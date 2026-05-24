@@ -1,0 +1,63 @@
+{
+  "$schema_version": "1.0.0",
+  "match_types": {
+    "single_color": {
+      "required": ["id", "type", "region", "anchor", "tolerance"],
+      "fields": {
+        "id": "string",
+        "type": "single_color",
+        "region": {"left": "int", "top": "int", "right": "int", "bottom": "int"},
+        "anchor": {
+          "x": "int",
+          "y": "int",
+          "rgb": "hex_rgb"
+        },
+        "checks": [
+          {
+            "dx": "int",
+            "dy": "int",
+            "rgb": "hex_rgb"
+          }
+        ],
+        "tolerance": "int(0-255)",
+        "task": "string"
+      }
+    },
+    "multi_point": {
+      "required": ["id", "type", "region", "anchor_rgb", "offsets", "tolerance"],
+      "fields": {
+        "id": "string",
+        "type": "multi_point",
+        "region": {"left": "int", "top": "int", "right": "int", "bottom": "int"},
+        "anchor_rgb": "hex_rgb",
+        "offsets": [
+          {"dx": "int", "dy": "int", "rgb": "hex_rgb"}
+        ],
+        "tolerance": "int(0-255)",
+        "task": "string"
+      }
+    },
+    "template_match": {
+      "required": ["id", "type", "template_path", "region", "similarity"],
+      "fields": {
+        "id": "string",
+        "type": "template_match",
+        "template_path": "assets-relative-path",
+        "region": {"left": "int", "top": "int", "right": "int", "bottom": "int"},
+        "step": "int>=1",
+        "similarity": "float(0-1)",
+        "task": "string"
+      }
+    },
+    "ocr_placeholder": {
+      "required": ["id", "type", "region", "task"],
+      "fields": {
+        "id": "string",
+        "type": "ocr_placeholder",
+        "region": {"left": "int", "top": "int", "right": "int", "bottom": "int"},
+        "keywords": ["string"],
+        "task": "string"
+      }
+    }
+  }
+}
