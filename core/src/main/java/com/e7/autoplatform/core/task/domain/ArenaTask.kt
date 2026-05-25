@@ -146,7 +146,8 @@ class ArenaTask(
         return detect(rule)
     }
 
-    private suspend fun detect(rule: ArenaRule): Boolean = when (rule.type) {
+    private suspend fun detect(rule: ArenaRule): Boolean {
+        return when (rule.type) {
         "single_color" -> {
             val anchor = rule.anchor ?: return false
             context.image.findColor(anchor.rgb.parseRgb(), rule.tolerance, rule.region.toScanRegion(), 1).matched
@@ -158,7 +159,8 @@ class ArenaTask(
             context.image.findPattern(pattern, rule.tolerance, rule.region.toScanRegion(), 1).matched
         }
 
-        else -> false
+            else -> false
+        }
     }
 
     private suspend fun doTap(rule: ArenaRule) {

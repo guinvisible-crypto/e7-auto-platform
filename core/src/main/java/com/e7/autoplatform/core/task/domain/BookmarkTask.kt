@@ -135,7 +135,8 @@ class BookmarkTask(
         return StepOutcome(nextState)
     }
 
-    private suspend fun detect(rule: BookmarkRule): Boolean = when (rule.type) {
+    private suspend fun detect(rule: BookmarkRule): Boolean {
+        return when (rule.type) {
         "single_color" -> {
             val anchor = rule.anchor ?: return false
             context.image.findColor(anchor.rgb.parseRgb(), rule.tolerance, rule.region.toScanRegion(), 1).matched
@@ -147,7 +148,8 @@ class BookmarkTask(
             context.image.findPattern(pattern, rule.tolerance, rule.region.toScanRegion(), 1).matched
         }
 
-        else -> false
+            else -> false
+        }
     }
 
     private suspend fun doTap(rule: BookmarkRule) {
