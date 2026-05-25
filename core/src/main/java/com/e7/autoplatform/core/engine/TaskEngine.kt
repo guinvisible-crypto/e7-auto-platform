@@ -128,9 +128,9 @@ class TaskEngine(
 
             scheduler.resetRecoveryState()
             _engineState.value = EngineState.Completed
-        } catch (_: CancellationException) {
+        } catch (e: CancellationException) {
             _engineState.value = EngineState.Stopped
-            throw
+            throw e
         } catch (_: Throwable) {
             scheduler.markInterruptedAndCountException()
             _engineState.value = EngineState.Interrupted
