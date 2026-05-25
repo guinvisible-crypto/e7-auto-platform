@@ -1,0 +1,1423 @@
+{
+  "task": "arena",
+  "rules": [
+    {
+      "id": "cmp_国服竞技场下战斗开始",
+      "source": "cmp_国服竞技场下战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 869,
+        "y": 680,
+        "rgb": "0F4E14"
+      },
+      "checks": [
+        {
+          "dx": 19,
+          "dy": 0,
+          "rgb": "0F4911"
+        },
+        {
+          "dx": -3,
+          "dy": 11,
+          "rgb": "1AC14C"
+        },
+        {
+          "dx": 18,
+          "dy": 11,
+          "rgb": "14B238"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场下战斗开始",
+      "source": "cmp_国际服国服竞技场下战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 898,
+        "y": 681,
+        "rgb": "286836"
+      },
+      "checks": [
+        {
+          "dx": 30,
+          "dy": 0,
+          "rgb": "255B2C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服战斗完成竞技场确定",
+      "source": "cmp_国服战斗完成竞技场确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1171,
+        "y": 692,
+        "rgb": "1FD567"
+      },
+      "checks": [
+        {
+          "dx": -30,
+          "dy": 0,
+          "rgb": "15B43B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服战斗完成竞技场确定",
+      "source": "cmp_国际服国服战斗完成竞技场确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1199,
+        "y": 683,
+        "rgb": "296B37"
+      },
+      "checks": [
+        {
+          "dx": -26,
+          "dy": 8,
+          "rgb": "3CA559"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场",
+      "source": "cmp_国服竞技场",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 221,
+        "y": 201,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 430,
+          "dy": -10,
+          "rgb": "FEFE02"
+        },
+        {
+          "dx": 430,
+          "dy": -15,
+          "rgb": "FEFE02"
+        },
+        {
+          "dx": 430,
+          "dy": 17,
+          "rgb": "48547C"
+        },
+        {
+          "dx": 428,
+          "dy": -33,
+          "rgb": "FEF6EA"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场战斗开始",
+      "source": "cmp_国服竞技场战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 859,
+        "y": 678,
+        "rgb": "0F4711"
+      },
+      "checks": [
+        {
+          "dx": 37,
+          "dy": 5,
+          "rgb": "105215"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场战斗开始",
+      "source": "cmp_国际服国服竞技场战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 868,
+        "y": 683,
+        "rgb": "2D763D"
+      },
+      "checks": [
+        {
+          "dx": 31,
+          "dy": 0,
+          "rgb": "2B6F39"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数0",
+      "source": "cmp_国服竞技场票数0",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 690,
+        "y": 26,
+        "rgb": "FEFEFE"
+      },
+      "checks": [
+        {
+          "dx": -4,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数1",
+      "source": "cmp_国服竞技场票数1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 695,
+        "y": 27,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 0,
+          "dy": 5,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 12,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数2",
+      "source": "cmp_国服竞技场票数2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 687,
+        "y": 28,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 3,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 6,
+          "dy": 12,
+          "rgb": "FCFCFC"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数3",
+      "source": "cmp_国服竞技场票数3",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 691,
+        "y": 26,
+        "rgb": "FEFEFE"
+      },
+      "checks": [
+        {
+          "dx": 2,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 1,
+          "dy": 14,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数4",
+      "source": "cmp_国服竞技场票数4",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 692,
+        "y": 36,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -6,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -1,
+          "dy": -9,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场票数5",
+      "source": "cmp_国服竞技场票数5",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 688,
+        "y": 27,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 4,
+          "dy": 5,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 5,
+          "dy": 12,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场每周结算时间",
+      "source": "cmp_国服竞技场每周结算时间",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 328,
+        "y": 412,
+        "rgb": "2B4C65"
+      },
+      "checks": [
+        {
+          "dx": 110,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": 232,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": 619,
+          "dy": 0,
+          "rgb": "2B4C65"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场切换对手确定",
+      "source": "cmp_国服竞技场切换对手确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 771,
+        "y": 516,
+        "rgb": "0E430E"
+      },
+      "checks": [
+        {
+          "dx": 33,
+          "dy": 12,
+          "rgb": "119126"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场切换对手确定",
+      "source": "cmp_国际服国服竞技场切换对手确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 797,
+        "y": 520,
+        "rgb": "2A6D37"
+      },
+      "checks": [
+        {
+          "dx": -40,
+          "dy": 1,
+          "rgb": "2E7B40"
+        },
+        {
+          "dx": 23,
+          "dy": 1,
+          "rgb": "296835"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场挑战升级",
+      "source": "cmp_国服竞技场挑战升级",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 610,
+        "y": 692,
+        "rgb": "19C34E"
+      },
+      "checks": [
+        {
+          "dx": 40,
+          "dy": 0,
+          "rgb": "1CCF5C"
+        },
+        {
+          "dx": -68,
+          "dy": -1,
+          "rgb": "10941E"
+        },
+        {
+          "dx": 116,
+          "dy": -1,
+          "rgb": "10941E"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场挑战升级",
+      "source": "cmp_国际服国服竞技场挑战升级",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 640,
+        "y": 685,
+        "rgb": "2F8042"
+      },
+      "checks": [
+        {
+          "dx": -39,
+          "dy": -2,
+          "rgb": "296835"
+        },
+        {
+          "dx": 20,
+          "dy": -2,
+          "rgb": "2D753D"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场叶子购买票",
+      "source": "cmp_国服竞技场叶子购买票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 391,
+        "y": 348,
+        "rgb": "D1EEF0"
+      },
+      "checks": [
+        {
+          "dx": 230,
+          "dy": 5,
+          "rgb": "D1EEF0"
+        },
+        {
+          "dx": 128,
+          "dy": -60,
+          "rgb": "D1EEF0"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场砖石购买票",
+      "source": "cmp_国服竞技场砖石购买票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 754,
+        "y": 288,
+        "rgb": "D1EEF0"
+      },
+      "checks": [
+        {
+          "dx": 125,
+          "dy": 65,
+          "rgb": "D1EEF0"
+        },
+        {
+          "dx": 10,
+          "dy": 127,
+          "rgb": "D1EEF0"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场购买票",
+      "source": "cmp_国服竞技场购买票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 727,
+        "y": 531,
+        "rgb": "0E4C13"
+      },
+      "checks": [
+        {
+          "dx": -224,
+          "dy": 1,
+          "rgb": "0C2941"
+        },
+        {
+          "dx": 10,
+          "dy": 8,
+          "rgb": "117426"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场购买票",
+      "source": "cmp_国际服国服竞技场购买票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 725,
+        "y": 537,
+        "rgb": "318345"
+      },
+      "checks": [
+        {
+          "dx": -36,
+          "dy": 4,
+          "rgb": "35904E"
+        },
+        {
+          "dx": 22,
+          "dy": 4,
+          "rgb": "389C55"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场取消购票",
+      "source": "cmp_国服竞技场取消购票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 504,
+        "y": 537,
+        "rgb": "103959"
+      },
+      "checks": [
+        {
+          "dx": 224,
+          "dy": 0,
+          "rgb": "116B23"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服国服竞技场取消购票",
+      "source": "cmp_国际服国服竞技场取消购票",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 506,
+        "y": 535,
+        "rgb": "315F7A"
+      },
+      "checks": [
+        {
+          "dx": -48,
+          "dy": -4,
+          "rgb": "21384C"
+        },
+        {
+          "dx": 34,
+          "dy": 0,
+          "rgb": "2C536C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场购买票页面",
+      "source": "cmp_国服竞技场购买票页面",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 322,
+        "y": 197,
+        "rgb": "2B4C65"
+      },
+      "checks": [
+        {
+          "dx": 301,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": 331,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": 631,
+          "dy": 0,
+          "rgb": "2B4C65"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场取消更换对手",
+      "source": "cmp_国服竞技场取消更换对手",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 484,
+        "y": 495,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 30,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 34,
+          "rgb": "3A7C9F"
+        },
+        {
+          "dx": 21,
+          "dy": 34,
+          "rgb": "3F81A4"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场每周排名奖励",
+      "source": "cmp_国服竞技场每周排名奖励",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 532,
+        "y": 163,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 32,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 90,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 125,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 179,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 206,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国服竞技场领取每周奖励",
+      "source": "cmp_国服竞技场领取每周奖励",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 638,
+        "y": 564,
+        "rgb": "906432"
+      },
+      "checks": [
+        {
+          "dx": 82,
+          "dy": -2,
+          "rgb": "7F572B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_国际服竞技场领取每周奖励",
+      "source": "cmp_国际服竞技场领取每周奖励",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 630,
+        "y": 557,
+        "rgb": "7B5329"
+      },
+      "checks": [
+        {
+          "dx": -25,
+          "dy": 2,
+          "rgb": "7C5429"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_竞技场挑战",
+      "source": "mul_竞技场挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 6,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 20,
+          "dy": -9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 29,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 10,
+          "dy": 39,
+          "rgb": "1CCA58"
+        },
+        {
+          "dx": 23,
+          "dy": 39,
+          "rgb": "16B841"
+        },
+        {
+          "dx": 16,
+          "dy": 23,
+          "rgb": "0F440F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国际服竞技场挑战",
+      "source": "mul_国际服竞技场挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "338949",
+      "offsets": [
+        {
+          "dx": -1,
+          "dy": -9,
+          "rgb": "286534"
+        },
+        {
+          "dx": 18,
+          "dy": -2,
+          "rgb": "296A36"
+        },
+        {
+          "dx": -31,
+          "dy": 0,
+          "rgb": "245B2B"
+        },
+        {
+          "dx": 6,
+          "dy": 4,
+          "rgb": "399E56"
+        },
+        {
+          "dx": -10,
+          "dy": 4,
+          "rgb": "379A54"
+        },
+        {
+          "dx": -7,
+          "dy": -61,
+          "rgb": "172C10"
+        },
+        {
+          "dx": 33,
+          "dy": -33,
+          "rgb": "172E11"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场再次挑战",
+      "source": "mul_国服竞技场再次挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "EBECED",
+      "offsets": [
+        {
+          "dx": 10,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 27,
+          "dy": 4,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 51,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 73,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 42,
+          "dy": -18,
+          "rgb": "040B17"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国际服国服竞技场再次挑战",
+      "source": "mul_国际服国服竞技场再次挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "326380",
+      "offsets": [
+        {
+          "dx": -26,
+          "dy": -14,
+          "rgb": "1F3143"
+        },
+        {
+          "dx": 31,
+          "dy": -11,
+          "rgb": "1F3143"
+        },
+        {
+          "dx": -6,
+          "dy": -55,
+          "rgb": "181F2D"
+        },
+        {
+          "dx": -19,
+          "dy": -4,
+          "rgb": "27475C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场旗帜位置",
+      "source": "mul_国服竞技场旗帜位置",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "28B9F7",
+      "offsets": [
+        {
+          "dx": 4,
+          "dy": -4,
+          "rgb": "3DFAFF"
+        },
+        {
+          "dx": 1,
+          "dy": -6,
+          "rgb": "0B2BC6"
+        },
+        {
+          "dx": -1,
+          "dy": 7,
+          "rgb": "111BB5"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数0",
+      "source": "mul_国服竞技场票数0",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FAFAFA",
+      "offsets": [
+        {
+          "dx": -3,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 3,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -4,
+          "dy": 6,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 6,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 2,
+          "dy": 12,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 1,
+          "dy": 13,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": -1,
+          "dy": 13,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": -2,
+          "dy": 12,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数1",
+      "source": "mul_国服竞技场票数1",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": -2,
+          "dy": 1,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": -3,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -4,
+          "dy": 2,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": 0,
+          "dy": 4,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": 1,
+          "dy": 8,
+          "rgb": "FAFAFA"
+        },
+        {
+          "dx": 0,
+          "dy": 12,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": 0,
+          "dy": -1,
+          "rgb": "FDFDFD"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数2",
+      "source": "mul_国服竞技场票数2",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FCFCFC",
+      "offsets": [
+        {
+          "dx": -5,
+          "dy": 0,
+          "rgb": "FCFCFC"
+        },
+        {
+          "dx": -6,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -3,
+          "dy": -5,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -1,
+          "dy": -7,
+          "rgb": "FAFAFA"
+        },
+        {
+          "dx": -3,
+          "dy": -13,
+          "rgb": "F5F5F5"
+        },
+        {
+          "dx": -7,
+          "dy": -12,
+          "rgb": "FCFCFC"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数3",
+      "source": "mul_国服竞技场票数3",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": -3,
+          "dy": -5,
+          "rgb": "F7F7F7"
+        },
+        {
+          "dx": -3,
+          "dy": 6,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 4,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": -5,
+          "rgb": "FEFEFE"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数4",
+      "source": "mul_国服竞技场票数4",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FEFEFE",
+      "offsets": [
+        {
+          "dx": -2,
+          "dy": 3,
+          "rgb": "FBFBFB"
+        },
+        {
+          "dx": -2,
+          "dy": 9,
+          "rgb": "EEEEEE"
+        },
+        {
+          "dx": 2,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 2,
+          "dy": 5,
+          "rgb": "F9F9F9"
+        },
+        {
+          "dx": 3,
+          "dy": 9,
+          "rgb": "F5F5F5"
+        },
+        {
+          "dx": 1,
+          "dy": 12,
+          "rgb": "F7F7F7"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场票数5",
+      "source": "mul_国服竞技场票数5",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "F9F9F9",
+      "offsets": [
+        {
+          "dx": -6,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -6,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -1,
+          "dy": 5,
+          "rgb": "FDFDFD"
+        },
+        {
+          "dx": 1,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -2,
+          "dy": 13,
+          "rgb": "FEFEFE"
+        },
+        {
+          "dx": -6,
+          "dy": 12,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国服竞技场已挑战过对手",
+      "source": "mul_国服竞技场已挑战过对手",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "808183",
+      "offsets": [
+        {
+          "dx": 6,
+          "dy": 7,
+          "rgb": "828384"
+        },
+        {
+          "dx": 19,
+          "dy": -4,
+          "rgb": "848486"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    },
+    {
+      "id": "mul_国际服国服竞技场已挑战过对手",
+      "source": "mul_国际服国服竞技场已挑战过对手",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "828384",
+      "offsets": [
+        {
+          "dx": -8,
+          "dy": -9,
+          "rgb": "808083"
+        },
+        {
+          "dx": 12,
+          "dy": -14,
+          "rgb": "838486"
+        }
+      ],
+      "tolerance": 16,
+      "task": "arena"
+    }
+  ]
+}
