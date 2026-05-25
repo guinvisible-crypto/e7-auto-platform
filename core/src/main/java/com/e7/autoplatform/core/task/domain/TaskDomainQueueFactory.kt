@@ -19,11 +19,12 @@ class TaskDomainQueueFactory {
         loop: Boolean,
         intervalMs: Long,
         runtimeStateStore: RuntimeStateStore,
+        stageRulesJson: String,
         arenaRulesJson: String,
         bookmarkRulesJson: String
     ): TaskQueue {
         val tasks = mutableListOf<QueuedTask>()
-        if (includeStage) tasks += StageTask(context)
+        if (includeStage) tasks += StageTask(context, stageRulesJson)
         if (includeArena) tasks += ArenaTask(context, runtimeStateStore, arenaRulesJson)
         if (includeGuild) tasks += GuildTask(context)
         if (includeBookmark) tasks += BookmarkTask(context, runtimeStateStore, bookmarkRulesJson)

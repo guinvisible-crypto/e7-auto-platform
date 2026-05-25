@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                 loop = true,
                 intervalMs = 1_000L,
                 runtimeStateStore = runtimeStateStore,
+                stageRulesJson = assets.open("image_rules/stage/stage_rules.json").bufferedReader().use { it.readText() },
                 arenaRulesJson = assets.open("image_rules/arena/arena_rules.json").bufferedReader().use { it.readText() },
                 bookmarkRulesJson = assets.open("image_rules/shop/bookmark_rules.json").bufferedReader().use { it.readText() }
             )
