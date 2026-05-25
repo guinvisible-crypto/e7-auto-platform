@@ -1,0 +1,748 @@
+{
+  "task": "shop",
+  "rules": [
+    {
+      "id": "cmp_友情商店购买",
+      "source": "cmp_友情商店购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 784,
+        "y": 529,
+        "rgb": "0F5015"
+      },
+      "checks": [
+        {
+          "dx": -6,
+          "dy": 8,
+          "rgb": "13AB33"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国际服友情商店购买",
+      "source": "cmp_国际服友情商店购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 785,
+        "y": 532,
+        "rgb": "308043"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": -1,
+          "rgb": "2C743C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店立即更新",
+      "source": "cmp_国服神秘商店立即更新",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 237,
+        "y": 652,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 22,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 41,
+          "dy": 5,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店购买完毕",
+      "source": "cmp_国服神秘商店购买完毕",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 416,
+        "y": 118,
+        "rgb": "143368"
+      },
+      "checks": [
+        {
+          "dx": -19,
+          "dy": 2,
+          "rgb": "163270"
+        },
+        {
+          "dx": -9,
+          "dy": 5,
+          "rgb": "163A6F"
+        },
+        {
+          "dx": -24,
+          "dy": 20,
+          "rgb": "112A5B"
+        },
+        {
+          "dx": -2,
+          "dy": 21,
+          "rgb": "0D2148"
+        },
+        {
+          "dx": 4,
+          "dy": 27,
+          "rgb": "102E51"
+        },
+        {
+          "dx": 4,
+          "dy": 4,
+          "rgb": "133667"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店购买完毕2",
+      "source": "cmp_国服神秘商店购买完毕2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 374,
+        "y": 150,
+        "rgb": "405C81"
+      },
+      "checks": [
+        {
+          "dx": 36,
+          "dy": 7,
+          "rgb": "455E7E"
+        },
+        {
+          "dx": 13,
+          "dy": 13,
+          "rgb": "3D5784"
+        },
+        {
+          "dx": 13,
+          "dy": 2,
+          "rgb": "3B567B"
+        },
+        {
+          "dx": -12,
+          "dy": 15,
+          "rgb": "405B8E"
+        },
+        {
+          "dx": -34,
+          "dy": 7,
+          "rgb": "45639A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店第一个商品",
+      "source": "cmp_国服神秘商店第一个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1090,
+        "y": 109,
+        "rgb": "24A7FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店第二个商品",
+      "source": "cmp_国服神秘商店第二个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1091,
+        "y": 255,
+        "rgb": "24A5FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店第三个商品",
+      "source": "cmp_国服神秘商店第三个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1090,
+        "y": 399,
+        "rgb": "24A7FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店第四个商品",
+      "source": "cmp_国服神秘商店第四个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1089,
+        "y": 543,
+        "rgb": "24A5FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_神秘商店最后三个商品",
+      "source": "cmp_神秘商店最后三个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1091,
+        "y": 326,
+        "rgb": "2AB0FE"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_神秘商店最后二个商品",
+      "source": "cmp_神秘商店最后二个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1088,
+        "y": 472,
+        "rgb": "20A1FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_神秘商店最后一个商品",
+      "source": "cmp_神秘商店最后一个商品",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1090,
+        "y": 617,
+        "rgb": "24A7FD"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店物品5",
+      "source": "cmp_国服神秘商店物品5",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 591,
+        "y": 133,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -3,
+          "dy": 4,
+          "rgb": "F0F0F0"
+        },
+        {
+          "dx": 4,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -1,
+          "dy": 15,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店购买1",
+      "source": "cmp_国服神秘商店购买1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 798,
+        "y": 504,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 26,
+          "dy": 4,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 26,
+          "dy": -6,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 2,
+          "dy": 33,
+          "rgb": "11A42B"
+        },
+        {
+          "dx": -28,
+          "dy": 33,
+          "rgb": "14AE35"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国际服国服神秘商店购买1",
+      "source": "cmp_国际服国服神秘商店购买1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 817,
+        "y": 528,
+        "rgb": "276332"
+      },
+      "checks": [
+        {
+          "dx": -38,
+          "dy": 2,
+          "rgb": "2D773F"
+        },
+        {
+          "dx": 17,
+          "dy": 7,
+          "rgb": "2C703A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服一般商店",
+      "source": "cmp_国服一般商店",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 72,
+        "y": 32,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 14,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店购买确认",
+      "source": "cmp_国服神秘商店购买确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 727,
+        "y": 474,
+        "rgb": "EEB640"
+      },
+      "checks": [
+        {
+          "dx": 19,
+          "dy": 0,
+          "rgb": "EFC747"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国际服国服神秘商店购买确认",
+      "source": "cmp_国际服国服神秘商店购买确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 744,
+        "y": 470,
+        "rgb": "9C6E36"
+      },
+      "checks": [
+        {
+          "dx": -45,
+          "dy": -5,
+          "rgb": "704B26"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_国服神秘商店购买资源不足",
+      "source": "cmp_国服神秘商店购买资源不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 952,
+        "y": 201,
+        "rgb": "2B4C65"
+      },
+      "checks": [
+        {
+          "dx": -300,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": -330,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": -630,
+          "dy": 0,
+          "rgb": "2B4C65"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "cmp_神秘商店取消",
+      "source": "cmp_神秘商店取消",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 493,
+        "y": 527,
+        "rgb": "0D2C45"
+      },
+      "checks": [
+        {
+          "dx": 226,
+          "dy": 7,
+          "rgb": "117727"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "mul_友情商店",
+      "source": "mul_友情商店",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 10,
+          "dy": -8,
+          "rgb": "3D210D"
+        },
+        {
+          "dx": 18,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 11,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 9,
+          "dy": 10,
+          "rgb": "7A6759"
+        },
+        {
+          "dx": 17,
+          "dy": -8,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "mul_友情书签",
+      "source": "mul_友情书签",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "15BA7B",
+      "offsets": [
+        {
+          "dx": -9,
+          "dy": -12,
+          "rgb": "23C06A"
+        },
+        {
+          "dx": -15,
+          "dy": 14,
+          "rgb": "1BBD67"
+        },
+        {
+          "dx": -27,
+          "dy": 1,
+          "rgb": "52E1BE"
+        },
+        {
+          "dx": 16,
+          "dy": -13,
+          "rgb": "5ED5B3"
+        },
+        {
+          "dx": -15,
+          "dy": 17,
+          "rgb": "1BBD67"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "mul_誓约书签",
+      "source": "mul_誓约书签",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "44ADF6",
+      "offsets": [
+        {
+          "dx": -13,
+          "dy": 3,
+          "rgb": "E0FFFF"
+        },
+        {
+          "dx": 19,
+          "dy": -11,
+          "rgb": "A97538"
+        },
+        {
+          "dx": -17,
+          "dy": 13,
+          "rgb": "926632"
+        },
+        {
+          "dx": 38,
+          "dy": -3,
+          "rgb": "486BA7"
+        },
+        {
+          "dx": 39,
+          "dy": -21,
+          "rgb": "202939"
+        },
+        {
+          "dx": -9,
+          "dy": 11,
+          "rgb": "313742"
+        },
+        {
+          "dx": 13,
+          "dy": 38,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "mul_国服神秘商店购买",
+      "source": "mul_国服神秘商店购买",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 28,
+          "dy": 4,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 29,
+          "rgb": "13AC34"
+        },
+        {
+          "dx": 34,
+          "dy": 29,
+          "rgb": "109A22"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    },
+    {
+      "id": "mul_国际服国服神秘商店购买",
+      "source": "mul_国际服国服神秘商店购买",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "225428",
+      "offsets": [
+        {
+          "dx": 20,
+          "dy": 10,
+          "rgb": "318346"
+        },
+        {
+          "dx": -60,
+          "dy": -12,
+          "rgb": "4EDCFF"
+        },
+        {
+          "dx": 34,
+          "dy": 8,
+          "rgb": "296A37"
+        }
+      ],
+      "tolerance": 16,
+      "task": "shop"
+    }
+  ]
+}

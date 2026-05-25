@@ -1,0 +1,25 @@
+{
+  "task": "stage",
+  "rules": [
+    {
+      "id": "cmp_battle_surrender",
+      "source": "cmp_国服放弃战斗",
+      "type": "single_color",
+      "region": {"left": 580, "top": 280, "right": 700, "bottom": 340},
+      "anchor": {"x": 617, "y": 307, "rgb": "0B0BBE"},
+      "checks": [
+        {"dx": 34, "dy": 0, "rgb": "0B0BBE"}
+      ],
+      "tolerance": 18,
+      "task": "stage"
+    },
+    {
+      "id": "ocr_stage_end",
+      "source": "ocr_国服结束",
+      "type": "ocr_placeholder",
+      "region": {"left": 682, "top": 418, "right": 798, "bottom": 469},
+      "keywords": ["结束"],
+      "task": "stage"
+    }
+  ]
+}
