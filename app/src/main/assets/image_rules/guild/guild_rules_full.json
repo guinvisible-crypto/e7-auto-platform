@@ -1,0 +1,540 @@
+{
+  "task": "guild",
+  "rules": [
+    {
+      "id": "cmp_世界首领准备战斗",
+      "source": "cmp_世界首领准备战斗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 834,
+        "y": 651,
+        "rgb": "162908"
+      },
+      "checks": [
+        {
+          "dx": 89,
+          "dy": 44,
+          "rgb": "19C14C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领准备战斗",
+      "source": "cmp_国际服世界首领准备战斗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 915,
+        "y": 690,
+        "rgb": "318345"
+      },
+      "checks": [
+        {
+          "dx": 28,
+          "dy": 4,
+          "rgb": "389C55"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领选择队伍",
+      "source": "cmp_世界首领选择队伍",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1007,
+        "y": 630,
+        "rgb": "117026"
+      },
+      "checks": [
+        {
+          "dx": -23,
+          "dy": -1,
+          "rgb": "116821"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领选择队伍",
+      "source": "cmp_国际服世界首领选择队伍",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1021,
+        "y": 628,
+        "rgb": "2F7F42"
+      },
+      "checks": [
+        {
+          "dx": -25,
+          "dy": 0,
+          "rgb": "2F7F42"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领组成队伍",
+      "source": "cmp_世界首领组成队伍",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1093,
+        "y": 680,
+        "rgb": "115B1B"
+      },
+      "checks": [
+        {
+          "dx": -25,
+          "dy": 0,
+          "rgb": "11571A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领组成队伍",
+      "source": "cmp_国际服世界首领组成队伍",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1108,
+        "y": 682,
+        "rgb": "2F8043"
+      },
+      "checks": [
+        {
+          "dx": 35,
+          "dy": -2,
+          "rgb": "2B703A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领战斗开始",
+      "source": "cmp_世界首领战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 864,
+        "y": 678,
+        "rgb": "105015"
+      },
+      "checks": [
+        {
+          "dx": -10,
+          "dy": 11,
+          "rgb": "1AC14C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领战斗开始",
+      "source": "cmp_国际服世界首领战斗开始",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 874,
+        "y": 682,
+        "rgb": "2E7B40"
+      },
+      "checks": [
+        {
+          "dx": -13,
+          "dy": 0,
+          "rgb": "2E7C41"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领全部开启",
+      "source": "cmp_世界首领全部开启",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 640,
+        "y": 650,
+        "rgb": "0E2F4B"
+      },
+      "checks": [
+        {
+          "dx": -1,
+          "dy": 9,
+          "rgb": "52ABCC"
+        },
+        {
+          "dx": -81,
+          "dy": -16,
+          "rgb": "09101D"
+        },
+        {
+          "dx": 85,
+          "dy": -15,
+          "rgb": "09111E"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领全部开启",
+      "source": "cmp_国际服世界首领全部开启",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 643,
+        "y": 649,
+        "rgb": "2E5972"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": 2,
+          "rgb": "305D78"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领完成确定",
+      "source": "cmp_世界首领完成确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1165,
+        "y": 682,
+        "rgb": "105719"
+      },
+      "checks": [
+        {
+          "dx": -1,
+          "dy": 10,
+          "rgb": "20D96C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国际服世界首领完成确定",
+      "source": "cmp_国际服世界首领完成确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1170,
+        "y": 681,
+        "rgb": "2A6E38"
+      },
+      "checks": [
+        {
+          "dx": 27,
+          "dy": 2,
+          "rgb": "296C37"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_世界首领战",
+      "source": "cmp_世界首领战",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 288,
+        "y": 410,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_团战奖励",
+      "source": "cmp_团战奖励",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 506,
+        "y": 205,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -12,
+          "dy": 18,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_团战奖励确定",
+      "source": "cmp_团战奖励确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 961,
+        "y": 681,
+        "rgb": "0E4B12"
+      },
+      "checks": [
+        {
+          "dx": 36,
+          "dy": 2,
+          "rgb": "105919"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国服左上骑士团",
+      "source": "cmp_国服左上骑士团",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 27,
+        "y": 33,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 20,
+          "dy": -13,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 19,
+          "dy": 11,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_骑士团右问号",
+      "source": "cmp_骑士团右问号",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 212,
+        "y": 36,
+        "rgb": "22334B"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": 1,
+          "rgb": "1F2E47"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国服骑士团签到",
+      "source": "cmp_国服骑士团签到",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 788,
+        "y": 625,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -5,
+          "dy": 0,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_国服骑士团每周任务",
+      "source": "cmp_国服骑士团每周任务",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 276,
+        "y": 106,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 9,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 33,
+          "dy": -6,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 62,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 87,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    },
+    {
+      "id": "mul_国服骑士团任务领取",
+      "source": "mul_国服骑士团任务领取",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 27,
+          "dy": -8,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 36,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 11,
+          "dy": 36,
+          "rgb": "18BB45"
+        },
+        {
+          "dx": 27,
+          "dy": 36,
+          "rgb": "16B740"
+        }
+      ],
+      "tolerance": 16,
+      "task": "guild"
+    }
+  ]
+}
