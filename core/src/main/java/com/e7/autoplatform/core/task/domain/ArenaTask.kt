@@ -73,7 +73,7 @@ class ArenaTask(
                             context.automation.waitMs(ACTION_WAIT_MS)
                         }
                         persistWaitResultRetryCount(0)
-                        return if (context.homeResolver.resolveToHome()) {
+                        return if (context.homeResolver.resolveToHome().success) {
                             StepOutcome(ArenaState.ENTER_ARENA, TaskRunResult.Retry)
                         } else {
                             StepOutcome(ArenaState.WAIT_RESULT, interruptAndPersist())
@@ -116,7 +116,7 @@ class ArenaTask(
                     context.automation.back()
                     context.automation.waitMs(ACTION_WAIT_MS)
                 }
-                return if (context.homeResolver.resolveToHome()) {
+                return if (context.homeResolver.resolveToHome().success) {
                     clearState()
                     StepOutcome(ArenaState.ENTER_ARENA, TaskRunResult.Retry)
                 } else {

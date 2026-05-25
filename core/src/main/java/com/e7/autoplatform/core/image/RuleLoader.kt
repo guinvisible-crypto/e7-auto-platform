@@ -102,5 +102,6 @@ sealed interface RuleValidationIssue {
 }
 
 private fun JsonObject.ruleIdOrNull(): String? {
-    return (this["id"] as? JsonPrimitive)?.contentOrNull
+    val primitive = this["id"] as? JsonPrimitive ?: return null
+    return runCatching { primitive.content }.getOrNull()
 }

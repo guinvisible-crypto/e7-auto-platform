@@ -2,6 +2,7 @@ package com.e7.autoplatform.core.task.domain
 
 import com.e7.autoplatform.core.engine.QueuedTask
 import com.e7.autoplatform.core.engine.TaskQueue
+import com.e7.autoplatform.core.config.RuntimeStateStore
 import com.e7.autoplatform.core.engine.TaskRuntimeSnapshotProvider
 
 /**
@@ -16,13 +17,16 @@ class TaskDomainQueueFactory {
         includeGuild: Boolean,
         includeBookmark: Boolean,
         loop: Boolean,
-        intervalMs: Long
+        intervalMs: Long,
+        runtimeStateStore: RuntimeStateStore,
+        arenaRulesJson: String,
+        bookmarkRulesJson: String
     ): TaskQueue {
         val tasks = mutableListOf<QueuedTask>()
         if (includeStage) tasks += StageTask(context)
-        if (includeArena) tasks += ArenaTask(context)
+        if (includeArena) tasks += ArenaTask(context, runtimeStateStore, arenaRulesJson)
         if (includeGuild) tasks += GuildTask(context)
-        if (includeBookmark) tasks += BookmarkTask(context)
+        if (includeBookmark) tasks += BookmarkTask(context, runtimeStateStore, bookmarkRulesJson)
         validateRuntimeSnapshotContract(tasks)
         return TaskQueue(tasks = tasks, loop = loop, intervalMs = intervalMs)
     }
