@@ -11,6 +11,7 @@ import com.e7.autoplatform.core.image.PatternMatcher
 import com.e7.autoplatform.core.image.RegionScanner
 import com.e7.autoplatform.core.image.ScanRegion
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class ImageBasedHomeStateDetector(
@@ -22,7 +23,7 @@ class ImageBasedHomeStateDetector(
 ) : HomeStateDetector {
 
     private val rules: List<HomeRule> by lazy {
-        json.decodeFromString(HomeRulePayload.serializer(), rulesJson).rules
+        json.decodeFromString<HomeRulePayload>(rulesJson).rules
             .mapNotNull { it.toHomeRule() }
     }
 
