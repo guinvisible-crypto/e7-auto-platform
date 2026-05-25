@@ -1,0 +1,369 @@
+{
+  "task": "ocr",
+  "rules": [
+    {
+      "id": "ocr_测试",
+      "source": "ocr_测试",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 774,
+        "top": 632,
+        "right": 865,
+        "bottom": 689
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_书签类型",
+      "source": "ocr_书签类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 611,
+        "top": 321,
+        "right": 762,
+        "bottom": 403
+      },
+      "keywords": [],
+      "task": "shop"
+    },
+    {
+      "id": "ocr_所有取消",
+      "source": "ocr_所有取消",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 318,
+        "top": 400,
+        "right": 685,
+        "bottom": 608
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_5面旗帜",
+      "source": "ocr_5面旗帜",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 550,
+        "top": 535,
+        "right": 672,
+        "bottom": 581
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_标签类型",
+      "source": "ocr_标签类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 1090,
+        "top": 62,
+        "right": 1250,
+        "bottom": 712
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_活动首页",
+      "source": "ocr_活动首页",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 97,
+        "top": 634,
+        "right": 211,
+        "bottom": 705
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服竞技场敌人积分",
+      "source": "ocr_国服竞技场敌人积分",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 655,
+        "top": 146,
+        "right": 808,
+        "bottom": 704
+      },
+      "keywords": [],
+      "task": "arena"
+    },
+    {
+      "id": "ocr_国服竞技场个人积分",
+      "source": "ocr_国服竞技场个人积分",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 64,
+        "top": 354,
+        "right": 209,
+        "bottom": 396
+      },
+      "keywords": [],
+      "task": "arena"
+    },
+    {
+      "id": "ocr_国服刷新挑战",
+      "source": "ocr_国服刷新挑战",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 783,
+        "top": 85,
+        "right": 988,
+        "bottom": 148
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服结束",
+      "source": "ocr_国服结束",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 682,
+        "top": 418,
+        "right": 798,
+        "bottom": 469
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服竞技场挑战对手剩余刷新次数",
+      "source": "ocr_国服竞技场挑战对手剩余刷新次数",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 492,
+        "top": 398,
+        "right": 801,
+        "bottom": 460
+      },
+      "keywords": [],
+      "task": "arena"
+    },
+    {
+      "id": "ocr_国服成就类型",
+      "source": "ocr_国服成就类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 227,
+        "top": 58,
+        "right": 672,
+        "bottom": 146
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服每日每周点数",
+      "source": "ocr_国服每日每周点数",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 272,
+        "top": 155,
+        "right": 378,
+        "bottom": 192
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服召唤类型",
+      "source": "ocr_国服召唤类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 1010,
+        "top": 68,
+        "right": 1226,
+        "bottom": 718
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服圣域指挥总部任务选择",
+      "source": "ocr_国服圣域指挥总部任务选择",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 279,
+        "top": 60,
+        "right": 526,
+        "bottom": 157
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服派遣任务等级",
+      "source": "ocr_国服派遣任务等级",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 405,
+        "top": 125,
+        "right": 677,
+        "bottom": 719
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服派遣所需等级",
+      "source": "ocr_国服派遣所需等级",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 539,
+        "top": 559,
+        "right": 653,
+        "bottom": 611
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服派遣英雄等级",
+      "source": "ocr_国服派遣英雄等级",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 992,
+        "top": 247,
+        "right": 1114,
+        "bottom": 291
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服战斗类型",
+      "source": "ocr_国服战斗类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 10,
+        "top": 107,
+        "right": 261,
+        "bottom": 205
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服右下角",
+      "source": "ocr_国服右下角",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 890,
+        "top": 550,
+        "right": 1280,
+        "bottom": 720
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服右下角活动",
+      "source": "ocr_国服右下角活动",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 826,
+        "top": 624,
+        "right": 987,
+        "bottom": 688
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服战斗失败",
+      "source": "ocr_国服战斗失败",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 987,
+        "top": 629,
+        "right": 1249,
+        "bottom": 691
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服重复战斗完成",
+      "source": "ocr_国服重复战斗完成",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 425,
+        "top": 94,
+        "right": 868,
+        "bottom": 254
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服战斗开始",
+      "source": "ocr_国服战斗开始",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 1074,
+        "top": 631,
+        "right": 1239,
+        "bottom": 686
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服战斗级别",
+      "source": "ocr_国服战斗级别",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 986,
+        "top": 247,
+        "right": 1279,
+        "bottom": 294
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_国服战斗级别区域",
+      "source": "ocr_国服战斗级别区域",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "keywords": [],
+      "task": "stage"
+    },
+    {
+      "id": "ocr_背包满类型",
+      "source": "ocr_背包满类型",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 553,
+        "top": 315,
+        "right": 706,
+        "bottom": 354
+      },
+      "keywords": [],
+      "task": "misc"
+    },
+    {
+      "id": "ocr_国服英雄升级企鹅不足",
+      "source": "ocr_国服英雄升级企鹅不足",
+      "type": "ocr_placeholder",
+      "region": {
+        "left": 545,
+        "top": 631,
+        "right": 734,
+        "bottom": 692
+      },
+      "keywords": [],
+      "task": "misc"
+    }
+  ]
+}
