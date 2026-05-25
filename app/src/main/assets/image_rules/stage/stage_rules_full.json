@@ -1,0 +1,542 @@
+{
+  "task": "stage",
+  "rules": [
+    {
+      "id": "cmp_战斗下方滑动条左",
+      "source": "cmp_战斗下方滑动条左",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 515,
+        "y": 686,
+        "rgb": "20394D"
+      },
+      "checks": [
+        {
+          "dx": 35,
+          "dy": 1,
+          "rgb": "223C50"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_后记冒险",
+      "source": "cmp_后记冒险",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1088,
+        "y": 680,
+        "rgb": "0F4D13"
+      },
+      "checks": [
+        {
+          "dx": 1,
+          "dy": 11,
+          "rgb": "1AC550"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国际服后记冒险",
+      "source": "cmp_国际服后记冒险",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1100,
+        "y": 683,
+        "rgb": "2E763D"
+      },
+      "checks": [
+        {
+          "dx": 34,
+          "dy": 3,
+          "rgb": "308042"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_活动冒险",
+      "source": "cmp_活动冒险",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1093,
+        "y": 686,
+        "rgb": "126B1F"
+      },
+      "checks": [
+        {
+          "dx": 33,
+          "dy": 0,
+          "rgb": "13661F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_后记准备战斗",
+      "source": "cmp_后记准备战斗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1123,
+        "y": 661,
+        "rgb": "1BC16B"
+      },
+      "checks": [
+        {
+          "dx": -7,
+          "dy": -8,
+          "rgb": "1BC16B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服活动小红点",
+      "source": "cmp_国服活动小红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 32,
+        "y": 455,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": 4,
+          "dy": 1,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服战斗完成确定",
+      "source": "cmp_国服战斗完成确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1146,
+        "y": 659,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 19,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 10,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -5,
+          "dy": 32,
+          "rgb": "13AB33"
+        },
+        {
+          "dx": 22,
+          "dy": 32,
+          "rgb": "19C550"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国际服国服战斗完成确定",
+      "source": "cmp_国际服国服战斗完成确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1199,
+        "y": 683,
+        "rgb": "296B37"
+      },
+      "checks": [
+        {
+          "dx": -26,
+          "dy": 8,
+          "rgb": "3CA559"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服放弃战斗",
+      "source": "cmp_国服放弃战斗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 617,
+        "y": 307,
+        "rgb": "0B0BBE"
+      },
+      "checks": [
+        {
+          "dx": 34,
+          "dy": 0,
+          "rgb": "0B0BBE"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国际服国服放弃战斗",
+      "source": "cmp_国际服国服放弃战斗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 635,
+        "y": 305,
+        "rgb": "04047D"
+      },
+      "checks": [
+        {
+          "dx": -35,
+          "dy": -6,
+          "rgb": "06065B"
+        },
+        {
+          "dx": 41,
+          "dy": -9,
+          "rgb": "060656"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服深渊净化确认",
+      "source": "cmp_国服深渊净化确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 736,
+        "y": 526,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -11,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 19,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -11,
+          "dy": 33,
+          "rgb": "EEB941"
+        },
+        {
+          "dx": 10,
+          "dy": 33,
+          "rgb": "EFC747"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国际服国服深渊净化确认",
+      "source": "cmp_国际服国服深渊净化确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 746,
+        "y": 549,
+        "rgb": "835B2D"
+      },
+      "checks": [
+        {
+          "dx": 22,
+          "dy": 0,
+          "rgb": "80572B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服深渊净化",
+      "source": "cmp_国服深渊净化",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 47,
+        "y": 635,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -4,
+          "dy": -1,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服战斗问号",
+      "source": "cmp_国服战斗问号",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1001,
+        "y": 25,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 8,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 5,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": 15,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -13,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 22,
+          "dy": 8,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 5,
+          "dy": -9,
+          "rgb": "FCFCFC"
+        },
+        {
+          "dx": 5,
+          "dy": 25,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服战斗结束左上背包",
+      "source": "cmp_国服战斗结束左上背包",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 44,
+        "y": 8,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 0,
+          "dy": 8,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 19,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "cmp_国服战斗记录",
+      "source": "cmp_国服战斗记录",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 331,
+        "y": 144,
+        "rgb": "33342F"
+      },
+      "checks": [
+        {
+          "dx": -24,
+          "dy": -29,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 62,
+          "dy": -30,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "mul_国服战斗开启",
+      "source": "mul_国服战斗开启",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "F6F3F6",
+      "offsets": [
+        {
+          "dx": -42,
+          "dy": 8,
+          "rgb": "F6F3F6"
+        },
+        {
+          "dx": 32,
+          "dy": 6,
+          "rgb": "F4F1F3"
+        },
+        {
+          "dx": -24,
+          "dy": 33,
+          "rgb": "14A839"
+        },
+        {
+          "dx": 11,
+          "dy": 33,
+          "rgb": "10992A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    },
+    {
+      "id": "mul_国服重复战斗绿色",
+      "source": "mul_国服重复战斗绿色",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "01C460",
+      "offsets": [
+        {
+          "dx": -9,
+          "dy": -6,
+          "rgb": "01C460"
+        },
+        {
+          "dx": 11,
+          "dy": -11,
+          "rgb": "01C460"
+        }
+      ],
+      "tolerance": 16,
+      "task": "stage"
+    }
+  ]
+}
