@@ -1,0 +1,12 @@
+package com.e7.autoplatform.ui.main
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.e7.autoplatform.R
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
