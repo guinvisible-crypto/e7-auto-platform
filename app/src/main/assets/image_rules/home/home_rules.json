@@ -1,0 +1,33 @@
+{
+  "task": "home",
+  "rules": [
+    {
+      "id": "cmp_home_rank",
+      "source": "cmp_国服主页Rank",
+      "type": "single_color",
+      "state": "HOME",
+      "region": {"left": 80, "top": 20, "right": 180, "bottom": 60},
+      "anchor": {"x": 124, "y": 39, "rgb": "1AAAFF"},
+      "checks": [
+        {"dx": 6, "dy": 0, "rgb": "1AAAFF"},
+        {"dx": 35, "dy": 0, "rgb": "1AAAFF"}
+      ],
+      "tolerance": 12,
+      "task": "home"
+    },
+    {
+      "id": "cmp_login_e7",
+      "source": "cmp_国服登录第七史诗",
+      "type": "single_color",
+      "state": "LOGIN",
+      "region": {"left": 560, "top": 250, "right": 680, "bottom": 380},
+      "anchor": {"x": 605, "y": 272, "rgb": "FFFFFF"},
+      "checks": [
+        {"dx": 38, "dy": 32, "rgb": "FFFFFF"},
+        {"dx": 29, "dy": 84, "rgb": "FFFFFF"}
+      ],
+      "tolerance": 10,
+      "task": "home"
+    }
+  ]
+}
