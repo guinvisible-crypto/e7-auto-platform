@@ -65,6 +65,8 @@ class MainActivity : AppCompatActivity() {
                 },
                 automation = object : AutomationGateway {
                     override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(x, y)
+                    override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
+                        E7AccessibilityService.performSwipe(startX, startY, endX, endY, durationMs)
                     override suspend fun back(): Boolean = true
                     override suspend fun waitMs(ms: Long) = Unit
                 }
