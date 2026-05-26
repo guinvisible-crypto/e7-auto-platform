@@ -42,8 +42,15 @@ class StageTask(
             }
             StageState.CLICK -> {
                 Log.d("StageTask", "state=CLICK")
-                Log.d("StageTask", "CLICK_ATTEMPT")
-                performClick(500, 500)
+                val x = 500
+                val y = 500
+                Log.d("StageTask", "CLICK_ATTEMPT x=$x y=$y")
+                val clicked = performClick(x, y)
+                if (clicked) {
+                    Log.d("StageTask", "CLICK_DISPATCHED")
+                } else {
+                    Log.d("StageTask", "CLICK_FAILED")
+                }
                 Log.d("StageTask", "event=state_transition task=StageTask from=CLICK to=WAIT")
                 StepOutcome(StageState.WAIT)
             }
