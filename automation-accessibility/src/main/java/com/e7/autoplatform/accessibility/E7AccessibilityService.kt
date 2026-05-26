@@ -105,7 +105,30 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         private var activeInstance: E7AccessibilityService? = null
 
         fun performClick(x: Int, y: Int): Boolean {
-            return activeInstance?.click(x.toFloat(), y.toFloat(), gestureId = "stage_click") ?: false
+            val service = activeInstance ?: return false
+            val displayMetrics = service.resources.displayMetrics
+            val width = displayMetrics.widthPixels
+            val height = displayMetrics.heightPixels
+            val foregroundPackage = service.rootInActiveWindow?.packageName?.toString() ?: "unknown"
+
+            Log.d(TAG, "click_validation screen_width=$width screen_height=$height")
+            Log.d(TAG, "click_validation foreground_package=$foregroundPackage")
+
+            val points = listOf(
+                Triple(width / 2, height / 2, "center"),
+                Triple(10, 10, "top_left"),
+                Triple((width - 10).coerceAtLeast(0), (height - 10).coerceAtLeast(0), "bottom_right")
+            )
+
+            var anyDispatched = false
+            points.forEach { (px, py, label) ->
+                Log.d(TAG, "click_validation target=$label x=$px y=$py")
+                val dispatched = service.click(px.toFloat(), py.toFloat(), gestureId = "stage_click_$label")
+                anyDispatched = anyDispatched || dispatched
+                Thread.sleep(1000)
+            }
+
+            return anyDispatched
         }
     }
 }
