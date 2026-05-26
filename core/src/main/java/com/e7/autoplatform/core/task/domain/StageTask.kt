@@ -1,6 +1,7 @@
 package com.e7.autoplatform.core.task.domain
 
 import android.util.Log
+import android.content.res.Resources
 import com.e7.autoplatform.core.engine.QueuedTask
 import com.e7.autoplatform.core.engine.TaskRunResult
 import com.e7.autoplatform.core.engine.TaskRuntimeSnapshotProvider
@@ -19,9 +20,11 @@ class StageTask(
     private var state: StageState = StageState.ENTER
     private var taskExceptionCount: Int = 0
     private lateinit var rules: List<StageRule>
+    private var matchedRule: StageRule? = null
 
     override suspend fun run(): TaskRunResult {
         return runCatching {
+            Log.d("StageTask", "RULES_JSON=$rulesJson")
             rules = parseRules(rulesJson)
             run(state)
         }.getOrElse {
@@ -37,13 +40,48 @@ class StageTask(
         return when (state) {
             StageState.ENTER -> StepOutcome(StageState.DETECT)
             StageState.DETECT -> {
-                Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
-                StepOutcome(StageState.CLICK)
+                Log.d("StageTask", "DETECT_RULE_COUNT=${rules.size}")
+                var matched: StageRule? = null
+                rules.forEach { rule ->
+                    Log.d("StageTask", "DETECT_RULE_ID=${rule.id}")
+                    val result = detect(rule)
+                    Log.d("StageTask", "DETECT_RESULT ruleId=${rule.id} matched=$result")
+                    if (matched == null && result) {
+                        matched = rule
+                    }
+                }
+                return if (matched != null) {
+                    matchedRule = matched
+                    Log.d("StageTask", "DETECT_SUCCESS ruleId=${matched.id}")
+                    Log.d("StageTask", "RULE_ID=${matched.id}")
+                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
+                    StepOutcome(StageState.CLICK)
+                } else {
+                    matchedRule = null
+                    Log.d("StageTask", "DETECT_FAIL ruleCount=${rules.size}")
+                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=WAIT")
+                    StepOutcome(StageState.WAIT)
+                }
             }
             StageState.CLICK -> {
                 Log.d("StageTask", "state=CLICK")
-                val x = 500
-                val y = 500
+                val rule = matchedRule
+                if (rule == null) {
+                    Log.d("StageTask", "NO_MATCHED_RULE")
+                    return StepOutcome(StageState.WAIT)
+                }
+                Log.d("StageTask", "RULE_ID=${rule.id}")
+                val anchor = rule.anchor
+                if (anchor == null) {
+                    Log.d("StageTask", "NO_ANCHOR_FOUND")
+                    return StepOutcome(StageState.WAIT)
+                }
+                Log.d("StageTask", "ANCHOR x=${anchor.x} y=${anchor.y}")
+                val x = anchor.x
+                val y = anchor.y
+                val dm = Resources.getSystem().displayMetrics
+                Log.d("StageTask", "SCREEN_INFO width=${dm.widthPixels} height=${dm.heightPixels} clickX=$x clickY=$y")
+                Log.d("StageTask", "FOREGROUND_PACKAGE=unavailable_in_core")
                 Log.d("StageTask", "CLICK_ATTEMPT x=$x y=$y")
                 val clicked = performClick(x, y)
                 if (clicked) {
@@ -57,6 +95,7 @@ class StageTask(
             StageState.WAIT -> {
                 Log.d("StageTask", "state=WAIT")
                 Thread.sleep(1000)
+                matchedRule = null
                 StepOutcome(StageState.DONE)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
