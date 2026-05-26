@@ -16,7 +16,7 @@ class StageTask(
     maxSteps: Int = 10
 ) : QueuedTask, WatchdogFallbackHandler, TaskRuntimeSnapshotProvider, TaskStateMachine<StageTask.StageState>(maxSteps) {
 
-    private var state: StageState = StageState.ENTER_STAGE
+    private var state: StageState = StageState.ENTER
     private var taskExceptionCount: Int = 0
     private lateinit var rules: List<StageRule>
 
@@ -35,26 +35,25 @@ class StageTask(
         this.state = state
         Log.d("StageTask", "state=${state.name}")
         return when (state) {
-            StageState.ENTER_STAGE -> {
-                context.convergeHomeOrThrow()
-                StepOutcome(StageState.DETECT_BATTLE_BUTTON)
-            }
-            StageState.DETECT_BATTLE_BUTTON -> {
-                val rule = rules.firstOrNull() ?: return StepOutcome(StageState.DONE, TaskRunResult.Interrupted)
-                if (detect(rule)) {
-                    StepOutcome(StageState.CLICK_BATTLE_BUTTON)
+            StageState.ENTER -> StepOutcome(StageState.DETECT)
+            StageState.DETECT -> {
+                val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
+                if (rule != null && detect(rule)) {
+                    StepOutcome(StageState.CLICK)
                 } else {
-                    StepOutcome(StageState.DONE, TaskRunResult.Retry)
+                    StepOutcome(StageState.WAIT)
                 }
             }
-            StageState.CLICK_BATTLE_BUTTON -> {
-                Log.d("StageTask", "action=CLICK_BATTLE_BUTTON")
-                val rule = rules.firstOrNull() ?: return StepOutcome(StageState.DONE, TaskRunResult.Interrupted)
+            StageState.CLICK -> {
+                Log.d("StageTask", "action=CLICK")
+                val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
+                    ?: rules.firstOrNull()
+                    ?: return StepOutcome(StageState.DONE, TaskRunResult.Interrupted)
                 doTap(rule)
                 StepOutcome(StageState.WAIT)
             }
             StageState.WAIT -> {
-                context.automation.waitMs(WAIT_AFTER_CLICK_MS)
+                context.automation.waitMs(WAIT_MS)
                 StepOutcome(StageState.DONE)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
@@ -94,9 +93,9 @@ class StageTask(
     private fun parseRules(raw: String): List<StageRule> = json.decodeFromString(StageRulePayload.serializer(), raw).rules
 
     enum class StageState {
-        ENTER_STAGE,
-        DETECT_BATTLE_BUTTON,
-        CLICK_BATTLE_BUTTON,
+        ENTER,
+        DETECT,
+        CLICK,
         WAIT,
         DONE
     }
@@ -120,6 +119,7 @@ class StageTask(
     private fun String.parseRgb(): Int = (0xFF shl 24) or removePrefix("#").toInt(16)
 
     companion object {
-        private const val WAIT_AFTER_CLICK_MS = 1500L
+        private const val RULE_STAGE_ENTRY = "cmp_battle_surrender"
+        private const val WAIT_MS = 1000L
     }
 }
