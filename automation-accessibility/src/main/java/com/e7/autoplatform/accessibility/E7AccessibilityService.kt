@@ -136,5 +136,17 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
                 gestureId = "stage_swipe"
             )
         }
+
+        fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+            val service = activeInstance ?: return false
+            return service.swipe(
+                startX = startX.toFloat(),
+                startY = startY.toFloat(),
+                endX = endX.toFloat(),
+                endY = endY.toFloat(),
+                durationMs = durationMs,
+                gestureId = "stage_swipe"
+            )
+        }
     }
 }
