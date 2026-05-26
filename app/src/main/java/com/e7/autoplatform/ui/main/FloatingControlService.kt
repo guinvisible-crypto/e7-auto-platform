@@ -20,6 +20,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.app.NotificationCompat
 import com.e7.autoplatform.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class FloatingControlService : Service() {
     private lateinit var windowManager: WindowManager
@@ -103,7 +106,9 @@ class FloatingControlService : Service() {
             text = "停止任务"
             setOnClickListener {
                 Log.d(TAG, "TASK_STOP_REQUESTED")
-                AutomationRuntime.stop()
+                CoroutineScope(Dispatchers.Main).launch {
+                    AutomationRuntime.stop()
+                }
             }
         }
         val hideBtn = Button(this).apply {
@@ -149,7 +154,7 @@ class FloatingControlService : Service() {
 
     private fun buildNotification(): Notification =
         NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(android.R.drawable.ic_media_play)
             .setContentTitle("E7 Automation")
             .setContentText("Floating control is active")
             .setOngoing(true)
