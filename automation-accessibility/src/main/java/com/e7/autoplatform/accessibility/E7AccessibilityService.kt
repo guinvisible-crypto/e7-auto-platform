@@ -113,6 +113,9 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
 
         @Volatile
         private var activeInstance: E7AccessibilityService? = null
+        @Volatile
+        private var isSwiping: Boolean = false
+        private val swipeLock = Any()
 
         fun isConnected(): Boolean = activeInstance != null
 
@@ -139,10 +142,18 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         suspend fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
             Log.e("E7_DEBUG", "SWIPE_ENTER")
             Log.e("E7_DEBUG", "ACTIVE_INSTANCE=" + (activeInstance != null))
+            synchronized(swipeLock) {
+                if (isSwiping) {
+                    Log.w(TAG, "SWIPE_SKIPPED_ALREADY_RUNNING")
+                    return false
+                }
+                isSwiping = true
+            }
             val service = activeInstance
             if (service == null) {
                 Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
                 Log.e(TAG, "SWIPE_FAIL")
+                synchronized(swipeLock) { isSwiping = false }
                 return false
             }
             Log.d(TAG, "SWIPE_ATTEMPT startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$durationMs")
@@ -152,8 +163,20 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
                 endX = endX.toFloat(),
                 endY = endY.toFloat(),
                 durationMs = durationMs,
-                gestureId = "stage_swipe"
+                gestureId = "stage_swipe",
+                callback = object : AutomationGestureCallback {
+                    override fun onCompleted(gestureId: String) {
+                        synchronized(swipeLock) { isSwiping = false }
+                    }
+
+                    override fun onCancelled(gestureId: String) {
+                        synchronized(swipeLock) { isSwiping = false }
+                    }
+                }
             )
+            if (!dispatched) {
+                synchronized(swipeLock) { isSwiping = false }
+            }
             if (dispatched) Log.d(TAG, "SWIPE_SUCCESS") else Log.e(TAG, "SWIPE_FAIL")
             return dispatched
         }

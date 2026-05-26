@@ -59,7 +59,7 @@ object AutomationRuntime {
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
                     E7AccessibilityService.performSwipe(startX, startY, endX, endY, durationMs)
                 override suspend fun back(): Boolean = true
-                override suspend fun waitMs(ms: Long) = Unit
+                override suspend fun waitMs(ms: Long) = delay(ms)
             }
         )
 
@@ -81,11 +81,14 @@ object AutomationRuntime {
             stateManager = SharedPrefsStateManager(appContext),
             maxRetryCount = 3
         )
-        taskEngine = TaskEngine(scheduler).also { it.start(queue) }
+        val engine = TaskEngine(scheduler)
+        taskEngine = engine
         CoroutineScope(Dispatchers.Main).launch {
+            delay(3000)
+            engine.start(queue)
             delay(2000)
             Log.e("E7_DEBUG", "FORCE_SWIPE_TEST")
-            E7AccessibilityService.performSwipe(500, 1200, 500, 400, 800)
+            E7AccessibilityService.performSwipe(500, 1200, 500, 900, 1800)
         }
     }
 

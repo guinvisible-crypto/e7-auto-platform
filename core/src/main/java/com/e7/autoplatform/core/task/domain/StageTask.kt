@@ -102,10 +102,10 @@ class StageTask(
                 Log.d("StageTask", "REFRESH_ATTEMPT")
                 val swiped = context.automation.swipe(
                     startX = 600,
-                    startY = 1600,
+                    startY = 1200,
                     endX = 600,
-                    endY = 600,
-                    durationMs = 300
+                    endY = 900,
+                    durationMs = 1800
                 )
                 if (swiped) {
                     usedSkyStone += refreshCost
@@ -114,6 +114,7 @@ class StageTask(
                 } else {
                     Log.d("StageTask", "REFRESH_FAILED")
                 }
+                context.automation.waitMs(1500)
                 StepOutcome(StageState.DETECT)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
