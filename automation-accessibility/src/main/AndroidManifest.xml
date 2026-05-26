@@ -3,7 +3,7 @@
 
     <application>
         <service
-            android:name=".MyAccessibilityService"
+            android:name="com.e7.autoplatform.accessibility.MyAccessibilityService"
             android:enabled="true"
             android:exported="false"
             android:label="@string/accessibility_service_label"
