@@ -7,7 +7,7 @@ import android.os.Build
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 
-class E7AccessibilityService : AccessibilityService(), AutoClickController {
+open class E7AccessibilityService : AccessibilityService(), AutoClickController {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
