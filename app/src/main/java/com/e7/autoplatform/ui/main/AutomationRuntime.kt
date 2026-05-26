@@ -43,12 +43,12 @@ object AutomationRuntime {
         val taskContext = TaskContext(
             homeResolver = homeResolver,
             image = object : ImageGateway {
-                override suspend fun findColor(color: Int, tolerance: Int, region: ScanRegion?, step: Int): MatchResult = MatchResult(false, 0f)
-                override suspend fun findPattern(pattern: PatternDefinition, tolerance: Int, region: ScanRegion?, step: Int): MatchResult = MatchResult(false, 0f)
-                override suspend fun matchTemplate(template: TemplateDefinition, threshold: Float): MatchResult = MatchResult(false, 0f)
+                override suspend fun findColor(color: Int, tolerance: Int, region: ScanRegion?, step: Int): MatchResult = MatchResult(false)
+                override suspend fun findPattern(pattern: PatternDefinition, tolerance: Int, region: ScanRegion?, step: Int): MatchResult = MatchResult(false)
+                override suspend fun matchTemplate(template: TemplateDefinition, threshold: Float): MatchResult = MatchResult(false)
             },
             automation = object : AutomationGateway {
-                override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(x, y)
+                override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(500, 500)
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
                     E7AccessibilityService.performSwipe(startX, startY, endX, endY, durationMs)
                 override suspend fun back(): Boolean = true
