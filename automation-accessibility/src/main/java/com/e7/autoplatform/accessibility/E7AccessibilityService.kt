@@ -104,8 +104,14 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         @Volatile
         private var activeInstance: E7AccessibilityService? = null
 
+        fun isConnected(): Boolean = activeInstance != null
+
         fun performClick(x: Int, y: Int): Boolean {
-            val service = activeInstance ?: return false
+            val service = activeInstance
+            if (service == null) {
+                Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
+                return false
+            }
             val displayMetrics = service.resources.displayMetrics
             val width = displayMetrics.widthPixels
             val height = displayMetrics.heightPixels
@@ -113,22 +119,30 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
 
             Log.d(TAG, "click_validation screen_width=$width screen_height=$height")
             Log.d(TAG, "click_validation foreground_package=$foregroundPackage")
+            Log.d(TAG, "TAP_DISPATCH_ATTEMPT x=$x y=$y")
+            val dispatched = service.click(x.toFloat(), y.toFloat(), gestureId = "tap_${x}_${y}")
+            if (dispatched) Log.d(TAG, "TAP_DISPATCH_SUCCESS") else Log.e(TAG, "TAP_DISPATCH_FAIL")
+            return dispatched
+        }
 
-            val points = listOf(
-                Triple(width / 2, height / 2, "center"),
-                Triple(10, 10, "top_left"),
-                Triple((width - 10).coerceAtLeast(0), (height - 10).coerceAtLeast(0), "bottom_right")
-            )
-
-            var anyDispatched = false
-            points.forEach { (px, py, label) ->
-                Log.d(TAG, "click_validation target=$label x=$px y=$py")
-                val dispatched = service.click(px.toFloat(), py.toFloat(), gestureId = "stage_click_$label")
-                anyDispatched = anyDispatched || dispatched
-                Thread.sleep(1000)
+        fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+            val service = activeInstance
+            if (service == null) {
+                Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
+                Log.e(TAG, "SWIPE_FAIL")
+                return false
             }
-
-            return anyDispatched
+            Log.d(TAG, "SWIPE_ATTEMPT startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$durationMs")
+            val dispatched = service.swipe(
+                startX = startX.toFloat(),
+                startY = startY.toFloat(),
+                endX = endX.toFloat(),
+                endY = endY.toFloat(),
+                durationMs = durationMs,
+                gestureId = "stage_swipe"
+            )
+            if (dispatched) Log.d(TAG, "SWIPE_SUCCESS") else Log.e(TAG, "SWIPE_FAIL")
+            return dispatched
         }
     }
 }
