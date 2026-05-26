@@ -39,21 +39,26 @@ class StageTask(
             StageState.DETECT -> {
                 val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
                 if (rule != null && detect(rule)) {
+                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
                     StepOutcome(StageState.CLICK)
                 } else {
+                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=WAIT")
                     StepOutcome(StageState.WAIT)
                 }
             }
             StageState.CLICK -> {
-                Log.d("StageTask", "action=CLICK")
+                Log.d("StageTask", "event=click_attempt x=500 y=500")
                 val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
                     ?: rules.firstOrNull()
                     ?: return StepOutcome(StageState.DONE, TaskRunResult.Interrupted)
-                doTap(rule)
+                val clicked = doTap(rule)
+                if (clicked) Log.d("StageTask", "event=click_success") else Log.d("StageTask", "event=click_failed")
+                Log.d("StageTask", "event=state_transition task=StageTask from=CLICK to=WAIT")
                 StepOutcome(StageState.WAIT)
             }
             StageState.WAIT -> {
                 context.automation.waitMs(WAIT_MS)
+                Log.d("StageTask", "event=state_transition task=StageTask from=WAIT to=DONE")
                 StepOutcome(StageState.DONE)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
@@ -83,11 +88,11 @@ class StageTask(
         ).matched
     }
 
-    private suspend fun doTap(rule: StageRule) {
+    private suspend fun doTap(rule: StageRule): Boolean {
         val region = rule.region
         val x = rule.anchor?.x ?: (region.left + region.right) / 2
         val y = rule.anchor?.y ?: (region.top + region.bottom) / 2
-        context.automation.tap(x, y)
+        return context.automation.tap(x, y)
     }
 
     private fun parseRules(raw: String): List<StageRule> = json.decodeFromString(StageRulePayload.serializer(), raw).rules

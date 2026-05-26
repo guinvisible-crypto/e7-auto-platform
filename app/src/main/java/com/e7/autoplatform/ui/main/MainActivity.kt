@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.e7.autoplatform.accessibility.E7AccessibilityService
 import com.e7.autoplatform.R
 import com.e7.autoplatform.core.config.InMemoryRuntimeStateStore
 import com.e7.autoplatform.core.engine.TaskEngine
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                         MatchResult(matched = false, score = 0f)
                 },
                 automation = object : AutomationGateway {
-                    override suspend fun tap(x: Int, y: Int): Boolean = true
+                    override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(x, y)
                     override suspend fun back(): Boolean = true
                     override suspend fun waitMs(ms: Long) = Unit
                 }

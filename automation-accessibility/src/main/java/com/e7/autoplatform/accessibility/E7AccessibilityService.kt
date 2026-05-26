@@ -11,6 +11,7 @@ class E7AccessibilityService : AccessibilityService(), AutoClickController {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
+        activeInstance = this
         Log.i(TAG, "Accessibility service connected. manufacturer=${Build.MANUFACTURER}, model=${Build.MODEL}, sdk=${Build.VERSION.SDK_INT}")
     }
 
@@ -24,6 +25,7 @@ class E7AccessibilityService : AccessibilityService(), AutoClickController {
     }
 
     override fun onDestroy() {
+        activeInstance = null
         Log.i(TAG, "Accessibility service destroyed")
         super.onDestroy()
     }
@@ -98,5 +100,12 @@ class E7AccessibilityService : AccessibilityService(), AutoClickController {
         private const val TAG = "E7Accessibility"
         private const val CLICK_DURATION_MS = 50L
         private const val MIN_SWIPE_DURATION_MS = 100L
+
+        @Volatile
+        private var activeInstance: E7AccessibilityService? = null
+
+        fun performClick(x: Int, y: Int): Boolean {
+            return activeInstance?.click(x.toFloat(), y.toFloat(), gestureId = "stage_click") ?: false
+        }
     }
 }
