@@ -1,0 +1,48 @@
+{
+  "task": "arena",
+  "rules": [
+    {
+      "id": "cmp_arena_start_cn",
+      "source": "cmp_国服竞技场战斗开始",
+      "type": "single_color",
+      "region": {"left": 0, "top": 0, "right": 1280, "bottom": 720},
+      "anchor": {"x": 859, "y": 678, "rgb": "0F4711"},
+      "checks": [
+        {"dx": 37, "dy": 5, "rgb": "105215"}
+      ],
+      "tolerance": 18,
+      "task": "arena"
+    },
+    {
+      "id": "cmp_arena_upgrade_cn",
+      "source": "cmp_国服竞技场挑战升级",
+      "type": "single_color",
+      "region": {"left": 0, "top": 0, "right": 1280, "bottom": 720},
+      "anchor": {"x": 610, "y": 692, "rgb": "19C34E"},
+      "checks": [
+        {"dx": 40, "dy": 0, "rgb": "1CCF5C"},
+        {"dx": -68, "dy": -1, "rgb": "10941E"},
+        {"dx": 116, "dy": -1, "rgb": "10941E"}
+      ],
+      "tolerance": 20,
+      "task": "arena"
+    },
+    {
+      "id": "mul_arena_challenge_cn",
+      "source": "mul_竞技场挑战",
+      "type": "multi_point",
+      "region": {"left": 875, "top": 147, "right": 996, "bottom": 703},
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {"dx": 6, "dy": 2, "rgb": "FFFFFF"},
+        {"dx": 20, "dy": -9, "rgb": "FFFFFF"},
+        {"dx": 29, "dy": 0, "rgb": "FFFFFF"},
+        {"dx": 10, "dy": 39, "rgb": "1CCA58"},
+        {"dx": 23, "dy": 39, "rgb": "16B841"},
+        {"dx": 16, "dy": 23, "rgb": "0F440F"}
+      ],
+      "tolerance": 20,
+      "task": "arena"
+    }
+  ]
+}
