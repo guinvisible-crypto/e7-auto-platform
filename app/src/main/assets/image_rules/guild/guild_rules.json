@@ -1,0 +1,27 @@
+{
+  "task": "guild",
+  "rules": [
+    {
+      "id": "cmp_guild_signin",
+      "source": "cmp_国服骑士团签到",
+      "type": "template_match",
+      "template_path": "templates/guild/signin.png",
+      "region": {"left": 0, "top": 0, "right": 1280, "bottom": 720},
+      "step": 1,
+      "similarity": 0.95,
+      "task": "guild"
+    },
+    {
+      "id": "cmp_guild_weekly_page",
+      "source": "cmp_国服骑士团每周任务",
+      "type": "single_color",
+      "region": {"left": 300, "top": 60, "right": 980, "bottom": 220},
+      "anchor": {"x": 320, "y": 80, "rgb": "FFFFFF"},
+      "checks": [
+        {"dx": 6, "dy": 0, "rgb": "FFFFFF"}
+      ],
+      "tolerance": 10,
+      "task": "guild"
+    }
+  ]
+}
