@@ -114,7 +114,11 @@ class StageTask(
                 } else {
                     Log.d("StageTask", "REFRESH_FAILED")
                 }
-                context.automation.waitMs(1500)
+                while (context.automation.isGestureRunning()) {
+                    Log.d("StageTask", "TASK_WAITING_GESTURE")
+                    context.automation.waitMs(100)
+                }
+                Log.d("StageTask", "TASK_RESUME_AFTER_GESTURE")
                 StepOutcome(StageState.DETECT)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)

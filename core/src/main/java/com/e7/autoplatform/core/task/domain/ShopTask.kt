@@ -56,7 +56,11 @@ class ShopTask(
 
             ShopState.SCROLL -> {
                 context.automation.swipe(600, 1200, 600, 900, 1800)
-                context.automation.waitMs(1500)
+                while (context.automation.isGestureRunning()) {
+                    Log.d(TAG, "TASK_WAITING_GESTURE")
+                    context.automation.waitMs(100)
+                }
+                Log.d(TAG, "TASK_RESUME_AFTER_GESTURE")
                 StepOutcome(ShopState.DETECT)
             }
 

@@ -52,6 +52,7 @@ class TaskDomainDecouplingTest {
     private class NoOpAutomationGateway : AutomationGateway {
         override suspend fun tap(x: Int, y: Int): Boolean = true
         override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean = true
+        override suspend fun isGestureRunning(): Boolean = false
         override suspend fun back(): Boolean = true
         override suspend fun waitMs(ms: Long) = Unit
     }

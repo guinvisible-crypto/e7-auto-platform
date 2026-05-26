@@ -2,7 +2,6 @@ package com.e7.autoplatform.ui.main
 
 import android.content.Context
 import android.util.Log
-import com.e7.autoplatform.accessibility.E7AccessibilityService
 import com.e7.autoplatform.core.config.InMemoryRuntimeStateStore
 import com.e7.autoplatform.core.engine.TaskEngine
 import com.e7.autoplatform.core.home.HomeActionExecutor
@@ -27,10 +26,13 @@ import kotlinx.coroutines.launch
 
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
+    @Volatile
+    private var taskRunning: Boolean = false
 
     fun start(context: Context) {
-        if (taskEngine != null) return
-        Log.d(TAG, "ACCESSIBILITY_STATUS = ${if (E7AccessibilityService.isConnected()) "CONNECTED" else "DISCONNECTED"}")
+        if (taskRunning || taskEngine != null) return
+        taskRunning = true
+        Log.d(TAG, "ACCESSIBILITY_STATUS = SHIZUKU_INPUT_MODE")
         val appContext = context.applicationContext
         val homeResolver = HomeResolver(
             detector = object : HomeStateDetector {
@@ -54,10 +56,11 @@ object AutomationRuntime {
             automation = object : AutomationGateway {
                 override suspend fun tap(x: Int, y: Int): Boolean {
                     Log.d("AutomationRuntime", "TAP_CALL x=$x y=$y")
-                    return E7AccessibilityService.performClick(x, y)
+                    return ShizukuInputExecutor.tap(x, y)
                 }
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
-                    E7AccessibilityService.performSwipe(startX, startY, endX, endY, durationMs)
+                    ShizukuInputExecutor.swipe(startX, startY, endX, endY, durationMs)
+                override suspend fun isGestureRunning(): Boolean = false
                 override suspend fun back(): Boolean = true
                 override suspend fun waitMs(ms: Long) = delay(ms)
             }
@@ -86,9 +89,10 @@ object AutomationRuntime {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
             engine.start(queue)
-            delay(2000)
-            Log.e("E7_DEBUG", "FORCE_SWIPE_TEST")
-            E7AccessibilityService.performSwipe(500, 1200, 500, 900, 1800)
+            delay(3000)
+            ShizukuInputExecutor.tap(500, 500)
+            delay(1500)
+            ShizukuInputExecutor.swipe(500, 1200, 500, 800, 800)
         }
     }
 
@@ -96,6 +100,7 @@ object AutomationRuntime {
         CoroutineScope(Dispatchers.Main).launch {
             taskEngine?.stop()
             taskEngine = null
+            taskRunning = false
         }
     }
 

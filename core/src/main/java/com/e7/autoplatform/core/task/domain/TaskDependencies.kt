@@ -14,6 +14,7 @@ import com.e7.autoplatform.core.image.TemplateDefinition
 interface AutomationGateway {
     suspend fun tap(x: Int, y: Int): Boolean
     suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean
+    suspend fun isGestureRunning(): Boolean
     suspend fun back(): Boolean
     suspend fun waitMs(ms: Long)
 }
