@@ -120,7 +120,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
             Log.d(TAG, "click_validation screen_width=$width screen_height=$height")
             Log.d(TAG, "click_validation foreground_package=$foregroundPackage")
             Log.d(TAG, "TAP_DISPATCH_ATTEMPT x=$x y=$y")
-            val dispatched = service.click(x.toFloat(), y.toFloat(), gestureId = "tap_$x_$y")
+            val dispatched = service.click(x.toFloat(), y.toFloat(), gestureId = "tap_${x}_${y}")
             if (dispatched) Log.d(TAG, "TAP_DISPATCH_SUCCESS") else Log.e(TAG, "TAP_DISPATCH_FAIL")
             return dispatched
         }
