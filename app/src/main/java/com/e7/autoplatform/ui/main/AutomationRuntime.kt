@@ -20,6 +20,9 @@ import com.e7.autoplatform.core.task.domain.AutomationGateway
 import com.e7.autoplatform.core.task.domain.ImageGateway
 import com.e7.autoplatform.core.task.domain.TaskContext
 import com.e7.autoplatform.core.task.domain.TaskDomainQueueFactory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
@@ -78,8 +81,10 @@ object AutomationRuntime {
     }
 
     fun stop() {
-        taskEngine?.stop()
-        taskEngine = null
+        CoroutineScope(Dispatchers.Main).launch {
+            taskEngine?.stop()
+            taskEngine = null
+        }
     }
 
     private const val TAG = "AutomationRuntime"
