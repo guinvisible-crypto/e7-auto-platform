@@ -2,6 +2,7 @@ package com.e7.autoplatform.ui.main
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.e7.autoplatform.accessibility.E7AccessibilityService
@@ -23,7 +24,6 @@ import com.e7.autoplatform.core.task.domain.AutomationGateway
 import com.e7.autoplatform.core.task.domain.ImageGateway
 import com.e7.autoplatform.core.task.domain.TaskContext
 import com.e7.autoplatform.core.task.domain.TaskDomainQueueFactory
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        lifecycleScope.launch {
-            delay(1500)
-            Log.d("TaskEngine", "Auto start on launch")
+        findViewById<Button>(R.id.btnStartAutomation).setOnClickListener {
+            lifecycleScope.launch {
+                Log.d("TaskEngine", "Started by user action")
 
             val homeResolver = HomeResolver(
                 detector = object : HomeStateDetector {
@@ -89,8 +89,9 @@ class MainActivity : AppCompatActivity() {
                 stateManager = SharedPrefsStateManager(this@MainActivity),
                 maxRetryCount = 3
             )
-            val taskEngine = TaskEngine(scheduler = taskScheduler)
-            taskEngine.start(queue)
+                val taskEngine = TaskEngine(scheduler = taskScheduler)
+                taskEngine.start(queue)
+            }
         }
     }
 }
