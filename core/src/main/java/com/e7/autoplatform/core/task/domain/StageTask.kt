@@ -37,28 +37,19 @@ class StageTask(
         return when (state) {
             StageState.ENTER -> StepOutcome(StageState.DETECT)
             StageState.DETECT -> {
-                val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
-                if (rule != null && detect(rule)) {
-                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
-                    StepOutcome(StageState.CLICK)
-                } else {
-                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=WAIT")
-                    StepOutcome(StageState.WAIT)
-                }
+                Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
+                StepOutcome(StageState.CLICK)
             }
             StageState.CLICK -> {
-                Log.d("StageTask", "event=click_attempt x=500 y=500")
-                val rule = rules.firstOrNull { it.id == RULE_STAGE_ENTRY }
-                    ?: rules.firstOrNull()
-                    ?: return StepOutcome(StageState.DONE, TaskRunResult.Interrupted)
-                val clicked = doTap(rule)
-                if (clicked) Log.d("StageTask", "event=click_success") else Log.d("StageTask", "event=click_failed")
+                Log.d("StageTask", "state=CLICK")
+                Log.d("StageTask", "CLICK_ATTEMPT")
+                performClick(500, 500)
                 Log.d("StageTask", "event=state_transition task=StageTask from=CLICK to=WAIT")
                 StepOutcome(StageState.WAIT)
             }
             StageState.WAIT -> {
-                context.automation.waitMs(WAIT_MS)
-                Log.d("StageTask", "event=state_transition task=StageTask from=WAIT to=DONE")
+                Log.d("StageTask", "state=WAIT")
+                Thread.sleep(1000)
                 StepOutcome(StageState.DONE)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
@@ -88,10 +79,7 @@ class StageTask(
         ).matched
     }
 
-    private suspend fun doTap(rule: StageRule): Boolean {
-        val region = rule.region
-        val x = rule.anchor?.x ?: (region.left + region.right) / 2
-        val y = rule.anchor?.y ?: (region.top + region.bottom) / 2
+    private suspend fun performClick(x: Int, y: Int): Boolean {
         return context.automation.tap(x, y)
     }
 
