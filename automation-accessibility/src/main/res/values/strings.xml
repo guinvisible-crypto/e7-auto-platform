@@ -1,0 +1,4 @@
+<resources>
+    <string name="accessibility_service_label">E7 Accessibility Service</string>
+    <string name="accessibility_service_desc">Accessibility service for E7 automation interactions.</string>
+</resources>
