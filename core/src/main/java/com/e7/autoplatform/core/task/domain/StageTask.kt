@@ -6,6 +6,7 @@ import com.e7.autoplatform.core.engine.QueuedTask
 import com.e7.autoplatform.core.engine.TaskRunResult
 import com.e7.autoplatform.core.engine.TaskRuntimeSnapshotProvider
 import com.e7.autoplatform.core.engine.WatchdogFallbackHandler
+import com.e7.autoplatform.core.image.MatchResult
 import com.e7.autoplatform.core.image.ScanRegion
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -21,6 +22,7 @@ class StageTask(
     private var taskExceptionCount: Int = 0
     private lateinit var rules: List<StageRule>
     private var matchedRule: StageRule? = null
+    private var matchedResult: MatchResult? = null
 
     override suspend fun run(): TaskRunResult {
         return runCatching {
@@ -41,23 +43,26 @@ class StageTask(
             StageState.ENTER -> StepOutcome(StageState.DETECT)
             StageState.DETECT -> {
                 Log.d("StageTask", "DETECT_RULE_COUNT=${rules.size}")
-                var matched: StageRule? = null
+                val detectionResults = mutableListOf<Pair<StageRule, MatchResult>>()
                 rules.forEach { rule ->
                     Log.d("StageTask", "DETECT_RULE_ID=${rule.id}")
                     val result = detect(rule)
-                    Log.d("StageTask", "DETECT_RESULT ruleId=${rule.id} matched=$result")
-                    if (matched == null && result) {
-                        matched = rule
-                    }
+                    Log.d("StageTask", "DETECT_RESULT ruleId=${rule.id} matched=${result.matched}")
+                    detectionResults += rule to result
                 }
-                return if (matched != null) {
-                    matchedRule = matched
-                    Log.d("StageTask", "DETECT_SUCCESS ruleId=${matched.id}")
-                    Log.d("StageTask", "RULE_ID=${matched.id}")
+
+                val matchedEntry = detectionResults.firstOrNull { (_, result) -> result.matched }
+                val matchedRule = matchedEntry?.first
+                return if (matchedRule != null) {
+                    this.matchedRule = matchedRule
+                    this.matchedResult = matchedEntry.second
+                    Log.d("StageTask", "DETECT_SUCCESS ruleId=${matchedRule.id}")
+                    Log.d("StageTask", "RULE_ID=${matchedRule.id}")
                     Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
                     StepOutcome(StageState.CLICK)
                 } else {
-                    matchedRule = null
+                    this.matchedRule = null
+                    this.matchedResult = null
                     Log.d("StageTask", "DETECT_FAIL ruleCount=${rules.size}")
                     Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=WAIT")
                     StepOutcome(StageState.WAIT)
@@ -76,9 +81,10 @@ class StageTask(
                     Log.d("StageTask", "NO_ANCHOR_FOUND")
                     return StepOutcome(StageState.WAIT)
                 }
+                val matchPoint = matchedResult?.point
+                val x = matchPoint?.x ?: anchor.x
+                val y = matchPoint?.y ?: anchor.y
                 Log.d("StageTask", "ANCHOR x=${anchor.x} y=${anchor.y}")
-                val x = anchor.x
-                val y = anchor.y
                 val dm = Resources.getSystem().displayMetrics
                 Log.d("StageTask", "SCREEN_INFO width=${dm.widthPixels} height=${dm.heightPixels} clickX=$x clickY=$y")
                 Log.d("StageTask", "FOREGROUND_PACKAGE=unavailable_in_core")
@@ -96,6 +102,7 @@ class StageTask(
                 Log.d("StageTask", "state=WAIT")
                 Thread.sleep(1000)
                 matchedRule = null
+                matchedResult = null
                 StepOutcome(StageState.DONE)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
@@ -115,14 +122,14 @@ class StageTask(
 
     override suspend fun currentTaskExceptionCount(): Int = taskExceptionCount
 
-    private suspend fun detect(rule: StageRule): Boolean {
-        val anchor = rule.anchor ?: return false
+    private suspend fun detect(rule: StageRule): MatchResult {
+        val anchor = rule.anchor ?: return MatchResult(matched = false)
         return context.image.findColor(
             color = anchor.rgb.parseRgb(),
             tolerance = rule.tolerance,
             region = rule.region.toScanRegion(),
             step = 1
-        ).matched
+        )
     }
 
     private suspend fun performClick(x: Int, y: Int): Boolean {
