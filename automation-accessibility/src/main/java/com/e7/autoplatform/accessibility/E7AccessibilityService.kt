@@ -126,8 +126,14 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         }
 
         fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
-            val service = activeInstance ?: return false
-            return service.swipe(
+            val service = activeInstance
+            if (service == null) {
+                Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
+                Log.e(TAG, "SWIPE_FAIL")
+                return false
+            }
+            Log.d(TAG, "SWIPE_ATTEMPT startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$durationMs")
+            val dispatched = service.swipe(
                 startX = startX.toFloat(),
                 startY = startY.toFloat(),
                 endX = endX.toFloat(),
@@ -135,18 +141,8 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
                 durationMs = durationMs,
                 gestureId = "stage_swipe"
             )
-        }
-
-        fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
-            val service = activeInstance ?: return false
-            return service.swipe(
-                startX = startX.toFloat(),
-                startY = startY.toFloat(),
-                endX = endX.toFloat(),
-                endY = endY.toFloat(),
-                durationMs = durationMs,
-                gestureId = "stage_swipe"
-            )
+            if (dispatched) Log.d(TAG, "SWIPE_SUCCESS") else Log.e(TAG, "SWIPE_FAIL")
+            return dispatched
         }
     }
 }
