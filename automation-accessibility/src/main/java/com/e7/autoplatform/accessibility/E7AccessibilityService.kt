@@ -74,6 +74,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         gestureId: String,
         callback: AutomationGestureCallback?
     ): Boolean {
+        Log.e("E7_DEBUG", "DISPATCH_GESTURE")
         val dispatched = runBlocking {
             withContext(Dispatchers.Main) {
                 dispatchGesture(
@@ -116,6 +117,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         fun isConnected(): Boolean = activeInstance != null
 
         suspend fun performClick(x: Int, y: Int): Boolean {
+            Log.e("E7_DEBUG", "ACTIVE_INSTANCE=" + (activeInstance != null))
             val service = activeInstance
             if (service == null) {
                 Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
@@ -135,6 +137,8 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         }
 
         suspend fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+            Log.e("E7_DEBUG", "SWIPE_ENTER")
+            Log.e("E7_DEBUG", "ACTIVE_INSTANCE=" + (activeInstance != null))
             val service = activeInstance
             if (service == null) {
                 Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")

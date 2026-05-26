@@ -22,6 +22,7 @@ import com.e7.autoplatform.core.task.domain.TaskContext
 import com.e7.autoplatform.core.task.domain.TaskDomainQueueFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 object AutomationRuntime {
@@ -51,7 +52,10 @@ object AutomationRuntime {
                 override suspend fun matchTemplate(template: TemplateDefinition, threshold: Float): MatchResult = MatchResult(false)
             },
             automation = object : AutomationGateway {
-                override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(500, 500)
+                override suspend fun tap(x: Int, y: Int): Boolean {
+                    Log.d("AutomationRuntime", "TAP_CALL x=$x y=$y")
+                    return E7AccessibilityService.performClick(x, y)
+                }
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
                     E7AccessibilityService.performSwipe(startX, startY, endX, endY, durationMs)
                 override suspend fun back(): Boolean = true
@@ -78,6 +82,11 @@ object AutomationRuntime {
             maxRetryCount = 3
         )
         taskEngine = TaskEngine(scheduler).also { it.start(queue) }
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(2000)
+            Log.e("E7_DEBUG", "FORCE_SWIPE_TEST")
+            E7AccessibilityService.performSwipe(500, 1200, 500, 400, 800)
+        }
     }
 
     fun stop() {

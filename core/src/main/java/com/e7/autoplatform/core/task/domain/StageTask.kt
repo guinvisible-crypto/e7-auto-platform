@@ -45,46 +45,20 @@ class StageTask(
         return when (state) {
             StageState.ENTER -> StepOutcome(StageState.DETECT)
             StageState.DETECT -> {
-                Log.d("StageTask", "DETECT_RULE_COUNT=${rules.size}")
-                val detectionResults = mutableListOf<Pair<StageRule, MatchResult>>()
-                rules.forEach { rule ->
-                    Log.d("StageTask", "DETECT_RULE_ID=${rule.id}")
-                    val result = detect(rule)
-                    Log.d("StageTask", "DETECT_RESULT ruleId=${rule.id} matched=${result.matched}")
-                    detectionResults += rule to result
-                }
-
-                val preferredMatchedEntry = detectionResults.firstOrNull { (rule, result) ->
-                    result.matched && rule.id in prioritizedRuleIds
-                }
-                val matchedEntry = preferredMatchedEntry ?: detectionResults.firstOrNull { (_, result) -> result.matched }
-                val matchedRule = matchedEntry?.first
-                return if (matchedRule != null) {
-                    this.matchedRule = matchedRule
-                    this.matchedResult = matchedEntry.second
-                    Log.d("StageTask", "DETECT_SUCCESS ruleId=${matchedRule.id}")
-                    Log.d("StageTask", "RULE_ID=${matchedRule.id}")
-                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK_ITEM")
-                    StepOutcome(StageState.CLICK_ITEM)
-                } else {
-                    this.matchedRule = null
-                    this.matchedResult = null
-                    Log.d("StageTask", "DETECT_FAIL ruleCount=${rules.size}")
-                    if (canRefresh()) {
-                        Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=REFRESH")
-                        StepOutcome(StageState.REFRESH)
-                    } else {
-                        Log.d("StageTask", "STOP_SKYSTONE_LIMIT used=$usedSkyStone limit=$maxSkyStone")
-                        StepOutcome(StageState.DONE)
-                    }
-                }
+                Log.d("StageTask", "FORCE_ENTER_CLICK")
+                this.matchedRule = null
+                this.matchedResult = null
+                StepOutcome(StageState.CLICK_ITEM)
             }
             StageState.CLICK_ITEM -> {
+                Log.e("E7_DEBUG", "STAGE_CLICK")
                 Log.d("StageTask", "state=CLICK_ITEM")
                 val rule = matchedRule
                 if (rule == null) {
-                    Log.d("StageTask", "NO_MATCHED_RULE")
-                    return StepOutcome(StageState.DETECT)
+                    val clicked = performClick(500, 500)
+                    Log.d("StageTask", "CLICK_ATTEMPT x=500 y=500")
+                    Log.d("StageTask", if (clicked) "CLICK_DISPATCHED" else "CLICK_FAILED")
+                    return StepOutcome(StageState.WAIT_ANIMATION)
                 }
                 Log.d("StageTask", "RULE_ID=${rule.id}")
                 val match = matchedResult?.point
