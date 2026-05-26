@@ -1,0 +1,5584 @@
+{
+  "task": "misc",
+  "rules": [
+    {
+      "id": "cmp_选择JJC",
+      "source": "cmp_选择JJC",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 293,
+        "y": 132,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 6,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_左侧选择栏1",
+      "source": "cmp_左侧选择栏1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 76,
+        "y": 96,
+        "rgb": "F5C44D"
+      },
+      "checks": [
+        {
+          "dx": 4,
+          "dy": 13,
+          "rgb": "FAD04F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_B服退出判定",
+      "source": "cmp_B服退出判定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 465,
+        "y": 420,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 114,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 216,
+          "dy": 2,
+          "rgb": "EABD4F"
+        },
+        {
+          "dx": 343,
+          "dy": -4,
+          "rgb": "EABD4F"
+        },
+        {
+          "dx": 174,
+          "dy": -90,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 175,
+          "dy": -187,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 172,
+          "dy": 70,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_未戴装备不在显示",
+      "source": "cmp_未戴装备不在显示",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 843,
+        "y": 562,
+        "rgb": "0E4610"
+      },
+      "checks": [
+        {
+          "dx": -28,
+          "dy": 13,
+          "rgb": "14B036"
+        },
+        {
+          "dx": 16,
+          "dy": 14,
+          "rgb": "18BF49"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_未配置英雄",
+      "source": "cmp_未配置英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 819,
+        "y": 550,
+        "rgb": "286735"
+      },
+      "checks": [
+        {
+          "dx": -19,
+          "dy": 1,
+          "rgb": "286432"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_左上3字问号",
+      "source": "cmp_左上3字问号",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 210,
+        "y": 36,
+        "rgb": "213148"
+      },
+      "checks": [
+        {
+          "dx": 915,
+          "dy": 6,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_左上2字问号",
+      "source": "cmp_左上2字问号",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 185,
+        "y": 35,
+        "rgb": "23324A"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": 2,
+          "rgb": "202F45"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服邮件",
+      "source": "cmp_国际服邮件",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 176,
+        "y": 80,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 43,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_辅助英雄队长",
+      "source": "cmp_辅助英雄队长",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 309,
+        "y": 175,
+        "rgb": "16659B"
+      },
+      "checks": [
+        {
+          "dx": 22,
+          "dy": -1,
+          "rgb": "175E92"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_网络断开连接",
+      "source": "cmp_网络断开连接",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 627,
+        "y": 546,
+        "rgb": "38CCE7"
+      },
+      "checks": [
+        {
+          "dx": 20,
+          "dy": 1,
+          "rgb": "3BBAD3"
+        },
+        {
+          "dx": -72,
+          "dy": -316,
+          "rgb": "000000"
+        },
+        {
+          "dx": 103,
+          "dy": -302,
+          "rgb": "000000"
+        },
+        {
+          "dx": -89,
+          "dy": -177,
+          "rgb": "000000"
+        },
+        {
+          "dx": 106,
+          "dy": -169,
+          "rgb": "000000"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_代理中大厅",
+      "source": "cmp_代理中大厅",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 265,
+        "y": 685,
+        "rgb": "173B54"
+      },
+      "checks": [
+        {
+          "dx": 1,
+          "dy": 7,
+          "rgb": "58AECC"
+        },
+        {
+          "dx": 4,
+          "dy": 7,
+          "rgb": "58AECC"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_初始企鹅",
+      "source": "cmp_初始企鹅",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 976,
+        "y": 181,
+        "rgb": "01DFF9"
+      },
+      "checks": [
+        {
+          "dx": 10,
+          "dy": -15,
+          "rgb": "1AB77A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_老练企鹅",
+      "source": "cmp_老练企鹅",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 984,
+        "y": 301,
+        "rgb": "24F4FE"
+      },
+      "checks": [
+        {
+          "dx": 10,
+          "dy": 16,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_传说企鹅",
+      "source": "cmp_传说企鹅",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 982,
+        "y": 416,
+        "rgb": "16EEFE"
+      },
+      "checks": [
+        {
+          "dx": 4,
+          "dy": -13,
+          "rgb": "16EEFE"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_企鹅自动补满",
+      "source": "cmp_企鹅自动补满",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1107,
+        "y": 684,
+        "rgb": "653615"
+      },
+      "checks": [
+        {
+          "dx": -1,
+          "dy": 8,
+          "rgb": "EEB740"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服企鹅自动补满",
+      "source": "cmp_国际服企鹅自动补满",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1096,
+        "y": 683,
+        "rgb": "845B2D"
+      },
+      "checks": [
+        {
+          "dx": 41,
+          "dy": -1,
+          "rgb": "775128"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_企鹅升级成功",
+      "source": "cmp_企鹅升级成功",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 667,
+        "y": 358,
+        "rgb": "0078FF"
+      },
+      "checks": [
+        {
+          "dx": -7,
+          "dy": -9,
+          "rgb": "0078FF"
+        },
+        {
+          "dx": -7,
+          "dy": 8,
+          "rgb": "0078FF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_企鹅返还",
+      "source": "cmp_企鹅返还",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 621,
+        "y": 513,
+        "rgb": "000000"
+      },
+      "checks": [
+        {
+          "dx": 19,
+          "dy": -150,
+          "rgb": "00DBF7"
+        },
+        {
+          "dx": -4,
+          "dy": -152,
+          "rgb": "04E3FA"
+        },
+        {
+          "dx": 20,
+          "dy": -159,
+          "rgb": "1AB77A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_行动力购买",
+      "source": "cmp_行动力购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 943,
+        "y": 464,
+        "rgb": "116C25"
+      },
+      "checks": [
+        {
+          "dx": 8,
+          "dy": 5,
+          "rgb": "16B842"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服行动力购买",
+      "source": "cmp_国际服行动力购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 951,
+        "y": 461,
+        "rgb": "2C733D"
+      },
+      "checks": [
+        {
+          "dx": 29,
+          "dy": 2,
+          "rgb": "296D39"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_旗帜购买",
+      "source": "cmp_旗帜购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 945,
+        "y": 602,
+        "rgb": "105D1D"
+      },
+      "checks": [
+        {
+          "dx": 7,
+          "dy": 7,
+          "rgb": "16B841"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服旗帜购买",
+      "source": "cmp_国际服旗帜购买",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 952,
+        "y": 600,
+        "rgb": "296C39"
+      },
+      "checks": [
+        {
+          "dx": 25,
+          "dy": 3,
+          "rgb": "2C713B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服购买企鹅不再提示",
+      "source": "cmp_国际服购买企鹅不再提示",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 821,
+        "y": 556,
+        "rgb": "308244"
+      },
+      "checks": [
+        {
+          "dx": 23,
+          "dy": -5,
+          "rgb": "286533"
+        },
+        {
+          "dx": -29,
+          "dy": -5,
+          "rgb": "266030"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服返回箭头",
+      "source": "cmp_国服返回箭头",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 29,
+        "y": 32,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 18,
+          "dy": -13,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 17,
+          "dy": 13,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_管理队伍",
+      "source": "cmp_管理队伍",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 124,
+        "y": 652,
+        "rgb": "3B1F0E"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_未记载的故事",
+      "source": "cmp_未记载的故事",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 65,
+        "y": 383,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -11,
+          "dy": -12,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -25,
+          "dy": -12,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服比赛",
+      "source": "cmp_国际服比赛",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1214,
+        "y": 94,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -9,
+          "dy": -9,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_关卡顶部",
+      "source": "cmp_关卡顶部",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 805,
+        "y": 295,
+        "rgb": "D1EEF0"
+      },
+      "checks": [
+        {
+          "dx": 114,
+          "dy": 0,
+          "rgb": "D1EEF0"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_申请好友取消",
+      "source": "cmp_申请好友取消",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 523,
+        "y": 532,
+        "rgb": "0A233A"
+      },
+      "checks": [
+        {
+          "dx": 35,
+          "dy": 0,
+          "rgb": "092035"
+        },
+        {
+          "dx": 7,
+          "dy": 14,
+          "rgb": "56B3D2"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服申请好友取消",
+      "source": "cmp_国际服申请好友取消",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 542,
+        "y": 538,
+        "rgb": "326481"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": 4,
+          "rgb": "37708F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_紧急任务确认",
+      "source": "cmp_紧急任务确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 521,
+        "y": 536,
+        "rgb": "0A2138"
+      },
+      "checks": [
+        {
+          "dx": 32,
+          "dy": -1,
+          "rgb": "091D32"
+        },
+        {
+          "dx": 11,
+          "dy": 13,
+          "rgb": "52ABCC"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服紧急任务确认",
+      "source": "cmp_国际服紧急任务确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 536,
+        "y": 543,
+        "rgb": "336684"
+      },
+      "checks": [
+        {
+          "dx": -32,
+          "dy": 1,
+          "rgb": "325F7B"
+        },
+        {
+          "dx": 27,
+          "dy": -2,
+          "rgb": "2F5A74"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服派遣任务重新进行",
+      "source": "cmp_国服派遣任务重新进行",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 879,
+        "y": 606,
+        "rgb": "348E4D"
+      },
+      "checks": [
+        {
+          "dx": 29,
+          "dy": -2,
+          "rgb": "318445"
+        },
+        {
+          "dx": -236,
+          "dy": -1,
+          "rgb": "366C8B"
+        },
+        {
+          "dx": -211,
+          "dy": -5,
+          "rgb": "2E5A74"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服派遣任务关闭",
+      "source": "cmp_国服派遣任务关闭",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 634,
+        "y": 578,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 293,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 336,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 305,
+          "dy": 32,
+          "rgb": "12A930"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服Connection",
+      "source": "cmp_国服Connection",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 559,
+        "y": 349,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 32,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 49,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 66,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 98,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 108,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 124,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 141,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物小屋红点",
+      "source": "cmp_国服宠物小屋红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 398,
+        "y": 624,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": 0,
+          "dy": 3,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物领养",
+      "source": "cmp_国服宠物领养",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 807,
+        "y": 663,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 10,
+          "dy": -4,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物免费领养",
+      "source": "cmp_国服宠物免费领养",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 545,
+        "y": 600,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 10,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 25,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物背包不足",
+      "source": "cmp_国服宠物背包不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 663,
+        "rgb": "EF9E56"
+      },
+      "checks": [
+        {
+          "dx": 19,
+          "dy": 0,
+          "rgb": "F6A358"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服成就红点",
+      "source": "cmp_国服成就红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 310,
+        "y": 621,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服成就红点2",
+      "source": "cmp_国服成就红点2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 306,
+        "y": 619,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": 0,
+          "dy": 3,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服声誉总分下方花",
+      "source": "cmp_国服声誉总分下方花",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 118,
+        "y": 203,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -40,
+          "dy": 74,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 43,
+          "dy": 76,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服三姐妹日记",
+      "source": "cmp_国服三姐妹日记",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 986,
+        "y": 104,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服记忆之根管理院",
+      "source": "cmp_国服记忆之根管理院",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 985,
+        "y": 204,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服元老院",
+      "source": "cmp_国服元老院",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 986,
+        "y": 304,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服商人联盟",
+      "source": "cmp_国服商人联盟",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 985,
+        "y": 404,
+        "rgb": "0B55DB"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服特务幻影队",
+      "source": "cmp_国服特务幻影队",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 980,
+        "y": 490,
+        "rgb": "402611"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服每日成就",
+      "source": "cmp_国服每日成就",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 699,
+        "y": 89,
+        "rgb": "0A50CE"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服每周成就",
+      "source": "cmp_国服每周成就",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 857,
+        "y": 93,
+        "rgb": "0B52D4"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服成就领取绿色",
+      "source": "cmp_国服成就领取绿色",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 854,
+        "y": 215,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 22,
+          "dy": 5,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 6,
+          "dy": 38,
+          "rgb": "1ECE5A"
+        },
+        {
+          "dx": 23,
+          "dy": 38,
+          "rgb": "1FD25F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服成就前往灰色",
+      "source": "cmp_国服成就前往灰色",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 843,
+        "y": 216,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 29,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 74,
+          "dy": -2,
+          "rgb": "5987AB"
+        },
+        {
+          "dx": 68,
+          "dy": -9,
+          "rgb": "5987AB"
+        },
+        {
+          "dx": 69,
+          "dy": 5,
+          "rgb": "5987AB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_全部领取红点",
+      "source": "cmp_全部领取红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 753,
+        "y": 83,
+        "rgb": "0A4CC3"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物礼盒",
+      "source": "cmp_国服宠物礼盒",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 750,
+        "y": 502,
+        "rgb": "3E24E2"
+      },
+      "checks": [
+        {
+          "dx": -6,
+          "dy": 24,
+          "rgb": "7B2D83"
+        },
+        {
+          "dx": 9,
+          "dy": 24,
+          "rgb": "4B1752"
+        },
+        {
+          "dx": 25,
+          "dy": 18,
+          "rgb": "47134E"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件",
+      "source": "cmp_国服邮件",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1102,
+        "y": 17,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": 23,
+          "dy": -1,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件2",
+      "source": "cmp_国服邮件2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1123,
+        "y": 16,
+        "rgb": "0B53D8"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件领取确认蓝底",
+      "source": "cmp_国服邮件领取确认蓝底",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 755,
+        "y": 471,
+        "rgb": "A17238"
+      },
+      "checks": [
+        {
+          "dx": -17,
+          "dy": -1,
+          "rgb": "9B6D36"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服邮件领取确认蓝底",
+      "source": "cmp_国际服国服邮件领取确认蓝底",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 752,
+        "y": 467,
+        "rgb": "8E6231"
+      },
+      "checks": [
+        {
+          "dx": 15,
+          "dy": 2,
+          "rgb": "936732"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件页面",
+      "source": "cmp_国服邮件页面",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 320,
+        "y": 80,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 6,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 46,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 53,
+          "dy": -7,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 177,
+          "dy": 51,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件领取英雄确定",
+      "source": "cmp_国服邮件领取英雄确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1117,
+        "y": 660,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 11,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 29,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 3,
+          "dy": 32,
+          "rgb": "55AACC"
+        },
+        {
+          "dx": 27,
+          "dy": 31,
+          "rgb": "4383A6"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件领取绿底",
+      "source": "cmp_国服邮件领取绿底",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 904,
+        "y": 223,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 14,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 35,
+          "rgb": "1AC14C"
+        },
+        {
+          "dx": 9,
+          "dy": 35,
+          "rgb": "19BF49"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件收信",
+      "source": "cmp_国服邮件收信",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 627,
+        "y": 571,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 26,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 5,
+          "dy": 29,
+          "rgb": "20D96C"
+        },
+        {
+          "dx": 21,
+          "dy": 29,
+          "rgb": "1CCF5C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件领取蓝底",
+      "source": "cmp_国服邮件领取蓝底",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 728,
+        "y": 477,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 8,
+          "dy": 32,
+          "rgb": "EFC747"
+        },
+        {
+          "dx": 23,
+          "dy": 32,
+          "rgb": "EEB740"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服邮件获得奖励Tip",
+      "source": "cmp_国服邮件获得奖励Tip",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 622,
+        "y": 211,
+        "rgb": "2B4C65"
+      },
+      "checks": [
+        {
+          "dx": 30,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": -300,
+          "dy": 0,
+          "rgb": "2B4C65"
+        },
+        {
+          "dx": 330,
+          "dy": 0,
+          "rgb": "2B4C65"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_我的通缉名单",
+      "source": "cmp_我的通缉名单",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 708,
+        "y": 597,
+        "rgb": "0F3452"
+      },
+      "checks": [
+        {
+          "dx": -12,
+          "dy": 6,
+          "rgb": "4087AA"
+        },
+        {
+          "dx": -76,
+          "dy": -25,
+          "rgb": "080F1B"
+        },
+        {
+          "dx": 45,
+          "dy": -20,
+          "rgb": "060D1A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服签到右下蓝底",
+      "source": "cmp_国服签到右下蓝底",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1081,
+        "y": 692,
+        "rgb": "EFC647"
+      },
+      "checks": [
+        {
+          "dx": 18,
+          "dy": 0,
+          "rgb": "F0C848"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服签到右下蓝底2",
+      "source": "cmp_国服签到右下蓝底2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1045,
+        "y": 663,
+        "rgb": "F0C848"
+      },
+      "checks": [
+        {
+          "dx": 13,
+          "dy": 0,
+          "rgb": "F0C246"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_新英雄获取确认",
+      "source": "cmp_新英雄获取确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1136,
+        "y": 661,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 21,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服召唤小红点",
+      "source": "cmp_国服召唤小红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 213,
+        "y": 623,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -2,
+          "dy": 0,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服免费1次召唤",
+      "source": "cmp_国服免费1次召唤",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 298,
+        "y": 656,
+        "rgb": "47C3FE"
+      },
+      "checks": [
+        {
+          "dx": 81,
+          "dy": 0,
+          "rgb": "0B1203"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服10次召唤",
+      "source": "cmp_国服10次召唤",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 534,
+        "y": 654,
+        "rgb": "45C7FB"
+      },
+      "checks": [
+        {
+          "dx": -237,
+          "dy": -1,
+          "rgb": "44B1F5"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服召唤确认",
+      "source": "cmp_国服召唤确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 752,
+        "y": 541,
+        "rgb": "0F4F14"
+      },
+      "checks": [
+        {
+          "dx": -221,
+          "dy": -1,
+          "rgb": "0B243B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服召唤确认",
+      "source": "cmp_国际服国服召唤确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 755,
+        "y": 550,
+        "rgb": "369852"
+      },
+      "checks": [
+        {
+          "dx": 35,
+          "dy": -4,
+          "rgb": "2E7D41"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_建筑升级状态",
+      "source": "cmp_建筑升级状态",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 97,
+        "y": 607,
+        "rgb": "0987FF"
+      },
+      "checks": [
+        {
+          "dx": 41,
+          "dy": 1,
+          "rgb": "E5A654"
+        },
+        {
+          "dx": 79,
+          "dy": 1,
+          "rgb": "27B477"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域小红点",
+      "source": "cmp_国服圣域小红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 207,
+        "y": 174,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -3,
+          "dy": -1,
+          "rgb": "0B55DB"
+        },
+        {
+          "dx": 3,
+          "dy": -1,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域首页",
+      "source": "cmp_国服圣域首页",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 618,
+        "y": 395,
+        "rgb": "4C80AA"
+      },
+      "checks": [
+        {
+          "dx": 41,
+          "dy": 0,
+          "rgb": "4A7FA9"
+        },
+        {
+          "dx": -13,
+          "dy": -1,
+          "rgb": "4576A0"
+        },
+        {
+          "dx": 56,
+          "dy": -1,
+          "rgb": "45769F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服欧勒毕斯之心",
+      "source": "cmp_国服欧勒毕斯之心",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 599,
+        "y": 484,
+        "rgb": "24A5FD"
+      },
+      "checks": [
+        {
+          "dx": 84,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 79,
+          "dy": 12,
+          "rgb": "E15201"
+        },
+        {
+          "dx": -19,
+          "dy": -7,
+          "rgb": "003EBA"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域精灵之森小红点",
+      "source": "cmp_国服圣域精灵之森小红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 297,
+        "y": 282,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -3,
+          "dy": 0,
+          "rgb": "0B55DB"
+        },
+        {
+          "dx": 2,
+          "dy": 0,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服建筑升级状态",
+      "source": "cmp_国服建筑升级状态",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 98,
+        "y": 608,
+        "rgb": "0981FF"
+      },
+      "checks": [
+        {
+          "dx": 41,
+          "dy": 1,
+          "rgb": "E4A452"
+        },
+        {
+          "dx": 82,
+          "dy": 1,
+          "rgb": "26B274"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域企鹅蛋",
+      "source": "cmp_国服圣域企鹅蛋",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 557,
+        "y": 140,
+        "rgb": "A75960"
+      },
+      "checks": [
+        {
+          "dx": 10,
+          "dy": 1,
+          "rgb": "27329B"
+        },
+        {
+          "dx": 19,
+          "dy": 0,
+          "rgb": "1BCEEF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域精灵之泉",
+      "source": "cmp_国服圣域精灵之泉",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1028,
+        "y": 232,
+        "rgb": "F9E116"
+      },
+      "checks": [
+        {
+          "dx": -9,
+          "dy": -2,
+          "rgb": "BB3404"
+        },
+        {
+          "dx": 3,
+          "dy": -19,
+          "rgb": "AB4F17"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域种植地",
+      "source": "cmp_国服圣域种植地",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 763,
+        "y": 449,
+        "rgb": "2B5877"
+      },
+      "checks": [
+        {
+          "dx": -14,
+          "dy": 1,
+          "rgb": "2A5676"
+        },
+        {
+          "dx": 16,
+          "dy": 1,
+          "rgb": "295676"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域种植地收获",
+      "source": "cmp_国服圣域种植地收获",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 752,
+        "y": 444,
+        "rgb": "2525CC"
+      },
+      "checks": [
+        {
+          "dx": 6,
+          "dy": 5,
+          "rgb": "4D832F"
+        },
+        {
+          "dx": 19,
+          "dy": -10,
+          "rgb": "6CCFF4"
+        },
+        {
+          "dx": 14,
+          "dy": -19,
+          "rgb": "72BCE6"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域企鹅巢穴",
+      "source": "cmp_国服圣域企鹅巢穴",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 514,
+        "y": 441,
+        "rgb": "60676A"
+      },
+      "checks": [
+        {
+          "dx": 57,
+          "dy": 20,
+          "rgb": "94C58F"
+        },
+        {
+          "dx": 137,
+          "dy": -5,
+          "rgb": "B7E8C4"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服圣域指挥总部小红点",
+      "source": "cmp_国服圣域指挥总部小红点",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 181,
+        "y": 549,
+        "rgb": "0B55DB"
+      },
+      "checks": [
+        {
+          "dx": -3,
+          "dy": 0,
+          "rgb": "0B55DB"
+        },
+        {
+          "dx": 4,
+          "dy": 1,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服金币捐赠",
+      "source": "cmp_国服金币捐赠",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 869,
+        "y": 432,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 23,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -3,
+          "dy": 37,
+          "rgb": "1AC04A"
+        },
+        {
+          "dx": 15,
+          "dy": 38,
+          "rgb": "1FD361"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服金币捐赠",
+      "source": "cmp_国际服国服金币捐赠",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 876,
+        "y": 463,
+        "rgb": "318144"
+      },
+      "checks": [
+        {
+          "dx": -35,
+          "dy": -1,
+          "rgb": "296935"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服勇气证据捐赠",
+      "source": "cmp_国服勇气证据捐赠",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 870,
+        "y": 657,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 22,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 38,
+          "rgb": "20D86C"
+        },
+        {
+          "dx": 15,
+          "dy": 38,
+          "rgb": "1CCF5D"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服勇气证据捐赠",
+      "source": "cmp_国际服国服勇气证据捐赠",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 882,
+        "y": 684,
+        "rgb": "2B703B"
+      },
+      "checks": [
+        {
+          "dx": -25,
+          "dy": -1,
+          "rgb": "286532"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服派遣执行任务",
+      "source": "cmp_国服派遣执行任务",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 789,
+        "y": 654,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 41,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 60,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 17,
+          "dy": 31,
+          "rgb": "17B53C"
+        },
+        {
+          "dx": 49,
+          "dy": 31,
+          "rgb": "15AC34"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_代理暂停",
+      "source": "cmp_代理暂停",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1232,
+        "y": 33,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 1,
+          "dy": -10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 17,
+          "dy": 1,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服二倍速",
+      "source": "cmp_国服二倍速",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1058,
+        "y": 24,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 8,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 0,
+          "dy": 17,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 10,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 18,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 10,
+          "dy": 18,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服一倍速",
+      "source": "cmp_国服一倍速",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1071,
+        "y": 33,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -7,
+          "dy": -8,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -8,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服神兽技能",
+      "source": "cmp_国服神兽技能",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 906,
+        "y": 618,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -47,
+          "dy": 47,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -2,
+          "dy": 91,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 45,
+          "dy": 48,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服重新进行",
+      "source": "cmp_国服重新进行",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1149,
+        "y": 659,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 27,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 47,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 66,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -38,
+          "dy": 33,
+          "rgb": "54ACCC"
+        },
+        {
+          "dx": -17,
+          "dy": 33,
+          "rgb": "4A97B9"
+        },
+        {
+          "dx": 46,
+          "dy": -8,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服行动力不足",
+      "source": "cmp_国服行动力不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 732,
+        "y": 537,
+        "rgb": "318547"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": -2,
+          "rgb": "2D773E"
+        },
+        {
+          "dx": -214,
+          "dy": 1,
+          "rgb": "366B8A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物自动补满",
+      "source": "cmp_国服宠物自动补满",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 576,
+        "y": 651,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 36,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 64,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 23,
+          "dy": 35,
+          "rgb": "EFC847"
+        },
+        {
+          "dx": 45,
+          "dy": 35,
+          "rgb": "EC9A34"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服宠物自动补满",
+      "source": "cmp_国际服国服宠物自动补满",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 614,
+        "y": 681,
+        "rgb": "986C35"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": -2,
+          "rgb": "855E2E"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物S",
+      "source": "cmp_国服宠物S",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 536,
+        "y": 474,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物A",
+      "source": "cmp_国服宠物A",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 626,
+        "y": 474,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物B",
+      "source": "cmp_国服宠物B",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 716,
+        "y": 474,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物C",
+      "source": "cmp_国服宠物C",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 806,
+        "y": 474,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服宠物D",
+      "source": "cmp_国服宠物D",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 896,
+        "y": 474,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服不包含特点造型宠物",
+      "source": "cmp_国服不包含特点造型宠物",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 536,
+        "y": 523,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服设置自动填充目标",
+      "source": "cmp_国服设置自动填充目标",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 524,
+        "y": 409,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 150,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 118,
+          "dy": -2,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服设置自动填充目标",
+      "source": "cmp_国际服国服设置自动填充目标",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 755,
+        "y": 435,
+        "rgb": "2B4C65"
+      },
+      "checks": [
+        {
+          "dx": 122,
+          "dy": 0,
+          "rgb": "2B4C65"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服释放宠物",
+      "source": "cmp_国服释放宠物",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 779,
+        "y": 652,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 72,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 27,
+          "dy": 34,
+          "rgb": "20DA6C"
+        },
+        {
+          "dx": 38,
+          "dy": 34,
+          "rgb": "1FD565"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服释放宠物",
+      "source": "cmp_国际服国服释放宠物",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 811,
+        "y": 677,
+        "rgb": "2C763D"
+      },
+      "checks": [
+        {
+          "dx": 30,
+          "dy": 3,
+          "rgb": "308243"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服背包空间不足",
+      "source": "cmp_国服背包空间不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 631,
+        "y": 490,
+        "rgb": "5B3112"
+      },
+      "checks": [
+        {
+          "dx": -183,
+          "dy": 3,
+          "rgb": "0F3451"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服背包空间不足",
+      "source": "cmp_国际服国服背包空间不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 630,
+        "y": 491,
+        "rgb": "825A2C"
+      },
+      "checks": [
+        {
+          "dx": 20,
+          "dy": 1,
+          "rgb": "81592C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服背包装备",
+      "source": "cmp_国服背包装备",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 254,
+        "y": 100,
+        "rgb": "1F2E45"
+      },
+      "checks": [
+        {
+          "dx": -23,
+          "dy": 2,
+          "rgb": "1E2C43"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服背包英雄",
+      "source": "cmp_国服背包英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 702,
+        "y": 665,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 49,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 192,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服装备出售",
+      "source": "cmp_国服装备出售",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 364,
+        "y": 181,
+        "rgb": "EFB540"
+      },
+      "checks": [
+        {
+          "dx": 17,
+          "dy": 0,
+          "rgb": "EFB540"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服装备出售",
+      "source": "cmp_国际服国服装备出售",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 366,
+        "y": 176,
+        "rgb": "946833"
+      },
+      "checks": [
+        {
+          "dx": 18,
+          "dy": -2,
+          "rgb": "8C6231"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服萃取出售",
+      "source": "cmp_国际服萃取出售",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 516,
+        "y": 173,
+        "rgb": "80582C"
+      },
+      "checks": [
+        {
+          "dx": 22,
+          "dy": 2,
+          "rgb": "916533"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服萃取出售确定",
+      "source": "cmp_国际服萃取出售确定",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 739,
+        "y": 601,
+        "rgb": "2B6F39"
+      },
+      "checks": [
+        {
+          "dx": -29,
+          "dy": 1,
+          "rgb": "286835"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服神器出售",
+      "source": "cmp_国服神器出售",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 377,
+        "y": 172,
+        "rgb": "5D3314"
+      },
+      "checks": [
+        {
+          "dx": -7,
+          "dy": 9,
+          "rgb": "F0C848"
+        },
+        {
+          "dx": 5,
+          "dy": 9,
+          "rgb": "EFAF3E"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服神器出售",
+      "source": "cmp_国际服国服神器出售",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 357,
+        "y": 179,
+        "rgb": "9D6F37"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": 0,
+          "rgb": "AC7B3D"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄传送确认",
+      "source": "cmp_国服英雄传送确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 731,
+        "y": 463,
+        "rgb": "542D10"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": 1,
+          "rgb": "5B3112"
+        },
+        {
+          "dx": 9,
+          "dy": 11,
+          "rgb": "EFC747"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服英雄传送确认",
+      "source": "cmp_国际服国服英雄传送确认",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 732,
+        "y": 466,
+        "rgb": "855B2D"
+      },
+      "checks": [
+        {
+          "dx": 29,
+          "dy": 2,
+          "rgb": "906432"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服背包全部",
+      "source": "cmp_国服背包全部",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 183,
+        "y": 187,
+        "rgb": "B5D1E1"
+      },
+      "checks": [
+        {
+          "dx": 5,
+          "dy": 0,
+          "rgb": "B5D1E1"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服背包装备自动选择",
+      "source": "cmp_国服背包装备自动选择",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 209,
+        "y": 181,
+        "rgb": "52A9CA"
+      },
+      "checks": [
+        {
+          "dx": 15,
+          "dy": 0,
+          "rgb": "4A94B7"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服背包装备自动选择",
+      "source": "cmp_国际服国服背包装备自动选择",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 219,
+        "y": 174,
+        "rgb": "33637F"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": 3,
+          "rgb": "376B8A"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服传送英雄",
+      "source": "cmp_国服传送英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 791,
+        "y": 678,
+        "rgb": "105F1C"
+      },
+      "checks": [
+        {
+          "dx": -5,
+          "dy": 7,
+          "rgb": "17BC47"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服传送英雄",
+      "source": "cmp_国际服国服传送英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 814,
+        "y": 678,
+        "rgb": "2F7A40"
+      },
+      "checks": [
+        {
+          "dx": 24,
+          "dy": 0,
+          "rgb": "2D733B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服传说",
+      "source": "cmp_国服传说",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 512,
+        "y": 231,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄",
+      "source": "cmp_国服英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 513,
+        "y": 284,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服稀有",
+      "source": "cmp_国服稀有",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 512,
+        "y": 336,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服高级",
+      "source": "cmp_国服高级",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 512,
+        "y": 389,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服一般",
+      "source": "cmp_国服一般",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 512,
+        "y": 443,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄1星",
+      "source": "cmp_国服英雄1星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 465,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄2星",
+      "source": "cmp_国服英雄2星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 414,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄3星",
+      "source": "cmp_国服英雄3星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 363,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄4星",
+      "source": "cmp_国服英雄4星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 680,
+        "y": 312,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄5星",
+      "source": "cmp_国服英雄5星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 260,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄6星",
+      "source": "cmp_国服英雄6星",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 679,
+        "y": 210,
+        "rgb": "00CB64"
+      },
+      "checks": [],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服锁定中的英雄",
+      "source": "cmp_国服锁定中的英雄",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 566,
+        "y": 212,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 55,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 116,
+          "dy": 2,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 153,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服Auto",
+      "source": "cmp_国服Auto",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1126,
+        "y": 60,
+        "rgb": "36373C"
+      },
+      "checks": [
+        {
+          "dx": 1,
+          "dy": -31,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -2,
+          "dy": -41,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -13,
+          "dy": -31,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 15,
+          "dy": -23,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 2,
+          "dy": -13,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服服务器维护中",
+      "source": "cmp_国服服务器维护中",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 145,
+        "y": 635,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 27,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 44,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 62,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 929,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 948,
+          "dy": -4,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 989,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 943,
+          "dy": 33,
+          "rgb": "F1C347"
+        },
+        {
+          "dx": 961,
+          "dy": 33,
+          "rgb": "F1C949"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服右侧栏打开",
+      "source": "cmp_国服右侧栏打开",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1258,
+        "y": 93,
+        "rgb": "3B210D"
+      },
+      "checks": [
+        {
+          "dx": -309,
+          "dy": 5,
+          "rgb": "3B210D"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄觉醒",
+      "source": "cmp_国服英雄觉醒",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 882,
+        "y": 682,
+        "rgb": "0B243B"
+      },
+      "checks": [
+        {
+          "dx": 25,
+          "dy": 1,
+          "rgb": "0B253E"
+        },
+        {
+          "dx": -1,
+          "dy": 11,
+          "rgb": "4D9FC1"
+        },
+        {
+          "dx": 16,
+          "dy": 11,
+          "rgb": "4A97B9"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服英雄觉醒",
+      "source": "cmp_国际服国服英雄觉醒",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 838,
+        "y": 629,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 20,
+          "dy": 7,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄升级1",
+      "source": "cmp_国服英雄升级1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 559,
+        "y": 684,
+        "rgb": "0D2D47"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": 1,
+          "rgb": "0E304D"
+        },
+        {
+          "dx": -1,
+          "dy": 9,
+          "rgb": "51A9CA"
+        },
+        {
+          "dx": 12,
+          "dy": 9,
+          "rgb": "4C9DBF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服英雄升级1",
+      "source": "cmp_国际服国服英雄升级1",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 619,
+        "y": 616,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 25,
+          "dy": 25,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄升级2",
+      "source": "cmp_国服英雄升级2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 803,
+        "y": 691,
+        "rgb": "12A82E"
+      },
+      "checks": [
+        {
+          "dx": 16,
+          "dy": 0,
+          "rgb": "109E25"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服英雄升级2",
+      "source": "cmp_国际服国服英雄升级2",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 777,
+        "y": 686,
+        "rgb": "318345"
+      },
+      "checks": [
+        {
+          "dx": 40,
+          "dy": -3,
+          "rgb": "296534"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄升级3",
+      "source": "cmp_国服英雄升级3",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 634,
+        "y": 692,
+        "rgb": "EFC546"
+      },
+      "checks": [
+        {
+          "dx": 11,
+          "dy": 0,
+          "rgb": "EFC747"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国际服国服英雄升级3",
+      "source": "cmp_国际服国服英雄升级3",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 646,
+        "y": 686,
+        "rgb": "916432"
+      },
+      "checks": [
+        {
+          "dx": 29,
+          "dy": 0,
+          "rgb": "916432"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服2星满级",
+      "source": "cmp_国服2星满级",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 313,
+        "y": 235,
+        "rgb": "16A3FF"
+      },
+      "checks": [
+        {
+          "dx": 7,
+          "dy": 6,
+          "rgb": "0F97FF"
+        },
+        {
+          "dx": 11,
+          "dy": 17,
+          "rgb": "017AFF"
+        },
+        {
+          "dx": 29,
+          "dy": 7,
+          "rgb": "0D92FF"
+        },
+        {
+          "dx": 18,
+          "dy": 7,
+          "rgb": "0D92FF"
+        },
+        {
+          "dx": 24,
+          "dy": 17,
+          "rgb": "017CFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服英雄升级银花不足",
+      "source": "cmp_国服英雄升级银花不足",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 554,
+        "y": 161,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 160,
+          "dy": -3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 179,
+          "dy": 392,
+          "rgb": "1DD05E"
+        },
+        {
+          "dx": 204,
+          "dy": 392,
+          "rgb": "1FD465"
+        },
+        {
+          "dx": -46,
+          "dy": 392,
+          "rgb": "4FA5C6"
+        },
+        {
+          "dx": -26,
+          "dy": 392,
+          "rgb": "50A7C8"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "cmp_国服NPC交战对手",
+      "source": "cmp_国服NPC交战对手",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 304,
+        "y": 117,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 142,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_选择难度初级",
+      "source": "mul_选择难度初级",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "1BC16B",
+      "offsets": [
+        {
+          "dx": 13,
+          "dy": -5,
+          "rgb": "1BBE69"
+        },
+        {
+          "dx": -12,
+          "dy": 0,
+          "rgb": "1BC16B"
+        },
+        {
+          "dx": 0,
+          "dy": 15,
+          "rgb": "1BBF6A"
+        },
+        {
+          "dx": -1,
+          "dy": -13,
+          "rgb": "1BC06B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_55红装",
+      "source": "mul_55红装",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "020213",
+      "offsets": [
+        {
+          "dx": -8,
+          "dy": 0,
+          "rgb": "7FDBFE"
+        },
+        {
+          "dx": 5,
+          "dy": -1,
+          "rgb": "7FDBFE"
+        },
+        {
+          "dx": 2,
+          "dy": 4,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": 8,
+          "dy": -5,
+          "rgb": "7EDAFC"
+        },
+        {
+          "dx": -8,
+          "dy": -5,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": -2,
+          "dy": -5,
+          "rgb": "7EDAFC"
+        },
+        {
+          "dx": -12,
+          "dy": 4,
+          "rgb": "060541"
+        },
+        {
+          "dx": -12,
+          "dy": -8,
+          "rgb": "03022B"
+        },
+        {
+          "dx": 4,
+          "dy": -8,
+          "rgb": "03022B"
+        },
+        {
+          "dx": -12,
+          "dy": -8,
+          "rgb": "03022B"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_85红装",
+      "source": "mul_85红装",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "010115",
+      "offsets": [
+        {
+          "dx": 2,
+          "dy": -7,
+          "rgb": "03022B"
+        },
+        {
+          "dx": 2,
+          "dy": 5,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": 5,
+          "dy": 0,
+          "rgb": "7FDBFE"
+        },
+        {
+          "dx": 2,
+          "dy": -4,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": -5,
+          "dy": 1,
+          "rgb": "7FDCFE"
+        },
+        {
+          "dx": -9,
+          "dy": 3,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": -3,
+          "dy": -4,
+          "rgb": "7FDBFE"
+        },
+        {
+          "dx": -12,
+          "dy": 4,
+          "rgb": "020239"
+        },
+        {
+          "dx": -12,
+          "dy": -7,
+          "rgb": "03022B"
+        },
+        {
+          "dx": -5,
+          "dy": -8,
+          "rgb": "010122"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_70红装",
+      "source": "mul_70红装",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "050538",
+      "offsets": [
+        {
+          "dx": -8,
+          "dy": -3,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": -8,
+          "dy": -4,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": 3,
+          "dy": 0,
+          "rgb": "7FDCFE"
+        },
+        {
+          "dx": 6,
+          "dy": -4,
+          "rgb": "7FDBFE"
+        },
+        {
+          "dx": 6,
+          "dy": 6,
+          "rgb": "7EDAFD"
+        },
+        {
+          "dx": 8,
+          "dy": 2,
+          "rgb": "7FDCFF"
+        },
+        {
+          "dx": -7,
+          "dy": 2,
+          "rgb": "060541"
+        },
+        {
+          "dx": 2,
+          "dy": -7,
+          "rgb": "03022B"
+        },
+        {
+          "dx": -10,
+          "dy": -6,
+          "rgb": "010122"
+        },
+        {
+          "dx": -10,
+          "dy": 5,
+          "rgb": "04043F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_神秘奖牌",
+      "source": "mul_神秘奖牌",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": -12,
+          "dy": 0,
+          "rgb": "1E42F8"
+        },
+        {
+          "dx": 2,
+          "dy": -10,
+          "rgb": "153DF9"
+        },
+        {
+          "dx": 9,
+          "dy": -2,
+          "rgb": "1D51FC"
+        },
+        {
+          "dx": -3,
+          "dy": 9,
+          "rgb": "2B5DFE"
+        },
+        {
+          "dx": 10,
+          "dy": -14,
+          "rgb": "1EABFE"
+        },
+        {
+          "dx": 29,
+          "dy": -7,
+          "rgb": "121A47"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服每日每周小红球",
+      "source": "mul_国服每日每周小红球",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "0B55DB",
+      "offsets": [
+        {
+          "dx": -4,
+          "dy": 0,
+          "rgb": "0B59E4"
+        },
+        {
+          "dx": 3,
+          "dy": 0,
+          "rgb": "0B55DB"
+        },
+        {
+          "dx": 0,
+          "dy": -4,
+          "rgb": "0B59E4"
+        },
+        {
+          "dx": 0,
+          "dy": 3,
+          "rgb": "0B55DB"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服派遣执行",
+      "source": "mul_国服派遣执行",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 24,
+          "dy": -1,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 13,
+          "dy": 10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -2,
+          "dy": 28,
+          "rgb": "18B238"
+        },
+        {
+          "dx": 19,
+          "dy": 28,
+          "rgb": "13A127"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服双足飞龙",
+      "source": "mul_国服双足飞龙",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "B2C7DD",
+      "offsets": [
+        {
+          "dx": -18,
+          "dy": -15,
+          "rgb": "3B30A1"
+        },
+        {
+          "dx": -6,
+          "dy": -34,
+          "rgb": "332792"
+        },
+        {
+          "dx": -43,
+          "dy": -66,
+          "rgb": "3C2FA9"
+        },
+        {
+          "dx": -121,
+          "dy": -42,
+          "rgb": "B2C7DD"
+        },
+        {
+          "dx": 41,
+          "dy": 90,
+          "rgb": "2F43DD"
+        },
+        {
+          "dx": 16,
+          "dy": -11,
+          "rgb": "392C9F"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服魔像",
+      "source": "mul_国服魔像",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "A7F52F",
+      "offsets": [
+        {
+          "dx": 23,
+          "dy": 3,
+          "rgb": "614F56"
+        },
+        {
+          "dx": 71,
+          "dy": -25,
+          "rgb": "C4F619"
+        },
+        {
+          "dx": 46,
+          "dy": -31,
+          "rgb": "6F7F74"
+        },
+        {
+          "dx": 101,
+          "dy": -10,
+          "rgb": "7A7987"
+        },
+        {
+          "dx": 70,
+          "dy": 23,
+          "rgb": "95ABA5"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服报丧妖",
+      "source": "mul_国服报丧妖",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "C6442E",
+      "offsets": [
+        {
+          "dx": -7,
+          "dy": -21,
+          "rgb": "7844E1"
+        },
+        {
+          "dx": -3,
+          "dy": -63,
+          "rgb": "CBC852"
+        },
+        {
+          "dx": -30,
+          "dy": -68,
+          "rgb": "CFCB54"
+        },
+        {
+          "dx": 24,
+          "dy": -8,
+          "rgb": "BF831B"
+        },
+        {
+          "dx": 66,
+          "dy": -33,
+          "rgb": "C47C1C"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服阿吉玛纳克",
+      "source": "mul_国服阿吉玛纳克",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "5D3E50",
+      "offsets": [
+        {
+          "dx": -13,
+          "dy": 0,
+          "rgb": "BBDFF3"
+        },
+        {
+          "dx": -2,
+          "dy": -19,
+          "rgb": "BCE0F4"
+        },
+        {
+          "dx": 22,
+          "dy": 33,
+          "rgb": "715867"
+        },
+        {
+          "dx": -25,
+          "dy": -24,
+          "rgb": "7A6379"
+        },
+        {
+          "dx": -30,
+          "dy": 10,
+          "rgb": "42B6E8"
+        },
+        {
+          "dx": 35,
+          "dy": 4,
+          "rgb": "799CC2"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服卡戴斯",
+      "source": "mul_国服卡戴斯",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "1E039D",
+      "offsets": [
+        {
+          "dx": -17,
+          "dy": -10,
+          "rgb": "1E039D"
+        },
+        {
+          "dx": 6,
+          "dy": -27,
+          "rgb": "2F70D0"
+        },
+        {
+          "dx": 36,
+          "dy": -50,
+          "rgb": "3972D5"
+        },
+        {
+          "dx": -7,
+          "dy": -37,
+          "rgb": "475257"
+        },
+        {
+          "dx": 62,
+          "dy": -7,
+          "rgb": "3D91ED"
+        },
+        {
+          "dx": 38,
+          "dy": 25,
+          "rgb": "2F5EB7"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服短选择队伍",
+      "source": "mul_国服短选择队伍",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FFFFFF",
+      "offsets": [
+        {
+          "dx": 20,
+          "dy": -1,
+          "rgb": "FCFCFC"
+        },
+        {
+          "dx": 40,
+          "dy": 0,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 65,
+          "dy": 3,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 18,
+          "dy": 33,
+          "rgb": "12A92F"
+        },
+        {
+          "dx": 46,
+          "dy": 34,
+          "rgb": "11A128"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国际服国服短选择队伍",
+      "source": "mul_国际服国服短选择队伍",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "245729",
+      "offsets": [
+        {
+          "dx": -36,
+          "dy": 2,
+          "rgb": "296936"
+        },
+        {
+          "dx": 27,
+          "dy": 0,
+          "rgb": "204B22"
+        },
+        {
+          "dx": -151,
+          "dy": -22,
+          "rgb": "D0E2E9"
+        },
+        {
+          "dx": -144,
+          "dy": 0,
+          "rgb": "2895EC"
+        },
+        {
+          "dx": -142,
+          "dy": -29,
+          "rgb": "EEF1F4"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服长选择队伍",
+      "source": "mul_国服长选择队伍",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "18AB5F",
+      "offsets": [
+        {
+          "dx": -140,
+          "dy": 34,
+          "rgb": "1DC063"
+        },
+        {
+          "dx": -283,
+          "dy": 0,
+          "rgb": "132508"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国际服国服长选择队伍",
+      "source": "mul_国际服国服长选择队伍",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "1AB665",
+      "offsets": [
+        {
+          "dx": -6,
+          "dy": 7,
+          "rgb": "1AB665"
+        },
+        {
+          "dx": -6,
+          "dy": -7,
+          "rgb": "1AB665"
+        },
+        {
+          "dx": -152,
+          "dy": 33,
+          "rgb": "399D56"
+        },
+        {
+          "dx": -106,
+          "dy": 29,
+          "rgb": "40A062"
+        },
+        {
+          "dx": -29,
+          "dy": 18,
+          "rgb": "1F4824"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_级别光圈",
+      "source": "mul_级别光圈",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "D1EEF0",
+      "offsets": [
+        {
+          "dx": -114,
+          "dy": -43,
+          "rgb": "D1EEF0"
+        },
+        {
+          "dx": -4,
+          "dy": -90,
+          "rgb": "D1EEF0"
+        },
+        {
+          "dx": 109,
+          "dy": -53,
+          "rgb": "D1EEF0"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服暗黑精灵",
+      "source": "mul_国服暗黑精灵",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "E8F3EE",
+      "offsets": [
+        {
+          "dx": -135,
+          "dy": -14,
+          "rgb": "D34716"
+        },
+        {
+          "dx": 22,
+          "dy": -5,
+          "rgb": "6FD8EA"
+        },
+        {
+          "dx": 59,
+          "dy": 92,
+          "rgb": "BD4CB6"
+        },
+        {
+          "dx": -10,
+          "dy": -47,
+          "rgb": "4B384A"
+        },
+        {
+          "dx": 11,
+          "dy": 7,
+          "rgb": "E8F3EE"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服火焰精灵",
+      "source": "mul_国服火焰精灵",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "103CF5",
+      "offsets": [
+        {
+          "dx": 13,
+          "dy": 20,
+          "rgb": "A8E6F4"
+        },
+        {
+          "dx": -15,
+          "dy": 26,
+          "rgb": "95D2EF"
+        },
+        {
+          "dx": -37,
+          "dy": -14,
+          "rgb": "0A34AE"
+        },
+        {
+          "dx": 7,
+          "dy": -40,
+          "rgb": "0C36A5"
+        },
+        {
+          "dx": 32,
+          "dy": 9,
+          "rgb": "1951E1"
+        },
+        {
+          "dx": 8,
+          "dy": 45,
+          "rgb": "88C0D2"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服寒气精灵",
+      "source": "mul_国服寒气精灵",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "E0E6E4",
+      "offsets": [
+        {
+          "dx": -9,
+          "dy": -18,
+          "rgb": "E8ED70"
+        },
+        {
+          "dx": 20,
+          "dy": -14,
+          "rgb": "B24D02"
+        },
+        {
+          "dx": 0,
+          "dy": -37,
+          "rgb": "E8EFED"
+        },
+        {
+          "dx": 47,
+          "dy": -42,
+          "rgb": "595120"
+        },
+        {
+          "dx": -34,
+          "dy": -54,
+          "rgb": "791801"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服光明精灵",
+      "source": "mul_国服光明精灵",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "DEF2EC",
+      "offsets": [
+        {
+          "dx": -9,
+          "dy": -45,
+          "rgb": "74AAD6"
+        },
+        {
+          "dx": -58,
+          "dy": -31,
+          "rgb": "33C5EC"
+        },
+        {
+          "dx": -90,
+          "dy": -26,
+          "rgb": "0CB3ED"
+        },
+        {
+          "dx": -75,
+          "dy": -54,
+          "rgb": "3D66AC"
+        },
+        {
+          "dx": 19,
+          "dy": 6,
+          "rgb": "D6EAE8"
+        },
+        {
+          "dx": 36,
+          "dy": 34,
+          "rgb": "D1D3CE"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服自然精灵",
+      "source": "mul_国服自然精灵",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "D5E2E0",
+      "offsets": [
+        {
+          "dx": -2,
+          "dy": -32,
+          "rgb": "50B59C"
+        },
+        {
+          "dx": 66,
+          "dy": 0,
+          "rgb": "002601"
+        },
+        {
+          "dx": -53,
+          "dy": -24,
+          "rgb": "005803"
+        },
+        {
+          "dx": 16,
+          "dy": -65,
+          "rgb": "78DBC7"
+        },
+        {
+          "dx": 55,
+          "dy": -45,
+          "rgb": "131F34"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服是否可自动挂机",
+      "source": "mul_国服是否可自动挂机",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "EBE8F0",
+      "offsets": [
+        {
+          "dx": -17,
+          "dy": 0,
+          "rgb": "EBE8F0"
+        },
+        {
+          "dx": -3,
+          "dy": -18,
+          "rgb": "EBE8F0"
+        },
+        {
+          "dx": 15,
+          "dy": -3,
+          "rgb": "EBE8F0"
+        },
+        {
+          "dx": 0,
+          "dy": 14,
+          "rgb": "EBE8F0"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服行动力叶子",
+      "source": "mul_国服行动力叶子",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "BAFFFE",
+      "offsets": [
+        {
+          "dx": 14,
+          "dy": 1,
+          "rgb": "181F28"
+        },
+        {
+          "dx": 6,
+          "dy": -8,
+          "rgb": "151D26"
+        },
+        {
+          "dx": -16,
+          "dy": 16,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -17,
+          "dy": 28,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 27,
+          "dy": -14,
+          "rgb": "9CC56D"
+        },
+        {
+          "dx": 33,
+          "dy": -23,
+          "rgb": "769E52"
+        },
+        {
+          "dx": 19,
+          "dy": 8,
+          "rgb": "1B2025"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服行动力砖石",
+      "source": "mul_国服行动力砖石",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "E76F08",
+      "offsets": [
+        {
+          "dx": 5,
+          "dy": -14,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": -3,
+          "dy": -26,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 4,
+          "dy": -37,
+          "rgb": "421D0E"
+        },
+        {
+          "dx": 12,
+          "dy": 5,
+          "rgb": "CC6E1B"
+        },
+        {
+          "dx": 17,
+          "dy": -24,
+          "rgb": "A95F33"
+        },
+        {
+          "dx": 11,
+          "dy": -34,
+          "rgb": "54230E"
+        },
+        {
+          "dx": -3,
+          "dy": -28,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服出售确认",
+      "source": "mul_国服出售确认",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "703F19",
+      "offsets": [
+        {
+          "dx": 0,
+          "dy": 7,
+          "rgb": "EFC747"
+        },
+        {
+          "dx": -31,
+          "dy": 8,
+          "rgb": "EFB13E"
+        },
+        {
+          "dx": -208,
+          "dy": -2,
+          "rgb": "0E314E"
+        },
+        {
+          "dx": -206,
+          "dy": 7,
+          "rgb": "4FA5C6"
+        },
+        {
+          "dx": -231,
+          "dy": 7,
+          "rgb": "4A97B9"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国际服国服出售确认",
+      "source": "mul_国际服国服出售确认",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "976A34",
+      "offsets": [
+        {
+          "dx": -45,
+          "dy": -3,
+          "rgb": "8D6230"
+        },
+        {
+          "dx": -91,
+          "dy": -15,
+          "rgb": "57351C"
+        },
+        {
+          "dx": 34,
+          "dy": -23,
+          "rgb": "4C2D17"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服背包绿钩",
+      "source": "mul_国服背包绿钩",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "00CB64",
+      "offsets": [
+        {
+          "dx": -7,
+          "dy": -6,
+          "rgb": "00CB64"
+        },
+        {
+          "dx": 12,
+          "dy": -11,
+          "rgb": "00CB64"
+        },
+        {
+          "dx": 7,
+          "dy": -6,
+          "rgb": "00CB64"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国际服国服英雄左上3星",
+      "source": "mul_国际服国服英雄左上3星",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "44C8FD",
+      "offsets": [
+        {
+          "dx": 24,
+          "dy": -1,
+          "rgb": "45CBFE"
+        },
+        {
+          "dx": -23,
+          "dy": 0,
+          "rgb": "44C8FD"
+        },
+        {
+          "dx": 19,
+          "dy": 4,
+          "rgb": "3CB9FB"
+        },
+        {
+          "dx": -19,
+          "dy": 2,
+          "rgb": "40C1FC"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服英雄左上2星",
+      "source": "mul_国服英雄左上2星",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "45CBFE",
+      "offsets": [
+        {
+          "dx": 28,
+          "dy": 3,
+          "rgb": "40C1FC"
+        },
+        {
+          "dx": 5,
+          "dy": 7,
+          "rgb": "38B2F9"
+        },
+        {
+          "dx": 25,
+          "dy": 8,
+          "rgb": "36AEF9"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国服NPC挑战",
+      "source": "mul_国服NPC挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "FDFEFD",
+      "offsets": [
+        {
+          "dx": 17,
+          "dy": 19,
+          "rgb": "2B6E39"
+        },
+        {
+          "dx": 50,
+          "dy": 19,
+          "rgb": "214D25"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    },
+    {
+      "id": "mul_国际服国服NPC挑战",
+      "source": "mul_国际服国服NPC挑战",
+      "type": "multi_point",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor_rgb": "338949",
+      "offsets": [
+        {
+          "dx": -1,
+          "dy": -9,
+          "rgb": "286534"
+        },
+        {
+          "dx": 18,
+          "dy": -2,
+          "rgb": "296A36"
+        },
+        {
+          "dx": -31,
+          "dy": 0,
+          "rgb": "245B2B"
+        },
+        {
+          "dx": 6,
+          "dy": 4,
+          "rgb": "399E56"
+        },
+        {
+          "dx": -10,
+          "dy": 4,
+          "rgb": "379A54"
+        },
+        {
+          "dx": -7,
+          "dy": -61,
+          "rgb": "172C10"
+        },
+        {
+          "dx": 33,
+          "dy": -33,
+          "rgb": "172E11"
+        }
+      ],
+      "tolerance": 16,
+      "task": "misc"
+    }
+  ]
+}

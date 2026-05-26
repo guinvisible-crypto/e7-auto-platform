@@ -1,0 +1,170 @@
+{
+  "task": "home",
+  "rules": [
+    {
+      "id": "cmp_国服主页Rank",
+      "source": "cmp_国服主页Rank",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 124,
+        "y": 39,
+        "rgb": "1AAAFF"
+      },
+      "checks": [
+        {
+          "dx": 6,
+          "dy": 0,
+          "rgb": "1AAAFF"
+        },
+        {
+          "dx": 35,
+          "dy": 0,
+          "rgb": "1AAAFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "home"
+    },
+    {
+      "id": "cmp_国服公告X",
+      "source": "cmp_国服公告X",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 1140,
+        "y": 98,
+        "rgb": "2D1E16"
+      },
+      "checks": [
+        {
+          "dx": 14,
+          "dy": -20,
+          "rgb": "2B1D16"
+        },
+        {
+          "dx": -13,
+          "dy": -22,
+          "rgb": "2A1C15"
+        },
+        {
+          "dx": 2,
+          "dy": -37,
+          "rgb": "221611"
+        },
+        {
+          "dx": -1,
+          "dy": -6,
+          "rgb": "322319"
+        }
+      ],
+      "tolerance": 16,
+      "task": "home"
+    },
+    {
+      "id": "cmp_国服登录第七史诗",
+      "source": "cmp_国服登录第七史诗",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 605,
+        "y": 272,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": 38,
+          "dy": 32,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 29,
+          "dy": 84,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 36,
+          "dy": 35,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "home"
+    },
+    {
+      "id": "cmp_国服迷宫主页",
+      "source": "cmp_国服迷宫主页",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 57,
+        "y": 167,
+        "rgb": "FFFFFF"
+      },
+      "checks": [
+        {
+          "dx": -12,
+          "dy": 9,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 28,
+          "dy": -10,
+          "rgb": "FFFFFF"
+        },
+        {
+          "dx": 42,
+          "dy": 15,
+          "rgb": "FFFFFF"
+        }
+      ],
+      "tolerance": 16,
+      "task": "home"
+    },
+    {
+      "id": "cmp_国服背包主页",
+      "source": "cmp_国服背包主页",
+      "type": "single_color",
+      "region": {
+        "left": 0,
+        "top": 0,
+        "right": 1280,
+        "bottom": 720
+      },
+      "anchor": {
+        "x": 253,
+        "y": 101,
+        "rgb": "1F2E45"
+      },
+      "checks": [
+        {
+          "dx": -23,
+          "dy": -2,
+          "rgb": "213148"
+        }
+      ],
+      "tolerance": 16,
+      "task": "home"
+    }
+  ]
+}
