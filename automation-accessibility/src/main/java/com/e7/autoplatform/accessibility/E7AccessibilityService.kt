@@ -6,6 +6,9 @@ import android.graphics.Path
 import android.os.Build
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 
 open class E7AccessibilityService : AccessibilityService(), AutoClickController {
 
@@ -38,7 +41,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
     ): Boolean {
         Log.d(TAG, "click requested. x=$x, y=$y, gestureId=$gestureId")
         val path = Path().apply { moveTo(x, y) }
-        val stroke = GestureDescription.StrokeDescription(path, 0L, CLICK_DURATION_MS)
+        val stroke = GestureDescription.StrokeDescription(path, GESTURE_START_DELAY_MS, CLICK_DURATION_MS)
         val gesture = GestureDescription.Builder().addStroke(stroke).build()
         return dispatchGestureWithCallback(gesture, gestureId, callback)
     }
@@ -52,7 +55,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         gestureId: String,
         callback: AutomationGestureCallback?
     ): Boolean {
-        val safeDuration = durationMs.coerceAtLeast(MIN_SWIPE_DURATION_MS)
+        val safeDuration = durationMs.coerceIn(MIN_SWIPE_DURATION_MS, MAX_SWIPE_DURATION_MS)
         Log.d(
             TAG,
             "swipe requested. start=($startX,$startY), end=($endX,$endY), durationMs=$safeDuration, gestureId=$gestureId"
@@ -61,7 +64,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
             moveTo(startX, startY)
             lineTo(endX, endY)
         }
-        val stroke = GestureDescription.StrokeDescription(path, 0L, safeDuration)
+        val stroke = GestureDescription.StrokeDescription(path, GESTURE_START_DELAY_MS, safeDuration)
         val gesture = GestureDescription.Builder().addStroke(stroke).build()
         return dispatchGestureWithCallback(gesture, gestureId, callback)
     }
@@ -71,27 +74,31 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         gestureId: String,
         callback: AutomationGestureCallback?
     ): Boolean {
-        val dispatched = dispatchGesture(
-            gesture,
-            object : AccessibilityService.GestureResultCallback() {
-                override fun onCompleted(gestureDescription: GestureDescription?) {
-                    Log.i(TAG, "gesture completed. gestureId=$gestureId")
-                    callback?.onCompleted(gestureId)
-                }
+        val dispatched = runBlocking {
+            withContext(Dispatchers.Main) {
+                dispatchGesture(
+                    gesture,
+                    object : AccessibilityService.GestureResultCallback() {
+                        override fun onCompleted(gestureDescription: GestureDescription?) {
+                            Log.i(TAG, "GESTURE_COMPLETED gestureId=$gestureId")
+                            callback?.onCompleted(gestureId)
+                        }
 
-                override fun onCancelled(gestureDescription: GestureDescription?) {
-                    Log.w(TAG, "gesture cancelled. gestureId=$gestureId")
-                    callback?.onCancelled(gestureId)
-                }
-            },
-            null
-        )
+                        override fun onCancelled(gestureDescription: GestureDescription?) {
+                            Log.w(TAG, "GESTURE_CANCELLED gestureId=$gestureId")
+                            callback?.onCancelled(gestureId)
+                        }
+                    },
+                    null
+                )
+            }
+        }
 
         if (!dispatched) {
-            Log.e(TAG, "dispatchGesture returned false. gestureId=$gestureId")
+            Log.e(TAG, "GESTURE_CANCELLED gestureId=$gestureId")
             callback?.onCancelled(gestureId)
         } else {
-            Log.d(TAG, "dispatchGesture submitted. gestureId=$gestureId")
+            Log.d(TAG, "GESTURE_DISPATCHED gestureId=$gestureId")
         }
         return dispatched
     }
@@ -99,14 +106,16 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
     companion object {
         private const val TAG = "E7Accessibility"
         private const val CLICK_DURATION_MS = 50L
-        private const val MIN_SWIPE_DURATION_MS = 100L
+        private const val MIN_SWIPE_DURATION_MS = 800L
+        private const val MAX_SWIPE_DURATION_MS = 1200L
+        private const val GESTURE_START_DELAY_MS = 300L
 
         @Volatile
         private var activeInstance: E7AccessibilityService? = null
 
         fun isConnected(): Boolean = activeInstance != null
 
-        fun performClick(x: Int, y: Int): Boolean {
+        suspend fun performClick(x: Int, y: Int): Boolean {
             val service = activeInstance
             if (service == null) {
                 Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")
@@ -125,7 +134,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
             return dispatched
         }
 
-        fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+        suspend fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
             val service = activeInstance
             if (service == null) {
                 Log.w(TAG, "ACCESSIBILITY_NOT_CONNECTED")

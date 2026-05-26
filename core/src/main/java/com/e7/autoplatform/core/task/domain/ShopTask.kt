@@ -55,7 +55,8 @@ class ShopTask(
             }
 
             ShopState.SCROLL -> {
-                context.automation.swipe(600, 1600, 600, 600, 300)
+                context.automation.swipe(600, 1400, 600, 1000, 1000)
+                context.automation.waitMs(1000)
                 StepOutcome(ShopState.DETECT)
             }
 
