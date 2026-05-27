@@ -23,6 +23,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import rikka.shizuku.Shizuku
 
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
@@ -31,6 +32,10 @@ object AutomationRuntime {
 
     fun start(context: Context) {
         if (taskRunning || taskEngine != null) return
+        if (!Shizuku.pingBinder()) {
+            Log.e("AUTO", "SHIZUKU_NOT_RUNNING")
+            return
+        }
         if (!ShizukuShellExecutor.isReady()) {
             Log.e("AUTO", "SHIZUKU_NOT_READY")
             return
