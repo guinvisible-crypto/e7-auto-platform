@@ -1,6 +1,7 @@
 package com.e7.autoplatform.accessibility
 
 import android.util.Log
+import android.view.accessibility.AccessibilityEvent
 
 class MyAccessibilityService : E7AccessibilityService() {
     override fun onCreate() {
@@ -10,7 +11,17 @@ class MyAccessibilityService : E7AccessibilityService() {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
-        Log.d(TAG, "Service Connected")
+        Log.d(TAG, "ACCESSIBILITY_CONNECTED")
+    }
+
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {
+        super.onAccessibilityEvent(event)
+        Log.d(TAG, "ACCESSIBILITY_EVENT_RECEIVED type=${event?.eventType ?: -1}")
+    }
+
+    override fun onInterrupt() {
+        super.onInterrupt()
+        Log.d(TAG, "ACCESSIBILITY_INTERRUPTED")
     }
 
     override fun onDestroy() {
