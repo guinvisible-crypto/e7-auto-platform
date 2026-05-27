@@ -28,10 +28,11 @@ import rikka.shizuku.Shizuku
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
     @Volatile
-    private var taskRunning: Boolean = false
+    var isRunning: Boolean = false
+        private set
 
     fun start(context: Context) {
-        if (taskRunning || taskEngine != null) return
+        if (isRunning || taskEngine != null) return
         if (!Shizuku.pingBinder()) {
             Log.e("AUTO", "SHIZUKU_NOT_RUNNING")
             return
@@ -40,7 +41,7 @@ object AutomationRuntime {
             Log.e("AUTO", "SHIZUKU_NOT_READY")
             return
         }
-        taskRunning = true
+        isRunning = true
         Log.d(TAG, "ACCESSIBILITY_STATUS = SHIZUKU_INPUT_MODE")
         val appContext = context.applicationContext
         val homeResolver = HomeResolver(
@@ -112,12 +113,6 @@ object AutomationRuntime {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
             engine.start(queue)
-            delay(3000)
-            val tapOk = ShizukuShellExecutor.execute("input tap 500 500")
-            if (tapOk) Log.i(TAG, "ADB_TAP_EXECUTED x=500 y=500")
-            delay(1500)
-            val swipeOk = ShizukuShellExecutor.execute("input swipe 500 1200 500 800 800")
-            if (swipeOk) Log.i(TAG, "ADB_SWIPE_EXECUTED startX=500 startY=1200 endX=500 endY=800 durationMs=800")
         }
     }
 
@@ -125,7 +120,7 @@ object AutomationRuntime {
         CoroutineScope(Dispatchers.Main).launch {
             taskEngine?.stop()
             taskEngine = null
-            taskRunning = false
+            isRunning = false
         }
     }
 

@@ -64,7 +64,12 @@ class FloatingControlService : Service() {
             setPadding(28, 28, 28, 28)
             setOnClickListener {
                 Log.d(TAG, "FLOATING_BALL_CLICKED")
-                toggleMenu()
+                CoroutineScope(Dispatchers.Main).launch {
+                    Log.d("AUTO", "TASK PAUSED FOR UI")
+                    AutomationRuntime.stop()
+                    kotlinx.coroutines.delay(300)
+                    toggleMenu()
+                }
             }
             setOnTouchListener(DragTouchListener())
         }
@@ -99,7 +104,13 @@ class FloatingControlService : Service() {
             text = "开始刷商店"
             setOnClickListener {
                 Log.d(TAG, "TASK_START_REQUESTED")
-                AutomationRuntime.start(this@FloatingControlService)
+                CoroutineScope(Dispatchers.Main).launch {
+                    Log.d("AUTO", "TASK PAUSED FOR UI")
+                    AutomationRuntime.stop()
+                    kotlinx.coroutines.delay(300)
+                    AutomationRuntime.start(this@FloatingControlService)
+                    Log.d("AUTO", "TASK RESUMED")
+                }
             }
         }
         val stopBtn = Button(this).apply {
