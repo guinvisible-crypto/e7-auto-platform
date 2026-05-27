@@ -89,7 +89,7 @@ class StageTask(
             }
             StageState.WAIT_ANIMATION -> {
                 Log.d("StageTask", "state=WAIT_ANIMATION")
-                Thread.sleep(1500)
+                context.automation.waitMs(1500)
                 matchedRule = null
                 matchedResult = null
                 StepOutcome(StageState.DETECT)

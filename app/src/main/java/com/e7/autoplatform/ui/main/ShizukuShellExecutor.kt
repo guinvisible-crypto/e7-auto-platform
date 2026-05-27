@@ -2,6 +2,8 @@ package com.e7.autoplatform.ui.main
 
 import android.content.pm.PackageManager
 import android.util.Log
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import rikka.shizuku.Shizuku
 
 object ShizukuShellExecutor {
@@ -12,9 +14,9 @@ object ShizukuShellExecutor {
         return Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
     }
 
-    fun execute(cmd: String): Boolean {
+    suspend fun execute(cmd: String): Boolean = withContext(Dispatchers.IO) {
         Log.d(TAG, "EXECUTE: $cmd")
-        return runCatching {
+        runCatching {
             val process = Runtime.getRuntime().exec(arrayOf("sh", "-c", cmd))
             val exitCode = process.waitFor()
             if (exitCode == 0) {
