@@ -20,9 +20,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.app.NotificationCompat
 import com.e7.autoplatform.R
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class FloatingControlService : Service() {
     private lateinit var windowManager: WindowManager
@@ -72,12 +69,7 @@ class FloatingControlService : Service() {
             setPadding(28, 28, 28, 28)
             setOnClickListener {
                 Log.d(TAG, "FLOATING_BALL_CLICKED")
-                CoroutineScope(Dispatchers.Main).launch {
-                    Log.d("AUTO", "TASK PAUSED FOR UI")
-                    AutomationWorker.stopAutomation()
-                    kotlinx.coroutines.delay(300)
-                    toggleMenu()
-                }
+                toggleMenu()
             }
             setOnTouchListener(DragTouchListener())
         }
@@ -112,22 +104,14 @@ class FloatingControlService : Service() {
             text = "开始刷商店"
             setOnClickListener {
                 Log.d(TAG, "TASK_START_REQUESTED")
-                CoroutineScope(Dispatchers.Main).launch {
-                    Log.d("AUTO", "TASK PAUSED FOR UI")
-                    AutomationWorker.stopAutomation()
-                    kotlinx.coroutines.delay(300)
-                    AutomationWorker.startAutomation()
-                    Log.d("AUTO", "TASK RESUMED")
-                }
+                AutomationWorker.startAutomation()
             }
         }
         val stopBtn = Button(this).apply {
             text = "停止任务"
             setOnClickListener {
                 Log.d(TAG, "TASK_STOP_REQUESTED")
-                CoroutineScope(Dispatchers.Main).launch {
-                    AutomationWorker.stopAutomation()
-                }
+                AutomationWorker.stopAutomation()
             }
         }
         val hideBtn = Button(this).apply {
