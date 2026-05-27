@@ -32,7 +32,7 @@ object AutomationRuntime {
     fun start(context: Context) {
         if (taskRunning || taskEngine != null) return
         if (!ShizukuShellExecutor.isReady()) {
-            Log.w(TAG, "SHIZUKU_NOT_READY")
+            Log.e("AUTO", "SHIZUKU_NOT_READY")
             return
         }
         taskRunning = true
