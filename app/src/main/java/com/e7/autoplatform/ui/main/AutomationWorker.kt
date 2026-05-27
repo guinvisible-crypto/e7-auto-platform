@@ -25,7 +25,8 @@ object AutomationWorker {
         scope.launch {
             while (running) {
                 try {
-                    val ok = ShizukuShellExecutor.execute("input swipe 600 1200 600 900 1800")
+                    Log.d("AUTO", "SWIPE_DEBUG x=800 y1=1600 y2=600")
+                    val ok = ShizukuShellExecutor.execute("input swipe 800 1600 800 600 1800")
                     if (ok) Log.d("AUTO", "SWIPE_EXECUTED")
                     delay(Random.nextLong(2500, 4500))
                 } catch (e: Exception) {

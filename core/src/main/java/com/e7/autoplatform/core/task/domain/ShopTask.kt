@@ -34,7 +34,8 @@ class ShopTask(
             isRunning = true
             while (isRunning && currentCoroutineContext().isActive) {
                 Log.d("AUTO", "LOOP RUNNING")
-                context.automation.swipe(600, 1200, 600, 900, 1800)
+                Log.d("AUTO", "SWIPE_DEBUG x=800 y1=1600 y2=600")
+                context.automation.swipe(800, 1600, 800, 600, 1800)
                 delay(Random.nextLong(2000, 4000))
             }
             TaskRunResult.Success
@@ -67,7 +68,8 @@ class ShopTask(
             }
 
             ShopState.SCROLL -> {
-                context.automation.swipe(600, 1200, 600, 900, 1800)
+                Log.d("AUTO", "SWIPE_DEBUG x=800 y1=1600 y2=600")
+                context.automation.swipe(800, 1600, 800, 600, 1800)
                 while (context.automation.isGestureRunning()) {
                     Log.d(TAG, "TASK_WAITING_GESTURE")
                     context.automation.waitMs(100)

@@ -100,11 +100,12 @@ class StageTask(
                     return StepOutcome(StageState.DONE)
                 }
                 Log.d("StageTask", "REFRESH_ATTEMPT")
+                Log.d("AUTO", "SWIPE_DEBUG x=800 y1=1600 y2=600")
                 val swiped = context.automation.swipe(
-                    startX = 600,
-                    startY = 1200,
-                    endX = 600,
-                    endY = 900,
+                    startX = 800,
+                    startY = 1600,
+                    endX = 800,
+                    endY = 600,
                     durationMs = 1800
                 )
                 if (swiped) {
