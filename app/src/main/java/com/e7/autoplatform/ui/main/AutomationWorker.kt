@@ -1,6 +1,7 @@
 package com.e7.autoplatform.ui.main
 
 import android.util.Log
+import com.e7.autoplatform.accessibility.E7AccessibilityService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -15,8 +16,8 @@ object AutomationWorker {
 
     fun startAutomation() {
         if (running) return
-        if (!ShizukuShellExecutor.isReady()) {
-            Log.e("AUTO", "SHIZUKU_NOT_READY")
+        if (!E7AccessibilityService.isConnected()) {
+            Log.e("AUTO", "ACCESSIBILITY_NOT_CONNECTED")
             return
         }
         running = true
@@ -26,7 +27,7 @@ object AutomationWorker {
             while (running) {
                 try {
                     Log.d("AUTO", "SWIPE_DEBUG x=800 y1=1600 y2=600")
-                    val ok = ShizukuShellExecutor.execute("input swipe 800 1600 800 600 1800")
+                    val ok = E7AccessibilityService.performGestureSwipe(800, 1600, 800, 600, 1800)
                     if (ok) Log.d("AUTO", "SWIPE_EXECUTED")
                     delay(Random.nextLong(2500, 4500))
                 } catch (e: Exception) {

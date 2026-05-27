@@ -2,6 +2,7 @@ package com.e7.autoplatform.ui.main
 
 import android.content.Context
 import android.util.Log
+import com.e7.autoplatform.accessibility.E7AccessibilityService
 import com.e7.autoplatform.core.config.InMemoryRuntimeStateStore
 import com.e7.autoplatform.core.engine.TaskEngine
 import com.e7.autoplatform.core.home.HomeActionExecutor
@@ -23,7 +24,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import rikka.shizuku.Shizuku
 
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
@@ -33,16 +33,12 @@ object AutomationRuntime {
 
     fun start(context: Context) {
         if (isRunning || taskEngine != null) return
-        if (!Shizuku.pingBinder()) {
-            Log.e("AUTO", "SHIZUKU_NOT_RUNNING")
-            return
-        }
-        if (!ShizukuShellExecutor.isReady()) {
-            Log.e("AUTO", "SHIZUKU_NOT_READY")
+        if (!E7AccessibilityService.isConnected()) {
+            Log.e("AUTO", "ACCESSIBILITY_NOT_CONNECTED")
             return
         }
         isRunning = true
-        Log.d(TAG, "ACCESSIBILITY_STATUS = SHIZUKU_INPUT_MODE")
+        Log.d(TAG, "ACCESSIBILITY_STATUS = GESTURE_MODE")
         val appContext = context.applicationContext
         val homeResolver = HomeResolver(
             detector = object : HomeStateDetector {
@@ -65,22 +61,13 @@ object AutomationRuntime {
             },
             automation = object : AutomationGateway {
                 override suspend fun tap(x: Int, y: Int): Boolean {
-                    Log.d("AUTO", "EXEC INPUT TAP")
-                    val ok = ShizukuShellExecutor.execute("input tap $x $y")
-                    if (ok) Log.i(TAG, "ADB_TAP_EXECUTED x=$x y=$y")
+                    val ok = E7AccessibilityService.performClick(x, y)
                     delay(350)
                     return ok
                 }
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
-                    Log.d("AUTO", "EXEC INPUT SWIPE")
                     val safeDuration = durationMs.coerceAtLeast(1L)
-                    val ok = ShizukuShellExecutor.execute("input swipe $startX $startY $endX $endY $safeDuration")
-                    if (ok) {
-                        Log.i(
-                            TAG,
-                            "ADB_SWIPE_EXECUTED startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$safeDuration"
-                        )
-                    }
+                    val ok = E7AccessibilityService.performGestureSwipe(startX, startY, endX, endY, safeDuration)
                     delay(400)
                     return ok
                 }
