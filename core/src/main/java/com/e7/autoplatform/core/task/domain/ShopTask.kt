@@ -7,9 +7,13 @@ import com.e7.autoplatform.core.engine.TaskRuntimeSnapshotProvider
 import com.e7.autoplatform.core.engine.WatchdogFallbackHandler
 import com.e7.autoplatform.core.image.MatchResult
 import com.e7.autoplatform.core.image.ScanRegion
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import kotlin.random.Random
 
 class ShopTask(
     private val context: TaskContext,
@@ -20,14 +24,22 @@ class ShopTask(
 
     private var state: ShopState = ShopState.ENTER
     private var taskExceptionCount: Int = 0
+    private var isRunning: Boolean = true
     private lateinit var rules: List<ShopRule>
     private var matchedResult: MatchResult? = null
 
     override suspend fun run(): TaskRunResult {
         return runCatching {
             rules = parseRules(rulesJson)
-            run(state)
+            isRunning = true
+            while (isRunning && currentCoroutineContext().isActive) {
+                Log.d("AUTO", "LOOP RUNNING")
+                context.automation.swipe(600, 1200, 600, 900, 1800)
+                delay(Random.nextLong(2000, 4000))
+            }
+            TaskRunResult.Success
         }.getOrElse {
+            isRunning = false
             taskExceptionCount += 1
             state = ShopState.DONE
             TaskRunResult.Interrupted
