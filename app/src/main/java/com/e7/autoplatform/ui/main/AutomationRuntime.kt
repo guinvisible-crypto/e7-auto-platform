@@ -31,6 +31,10 @@ object AutomationRuntime {
 
     fun start(context: Context) {
         if (taskRunning || taskEngine != null) return
+        if (!ShizukuShellExecutor.isReady()) {
+            Log.w(TAG, "SHIZUKU_NOT_READY")
+            return
+        }
         taskRunning = true
         Log.d(TAG, "ACCESSIBILITY_STATUS = SHIZUKU_INPUT_MODE")
         val appContext = context.applicationContext
@@ -56,10 +60,23 @@ object AutomationRuntime {
             automation = object : AutomationGateway {
                 override suspend fun tap(x: Int, y: Int): Boolean {
                     Log.d("AutomationRuntime", "TAP_CALL x=$x y=$y")
-                    return ShizukuInputExecutor.tap(x, y)
+                    val ok = ShizukuShellExecutor.execute("input tap $x $y")
+                    if (ok) Log.i(TAG, "ADB_TAP_EXECUTED x=$x y=$y")
+                    delay(350)
+                    return ok
                 }
-                override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean =
-                    ShizukuInputExecutor.swipe(startX, startY, endX, endY, durationMs)
+                override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+                    val safeDuration = durationMs.coerceAtLeast(1L)
+                    val ok = ShizukuShellExecutor.execute("input swipe $startX $startY $endX $endY $safeDuration")
+                    if (ok) {
+                        Log.i(
+                            TAG,
+                            "ADB_SWIPE_EXECUTED startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$safeDuration"
+                        )
+                    }
+                    delay(400)
+                    return ok
+                }
                 override suspend fun isGestureRunning(): Boolean = false
                 override suspend fun back(): Boolean = true
                 override suspend fun waitMs(ms: Long) = delay(ms)
@@ -90,9 +107,11 @@ object AutomationRuntime {
             delay(3000)
             engine.start(queue)
             delay(3000)
-            ShizukuInputExecutor.tap(500, 500)
+            val tapOk = ShizukuShellExecutor.execute("input tap 500 500")
+            if (tapOk) Log.i(TAG, "ADB_TAP_EXECUTED x=500 y=500")
             delay(1500)
-            ShizukuInputExecutor.swipe(500, 1200, 500, 800, 800)
+            val swipeOk = ShizukuShellExecutor.execute("input swipe 500 1200 500 800 800")
+            if (swipeOk) Log.i(TAG, "ADB_SWIPE_EXECUTED startX=500 startY=1200 endX=500 endY=800 durationMs=800")
         }
     }
 
