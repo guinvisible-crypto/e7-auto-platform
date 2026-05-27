@@ -24,7 +24,7 @@ class TaskDomainQueueFactory {
         bookmarkRulesJson: String
     ): TaskQueue {
         val tasks = mutableListOf<QueuedTask>()
-        if (includeStage) tasks += StageTask(context, stageRulesJson)
+        if (includeStage) tasks += ShopTask(context, bookmarkRulesJson)
         if (includeArena) tasks += ArenaTask(context, runtimeStateStore, arenaRulesJson)
         if (includeGuild) tasks += GuildTask(context)
         if (includeBookmark) tasks += BookmarkTask(context, runtimeStateStore, bookmarkRulesJson)
