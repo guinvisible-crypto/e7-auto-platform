@@ -31,6 +31,12 @@ class FloatingControlService : Service() {
     private lateinit var ballParams: WindowManager.LayoutParams
     private lateinit var menuParams: WindowManager.LayoutParams
     private var menuVisible = false
+    private var isOverlayAdded = false
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (isOverlayAdded) return START_STICKY
+        return super.onStartCommand(intent, flags, startId)
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -41,12 +47,14 @@ class FloatingControlService : Service() {
         windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         setupFloatingBall()
         setupFloatingMenu()
+        isOverlayAdded = true
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        windowManager.removeView(floatingBall)
-        windowManager.removeView(menuLayout)
+        if (this::floatingBall.isInitialized && floatingBall.isAttachedToWindow) windowManager.removeView(floatingBall)
+        if (this::menuLayout.isInitialized && menuLayout.isAttachedToWindow) windowManager.removeView(menuLayout)
+        isOverlayAdded = false
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
@@ -66,7 +74,7 @@ class FloatingControlService : Service() {
                 Log.d(TAG, "FLOATING_BALL_CLICKED")
                 CoroutineScope(Dispatchers.Main).launch {
                     Log.d("AUTO", "TASK PAUSED FOR UI")
-                    AutomationRuntime.stop()
+                    AutomationWorker.stopAutomation()
                     kotlinx.coroutines.delay(300)
                     toggleMenu()
                 }
@@ -78,7 +86,7 @@ class FloatingControlService : Service() {
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
             overlayType(),
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
@@ -106,9 +114,9 @@ class FloatingControlService : Service() {
                 Log.d(TAG, "TASK_START_REQUESTED")
                 CoroutineScope(Dispatchers.Main).launch {
                     Log.d("AUTO", "TASK PAUSED FOR UI")
-                    AutomationRuntime.stop()
+                    AutomationWorker.stopAutomation()
                     kotlinx.coroutines.delay(300)
-                    AutomationRuntime.start(this@FloatingControlService)
+                    AutomationWorker.startAutomation()
                     Log.d("AUTO", "TASK RESUMED")
                 }
             }
@@ -118,7 +126,7 @@ class FloatingControlService : Service() {
             setOnClickListener {
                 Log.d(TAG, "TASK_STOP_REQUESTED")
                 CoroutineScope(Dispatchers.Main).launch {
-                    AutomationRuntime.stop()
+                    AutomationWorker.stopAutomation()
                 }
             }
         }
@@ -135,7 +143,7 @@ class FloatingControlService : Service() {
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
             overlayType(),
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
