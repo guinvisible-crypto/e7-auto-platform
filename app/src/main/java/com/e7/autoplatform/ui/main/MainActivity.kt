@@ -1,97 +1,79 @@
 package com.e7.autoplatform.ui.main
 
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import com.e7.autoplatform.accessibility.E7AccessibilityService
 import com.e7.autoplatform.R
-import com.e7.autoplatform.core.config.InMemoryRuntimeStateStore
-import com.e7.autoplatform.core.engine.TaskEngine
-import com.e7.autoplatform.core.home.HomeActionExecutor
-import com.e7.autoplatform.core.home.HomeDetectionResult
-import com.e7.autoplatform.core.home.HomeResolver
-import com.e7.autoplatform.core.home.HomeStateDetector
-import com.e7.autoplatform.core.home.HomeUiState
-import com.e7.autoplatform.core.image.MatchResult
-import com.e7.autoplatform.core.image.PatternDefinition
-import com.e7.autoplatform.core.image.ScanRegion
-import com.e7.autoplatform.core.image.TemplateDefinition
-import com.e7.autoplatform.core.task.SharedPrefsStateManager
-import com.e7.autoplatform.core.task.TaskScheduler
-import com.e7.autoplatform.core.task.domain.AutomationGateway
-import com.e7.autoplatform.core.task.domain.ImageGateway
-import com.e7.autoplatform.core.task.domain.TaskContext
-import com.e7.autoplatform.core.task.domain.TaskDomainQueueFactory
-import kotlinx.coroutines.launch
+import rikka.shizuku.Shizuku
 
 class MainActivity : AppCompatActivity() {
+    private val shizukuPermissionListener = Shizuku.OnRequestPermissionResultListener { requestCode, grantResult ->
+        if (requestCode != SHIZUKU_REQUEST_CODE) return@OnRequestPermissionResultListener
+        if (grantResult == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+            Log.i(TAG, "SHIZUKU_PERMISSION_GRANTED")
+        } else {
+            Log.w(TAG, "SHIZUKU_PERMISSION_DENIED")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Shizuku.addRequestPermissionResultListener(shizukuPermissionListener)
+        ensureShizukuPermission()
+        ensureOverlayPermissionAndStartService()
+    }
 
-        findViewById<Button>(R.id.btnStartAutomation).setOnClickListener {
-            lifecycleScope.launch {
-                Log.d("TaskEngine", "Started by user action")
-
-            val homeResolver = HomeResolver(
-                detector = object : HomeStateDetector {
-                    override suspend fun detect(): HomeDetectionResult = HomeDetectionResult(HomeUiState.HOME, 1f)
-                },
-                executor = object : HomeActionExecutor {
-                    override suspend fun tapDismiss() = Unit
-                    override suspend fun pressBack() = Unit
-                    override suspend fun waitStep(delayMs: Long) = Unit
-                    override suspend fun ensureForeground() = Unit
-                }
-            )
-
-            val taskContext = TaskContext(
-                homeResolver = homeResolver,
-                image = object : ImageGateway {
-                    override suspend fun findColor(color: Int, tolerance: Int, region: ScanRegion?, step: Int): MatchResult =
-                        MatchResult(matched = false, score = 0f)
-
-                    override suspend fun findPattern(
-                        pattern: PatternDefinition,
-                        tolerance: Int,
-                        region: ScanRegion?,
-                        step: Int
-                    ): MatchResult = MatchResult(matched = false, score = 0f)
-
-                    override suspend fun matchTemplate(template: TemplateDefinition, threshold: Float): MatchResult =
-                        MatchResult(matched = false, score = 0f)
-                },
-                automation = object : AutomationGateway {
-                    override suspend fun tap(x: Int, y: Int): Boolean = E7AccessibilityService.performClick(x, y)
-                    override suspend fun back(): Boolean = true
-                    override suspend fun waitMs(ms: Long) = Unit
-                }
-            )
-
-            val runtimeStateStore = InMemoryRuntimeStateStore()
-            val queue = TaskDomainQueueFactory().build(
-                context = taskContext,
-                includeStage = true,
-                includeArena = false,
-                includeGuild = true,
-                includeBookmark = false,
-                loop = true,
-                intervalMs = 1_000L,
-                runtimeStateStore = runtimeStateStore,
-                stageRulesJson = assets.open("image_rules/stage/stage_rules.json").bufferedReader().use { it.readText() },
-                arenaRulesJson = assets.open("image_rules/arena/arena_rules.json").bufferedReader().use { it.readText() },
-                bookmarkRulesJson = assets.open("image_rules/shop/bookmark_rules.json").bufferedReader().use { it.readText() }
-            )
-
-            val taskScheduler = TaskScheduler(
-                stateManager = SharedPrefsStateManager(this@MainActivity),
-                maxRetryCount = 3
-            )
-                val taskEngine = TaskEngine(scheduler = taskScheduler)
-                taskEngine.start(queue)
-            }
+    override fun onResume() {
+        super.onResume()
+        if (canDrawOverlays()) {
+            startFloatingService()
         }
+    }
+
+    private fun ensureOverlayPermissionAndStartService() {
+        if (canDrawOverlays()) {
+            startFloatingService()
+            return
+        }
+        val intent = Intent(
+            Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+            Uri.parse("package:$packageName")
+        )
+        startActivity(intent)
+    }
+
+    private fun canDrawOverlays(): Boolean =
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this)
+
+    private fun ensureShizukuPermission() {
+        if (!Shizuku.pingBinder()) {
+            Log.w(TAG, "SHIZUKU_PERMISSION_DENIED")
+            return
+        }
+        if (Shizuku.checkSelfPermission() == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+            Log.i(TAG, "SHIZUKU_PERMISSION_GRANTED")
+            return
+        }
+        Shizuku.requestPermission(SHIZUKU_REQUEST_CODE)
+    }
+
+    private fun startFloatingService() {
+        val intent = Intent(this, FloatingControlService::class.java)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) startForegroundService(intent) else startService(intent)
+    }
+
+    override fun onDestroy() {
+        Shizuku.removeRequestPermissionResultListener(shizukuPermissionListener)
+        super.onDestroy()
+    }
+
+    companion object {
+        private const val TAG = "MainActivity"
+        private const val SHIZUKU_REQUEST_CODE = 1001
     }
 }
