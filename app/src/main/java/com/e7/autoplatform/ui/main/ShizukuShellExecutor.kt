@@ -5,7 +5,7 @@ import android.util.Log
 import rikka.shizuku.Shizuku
 
 object ShizukuShellExecutor {
-    private const val TAG = "ShizukuShellExecutor"
+    private const val TAG = "INPUT"
 
     fun isReady(): Boolean {
         if (!Shizuku.pingBinder()) return false
@@ -13,15 +13,15 @@ object ShizukuShellExecutor {
     }
 
     fun execute(cmd: String): Boolean {
-        Log.i(TAG, "INPUT_EXECUTE cmd=$cmd")
+        Log.d(TAG, "EXECUTE: $cmd")
         return runCatching {
             val process = Runtime.getRuntime().exec(arrayOf("sh", "-c", cmd))
             val exitCode = process.waitFor()
             if (exitCode == 0) {
-                Log.i(TAG, "INPUT_SUCCESS")
+                Log.d(TAG, "SUCCESS")
                 true
             } else {
-                Log.e(TAG, "INPUT_FAILED")
+                Log.e(TAG, "FAILED")
                 false
             }
         }.getOrElse {
