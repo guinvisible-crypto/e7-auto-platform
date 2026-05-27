@@ -32,7 +32,12 @@ object AutomationRuntime {
         private set
 
     fun start(context: Context) {
-        if (isRunning || taskEngine != null) return
+        Log.d("TASK", "AutomationRuntime.start CALLED")
+        if (taskEngine != null) {
+            Log.d("TASK", "ENGINE_ALREADY_RUNNING")
+            return
+        }
+        if (isRunning) return
         if (!E7AccessibilityService.isConnected()) {
             Log.e("AUTO", "ACCESSIBILITY_NOT_CONNECTED")
             return
@@ -99,6 +104,7 @@ object AutomationRuntime {
         taskEngine = engine
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
+            Log.d("TASK", "ENGINE_START")
             engine.start(queue)
         }
     }

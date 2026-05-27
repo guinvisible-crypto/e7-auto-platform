@@ -103,8 +103,10 @@ class FloatingControlService : Service() {
         val startBtn = Button(this).apply {
             text = "开始刷商店"
             setOnClickListener {
+                Log.d("FLOATING", "START_BUTTON_CLICKED")
+                Log.d("FLOATING", "CALLING_AUTOMATION_RUNTIME")
                 Log.d(TAG, "TASK_START_REQUESTED")
-                AutomationRuntime.start(this@FloatingControlService)
+                AutomationRuntime.start(applicationContext)
             }
         }
         val stopBtn = Button(this).apply {
