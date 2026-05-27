@@ -79,8 +79,21 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         Log.e("E7_DEBUG", "DISPATCH_GESTURE")
         val dispatched = runBlocking {
             withContext(Dispatchers.Main) {
-                Log.w(TAG, "GESTURE_DISABLED_USE_SHIZUKU gestureId=$gestureId")
-                false
+                dispatchGesture(
+                    gesture,
+                    object : GestureResultCallback() {
+                        override fun onCompleted(gestureDescription: GestureDescription?) {
+                            super.onCompleted(gestureDescription)
+                            callback?.onCompleted(gestureId)
+                        }
+
+                        override fun onCancelled(gestureDescription: GestureDescription?) {
+                            super.onCancelled(gestureDescription)
+                            callback?.onCancelled(gestureId)
+                        }
+                    },
+                    null
+                )
             }
         }
 
@@ -108,7 +121,7 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
         fun isConnected(): Boolean = activeInstance != null
         fun isGestureRunning(): Boolean = gestureState == GestureState.RUNNING
 
-        suspend fun performClick(x: Int, y: Int): Boolean {
+        suspend fun performGestureTap(x: Int, y: Int): Boolean {
             Log.e("E7_DEBUG", "ACTIVE_INSTANCE=" + (activeInstance != null))
             val service = activeInstance
             if (service == null) {
@@ -124,11 +137,16 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
             Log.d(TAG, "click_validation foreground_package=$foregroundPackage")
             Log.d(TAG, "TAP_DISPATCH_ATTEMPT x=$x y=$y")
             val dispatched = service.click(x.toFloat(), y.toFloat(), gestureId = "tap_${x}_${y}")
-            if (dispatched) Log.d(TAG, "TAP_DISPATCH_SUCCESS") else Log.e(TAG, "TAP_DISPATCH_FAIL")
+            if (dispatched) {
+                Log.d("AUTO", "GESTURE_TAP_DISPATCHED")
+                Log.d(TAG, "TAP_DISPATCH_SUCCESS")
+            } else {
+                Log.e(TAG, "TAP_DISPATCH_FAIL")
+            }
             return dispatched
         }
 
-        suspend fun performSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+        suspend fun performGestureSwipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
             Log.e("E7_DEBUG", "SWIPE_ENTER")
             Log.e("E7_DEBUG", "ACTIVE_INSTANCE=" + (activeInstance != null))
             synchronized(swipeLock) {
@@ -157,17 +175,24 @@ open class E7AccessibilityService : AccessibilityService(), AutoClickController 
                 callback = object : AutomationGestureCallback {
                     override fun onCompleted(gestureId: String) {
                         synchronized(swipeLock) { gestureState = GestureState.IDLE }
+                        Log.d("AUTO", "GESTURE_COMPLETED")
                     }
 
                     override fun onCancelled(gestureId: String) {
                         synchronized(swipeLock) { gestureState = GestureState.IDLE }
+                        Log.d("AUTO", "GESTURE_CANCELLED")
                     }
                 }
             )
             if (!dispatched) {
                 synchronized(swipeLock) { gestureState = GestureState.IDLE }
             }
-            if (dispatched) Log.d(TAG, "SWIPE_SUCCESS") else Log.e(TAG, "SWIPE_FAIL")
+            if (dispatched) {
+                Log.d("AUTO", "GESTURE_SWIPE_DISPATCHED")
+                Log.d(TAG, "SWIPE_SUCCESS")
+            } else {
+                Log.e(TAG, "SWIPE_FAIL")
+            }
             return dispatched
         }
     }

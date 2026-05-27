@@ -104,14 +104,14 @@ class FloatingControlService : Service() {
             text = "开始刷商店"
             setOnClickListener {
                 Log.d(TAG, "TASK_START_REQUESTED")
-                AutomationWorker.startAutomation()
+                AutomationRuntime.start(this@FloatingControlService)
             }
         }
         val stopBtn = Button(this).apply {
             text = "停止任务"
             setOnClickListener {
                 Log.d(TAG, "TASK_STOP_REQUESTED")
-                AutomationWorker.stopAutomation()
+                AutomationRuntime.stop()
             }
         }
         val hideBtn = Button(this).apply {
