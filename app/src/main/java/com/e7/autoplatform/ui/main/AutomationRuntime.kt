@@ -64,13 +64,14 @@ object AutomationRuntime {
             },
             automation = object : AutomationGateway {
                 override suspend fun tap(x: Int, y: Int): Boolean {
-                    Log.d("AutomationRuntime", "TAP_CALL x=$x y=$y")
+                    Log.d("AUTO", "EXEC INPUT TAP")
                     val ok = ShizukuShellExecutor.execute("input tap $x $y")
                     if (ok) Log.i(TAG, "ADB_TAP_EXECUTED x=$x y=$y")
                     delay(350)
                     return ok
                 }
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
+                    Log.d("AUTO", "EXEC INPUT SWIPE")
                     val safeDuration = durationMs.coerceAtLeast(1L)
                     val ok = ShizukuShellExecutor.execute("input swipe $startX $startY $endX $endY $safeDuration")
                     if (ok) {
