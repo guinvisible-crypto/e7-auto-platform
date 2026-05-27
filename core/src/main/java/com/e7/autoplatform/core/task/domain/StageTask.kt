@@ -23,6 +23,9 @@ class StageTask(
     private lateinit var rules: List<StageRule>
     private var matchedRule: StageRule? = null
     private var matchedResult: MatchResult? = null
+    private val refreshCost = 3
+    private var usedSkyStone = 0
+    private val maxSkyStone = 300
 
     override suspend fun run(): TaskRunResult {
         return runCatching {
@@ -42,49 +45,29 @@ class StageTask(
         return when (state) {
             StageState.ENTER -> StepOutcome(StageState.DETECT)
             StageState.DETECT -> {
-                Log.d("StageTask", "DETECT_RULE_COUNT=${rules.size}")
-                val detectionResults = mutableListOf<Pair<StageRule, MatchResult>>()
-                rules.forEach { rule ->
-                    Log.d("StageTask", "DETECT_RULE_ID=${rule.id}")
-                    val result = detect(rule)
-                    Log.d("StageTask", "DETECT_RESULT ruleId=${rule.id} matched=${result.matched}")
-                    detectionResults += rule to result
-                }
-
-                val matchedEntry = detectionResults.firstOrNull { (_, result) -> result.matched }
-                val matchedRule = matchedEntry?.first
-                return if (matchedRule != null) {
-                    this.matchedRule = matchedRule
-                    this.matchedResult = matchedEntry.second
-                    Log.d("StageTask", "DETECT_SUCCESS ruleId=${matchedRule.id}")
-                    Log.d("StageTask", "RULE_ID=${matchedRule.id}")
-                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=CLICK")
-                    StepOutcome(StageState.CLICK)
-                } else {
-                    this.matchedRule = null
-                    this.matchedResult = null
-                    Log.d("StageTask", "DETECT_FAIL ruleCount=${rules.size}")
-                    Log.d("StageTask", "event=state_transition task=StageTask from=DETECT to=WAIT")
-                    StepOutcome(StageState.WAIT)
-                }
+                Log.d("StageTask", "FORCE_ENTER_CLICK")
+                this.matchedRule = null
+                this.matchedResult = null
+                StepOutcome(StageState.CLICK_ITEM)
             }
-            StageState.CLICK -> {
-                Log.d("StageTask", "state=CLICK")
+            StageState.CLICK_ITEM -> {
+                Log.e("E7_DEBUG", "STAGE_CLICK")
+                Log.d("StageTask", "state=CLICK_ITEM")
                 val rule = matchedRule
                 if (rule == null) {
-                    Log.d("StageTask", "NO_MATCHED_RULE")
-                    return StepOutcome(StageState.WAIT)
+                    val clicked = performClick(500, 500)
+                    Log.d("StageTask", "CLICK_ATTEMPT x=500 y=500")
+                    Log.d("StageTask", if (clicked) "CLICK_DISPATCHED" else "CLICK_FAILED")
+                    return StepOutcome(StageState.WAIT_ANIMATION)
                 }
                 Log.d("StageTask", "RULE_ID=${rule.id}")
-                val anchor = rule.anchor
-                if (anchor == null) {
-                    Log.d("StageTask", "NO_ANCHOR_FOUND")
-                    return StepOutcome(StageState.WAIT)
+                val match = matchedResult?.point
+                if (match == null) {
+                    Log.d("StageTask", "NO_MATCH_POINT_FOUND")
+                    return StepOutcome(StageState.DETECT)
                 }
-                val matchPoint = matchedResult?.point
-                val x = matchPoint?.x ?: anchor.x
-                val y = matchPoint?.y ?: anchor.y
-                Log.d("StageTask", "ANCHOR x=${anchor.x} y=${anchor.y}")
+                val x = match.x
+                val y = match.y
                 val dm = Resources.getSystem().displayMetrics
                 Log.d("StageTask", "SCREEN_INFO width=${dm.widthPixels} height=${dm.heightPixels} clickX=$x clickY=$y")
                 Log.d("StageTask", "FOREGROUND_PACKAGE=unavailable_in_core")
@@ -95,15 +78,48 @@ class StageTask(
                 } else {
                     Log.d("StageTask", "CLICK_FAILED")
                 }
-                Log.d("StageTask", "event=state_transition task=StageTask from=CLICK to=WAIT")
-                StepOutcome(StageState.WAIT)
+                Log.d("StageTask", "event=state_transition task=StageTask from=CLICK_ITEM to=CONFIRM_BUY")
+                StepOutcome(StageState.CONFIRM_BUY)
             }
-            StageState.WAIT -> {
-                Log.d("StageTask", "state=WAIT")
-                Thread.sleep(1000)
+            StageState.CONFIRM_BUY -> {
+                context.automation.waitMs(500)
+                val clicked = performClick(900, 1600)
+                Log.d("StageTask", "CONFIRM_BUY_CLICKED=$clicked")
+                StepOutcome(StageState.WAIT_ANIMATION)
+            }
+            StageState.WAIT_ANIMATION -> {
+                Log.d("StageTask", "state=WAIT_ANIMATION")
+                context.automation.waitMs(1500)
                 matchedRule = null
                 matchedResult = null
-                StepOutcome(StageState.DONE)
+                StepOutcome(StageState.DETECT)
+            }
+            StageState.REFRESH -> {
+                if (!canRefresh()) {
+                    Log.d("StageTask", "STOP_SKYSTONE_LIMIT used=$usedSkyStone limit=$maxSkyStone")
+                    return StepOutcome(StageState.DONE)
+                }
+                Log.d("StageTask", "REFRESH_ATTEMPT")
+                val swiped = context.automation.swipe(
+                    startX = 600,
+                    startY = 1200,
+                    endX = 600,
+                    endY = 900,
+                    durationMs = 1800
+                )
+                if (swiped) {
+                    usedSkyStone += refreshCost
+                    Log.d("StageTask", "REFRESH_SUCCESS")
+                    Log.d("StageTask", "SKYSTONE_USED=$usedSkyStone")
+                } else {
+                    Log.d("StageTask", "REFRESH_FAILED")
+                }
+                while (context.automation.isGestureRunning()) {
+                    Log.d("StageTask", "TASK_WAITING_GESTURE")
+                    context.automation.waitMs(100)
+                }
+                Log.d("StageTask", "TASK_RESUME_AFTER_GESTURE")
+                StepOutcome(StageState.DETECT)
             }
             StageState.DONE -> StepOutcome(StageState.DONE, TaskRunResult.Success)
         }
@@ -136,13 +152,19 @@ class StageTask(
         return context.automation.tap(x, y)
     }
 
+    private fun canRefresh(): Boolean {
+        return usedSkyStone + refreshCost <= maxSkyStone
+    }
+
     private fun parseRules(raw: String): List<StageRule> = json.decodeFromString(StageRulePayload.serializer(), raw).rules
 
     enum class StageState {
         ENTER,
         DETECT,
-        CLICK,
-        WAIT,
+        CLICK_ITEM,
+        CONFIRM_BUY,
+        WAIT_ANIMATION,
+        REFRESH,
         DONE
     }
 
@@ -165,7 +187,9 @@ class StageTask(
     private fun String.parseRgb(): Int = (0xFF shl 24) or removePrefix("#").toInt(16)
 
     companion object {
-        private const val RULE_STAGE_ENTRY = "cmp_battle_surrender"
-        private const val WAIT_MS = 1000L
+        private val prioritizedRuleIds = setOf(
+            "cmp_shop_bookmark_blue",
+            "cmp_shop_bookmark_red"
+        )
     }
 }
