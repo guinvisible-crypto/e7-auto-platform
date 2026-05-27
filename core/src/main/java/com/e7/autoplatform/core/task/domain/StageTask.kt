@@ -55,7 +55,7 @@ class StageTask(
                 Log.d("StageTask", "state=CLICK_ITEM")
                 val rule = matchedRule
                 if (rule == null) {
-                    val clicked = performClick(500, 500)
+                    val clicked = performTap(500, 500)
                     Log.d("StageTask", "CLICK_ATTEMPT x=500 y=500")
                     Log.d("StageTask", if (clicked) "CLICK_DISPATCHED" else "CLICK_FAILED")
                     return StepOutcome(StageState.WAIT_ANIMATION)
@@ -72,7 +72,7 @@ class StageTask(
                 Log.d("StageTask", "SCREEN_INFO width=${dm.widthPixels} height=${dm.heightPixels} clickX=$x clickY=$y")
                 Log.d("StageTask", "FOREGROUND_PACKAGE=unavailable_in_core")
                 Log.d("StageTask", "CLICK_ATTEMPT x=$x y=$y")
-                val clicked = performClick(x, y)
+                val clicked = performTap(x, y)
                 if (clicked) {
                     Log.d("StageTask", "CLICK_DISPATCHED")
                 } else {
@@ -83,7 +83,7 @@ class StageTask(
             }
             StageState.CONFIRM_BUY -> {
                 context.automation.waitMs(500)
-                val clicked = performClick(900, 1600)
+                val clicked = performTap(900, 1600)
                 Log.d("StageTask", "CONFIRM_BUY_CLICKED=$clicked")
                 StepOutcome(StageState.WAIT_ANIMATION)
             }
@@ -149,7 +149,7 @@ class StageTask(
         )
     }
 
-    private suspend fun performClick(x: Int, y: Int): Boolean {
+    private suspend fun performTap(x: Int, y: Int): Boolean {
         return context.automation.tap(x, y)
     }
 

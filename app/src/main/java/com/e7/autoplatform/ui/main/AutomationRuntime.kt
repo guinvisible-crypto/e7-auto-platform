@@ -20,10 +20,12 @@ import com.e7.autoplatform.core.task.domain.ImageGateway
 import com.e7.autoplatform.core.task.domain.TaskContext
 import com.e7.autoplatform.core.task.domain.TaskDomainQueueFactory
 import kotlinx.coroutines.CoroutineScope
+import com.e7.autoplatform.input.RootCheck
+import com.e7.autoplatform.input.RootInputExecutor
+import com.e7.autoplatform.input.SendeventBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import rikka.shizuku.Shizuku
 
 object AutomationRuntime {
     private var taskEngine: TaskEngine? = null
@@ -32,17 +34,18 @@ object AutomationRuntime {
         private set
 
     fun start(context: Context) {
-        if (isRunning || taskEngine != null) return
-        if (!Shizuku.pingBinder()) {
-            Log.e("AUTO", "SHIZUKU_NOT_RUNNING")
+        Log.d("TASK", "AutomationRuntime.start CALLED")
+        if (taskEngine != null) {
+            Log.d("TASK", "ENGINE_ALREADY_RUNNING")
             return
         }
-        if (!ShizukuShellExecutor.isReady()) {
-            Log.e("AUTO", "SHIZUKU_NOT_READY")
+        if (isRunning) return
+        if (!RootCheck.isRoot()) {
+            Log.e("AUTO", "ROOT_NOT_AVAILABLE")
             return
         }
         isRunning = true
-        Log.d(TAG, "ACCESSIBILITY_STATUS = SHIZUKU_INPUT_MODE")
+        Log.d(TAG, "INPUT_STATUS = ROOT_SENDEVENT_MODE")
         val appContext = context.applicationContext
         val homeResolver = HomeResolver(
             detector = object : HomeStateDetector {
@@ -56,6 +59,9 @@ object AutomationRuntime {
             }
         )
 
+        val rootInputExecutor = RootInputExecutor()
+        val sendeventBuilder = SendeventBuilder("/dev/input/event2")
+
         val taskContext = TaskContext(
             homeResolver = homeResolver,
             image = object : ImageGateway {
@@ -65,22 +71,14 @@ object AutomationRuntime {
             },
             automation = object : AutomationGateway {
                 override suspend fun tap(x: Int, y: Int): Boolean {
-                    Log.d("AUTO", "EXEC INPUT TAP")
-                    val ok = ShizukuShellExecutor.execute("input tap $x $y")
-                    if (ok) Log.i(TAG, "ADB_TAP_EXECUTED x=$x y=$y")
+                    val ok = rootInputExecutor.send(sendeventBuilder.tap(x, y))
                     delay(350)
                     return ok
                 }
                 override suspend fun swipe(startX: Int, startY: Int, endX: Int, endY: Int, durationMs: Long): Boolean {
-                    Log.d("AUTO", "EXEC INPUT SWIPE")
                     val safeDuration = durationMs.coerceAtLeast(1L)
-                    val ok = ShizukuShellExecutor.execute("input swipe $startX $startY $endX $endY $safeDuration")
-                    if (ok) {
-                        Log.i(
-                            TAG,
-                            "ADB_SWIPE_EXECUTED startX=$startX startY=$startY endX=$endX endY=$endY durationMs=$safeDuration"
-                        )
-                    }
+                    val steps = (safeDuration / 120L).toInt().coerceIn(12, 25)
+                    val ok = rootInputExecutor.send(sendeventBuilder.swipe(startX, startY, endX, endY, steps))
                     delay(400)
                     return ok
                 }
@@ -112,6 +110,7 @@ object AutomationRuntime {
         taskEngine = engine
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
+            Log.d("TASK", "ENGINE_START")
             engine.start(queue)
         }
     }
